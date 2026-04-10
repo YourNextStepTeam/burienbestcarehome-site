@@ -29,37 +29,34 @@ export const metadata: Metadata = {
 export default function About() {
   const teamMembers = [
     {
+      initials: 'BP',
       name: 'Becca Pitts',
       role: 'Owner & Care Director',
-      bio: 'Founded the home after 20+ years in senior care. She has been where you are right now, helping her own family navigate this decision. She knows the exhaustion of trying to find a place that feels like home, not a facility. She built this because she wished it existed for her family.',
+      bio: 'Becca founded this home after years walking alongside families in senior care. She has been where you are right now, helping her own family navigate this decision. She knows the exhaustion of trying to find a place that feels like home, not a facility. She built this because she wished it existed for her own family.',
     },
     {
-      name: 'Mary Johnson',
+      initials: 'DT',
+      name: 'Daniela Torkelson',
       role: 'Lead Caregiver',
-      bio: '12+ years specializing in memory care. Families trust her instincts and her gentle way with residents. She knows the difference between managing someone and truly seeing them. That difference shows up in every interaction.',
-    },
-    {
-      name: 'James Rivera',
-      role: 'Caregiver & Activities Coordinator',
-      bio: 'Believes every day should have purpose and joy. Creates moments that families talk about for years. He knows that your parent is not just a care case. They are still the person you love, and they deserve days that feel like living, not just surviving.',
+      bio: 'Daniela brings a calm steadiness to everything she does. She knows the difference between managing someone and truly seeing them, and that difference shows up in every interaction. Families trust her instincts, and residents feel safer the moment she walks in the room.',
     },
   ]
 
   const promises = [
     {
-      title: 'Your parent\'s dignity comes first',
+      title: 'Your Parent\u2019s Dignity Comes First',
       description: 'We never rush, never talk down, never treat care as a checklist. Your parent is not a task. They are a person with a lifetime of stories and wisdom.',
     },
     {
-      title: 'You are always part of the team',
+      title: 'You Are Always Part of the Team',
       description: 'Open communication, welcome visits, your input shapes their care. This is partnership. You do not step back. You step in.',
     },
     {
-      title: 'Small by design, not by accident',
-      description: 'Six residents maximum. Because real care requires real attention. We say no to growth so we can say yes to each person.',
+      title: 'Small by Design, Not by Accident',
+      description: 'An intimate adult family home. Because real care requires real attention. We say no to growth so we can say yes to each person.',
     },
     {
-      title: 'We do what we say',
+      title: 'We Do What We Say',
       description: 'Licensed, bonded, insured. No hidden fees, no surprises, no excuses. You know exactly what you are getting.',
     },
   ]
@@ -80,62 +77,81 @@ export default function About() {
           sizes="100vw"
           className="object-cover"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80" />
-        <div className="relative z-10 text-center px-4 sm:px-6 py-20 md:py-24 max-w-3xl">
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/85 via-forest/75 to-forest/90" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-black/20" />
+        <div className="relative z-10 text-center px-4 sm:px-6 py-24 md:py-32 max-w-4xl">
+          <p className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25">
+            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
+            <span>Our Story</span>
+          </p>
           <h1
             id="about-hero-headline"
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            We Built This Home Because Your Family Deserves Better
+            We Built This Home Because Your Family Deserves&nbsp;<span className="text-cream italic">Better</span>.
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-cream leading-relaxed">
-            After 20 years in senior care, we saw the same story over and over. Families forced to choose between institutions that felt cold and staying home until a crisis. We built Burien Best Care Home to give families a third option.
+          <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
+            We kept watching families forced to choose between cold institutions and staying home until a crisis. We built Burien Best Care Home to give families a third&nbsp;option.
           </p>
         </div>
       </section>
 
       {/* Our Why Section (The Guide's Backstory) */}
-      <section className="py-20 px-6 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-12 text-center">
-              Why This Home Exists
-            </h2>
+            <div className="text-center mb-12">
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Why</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
+                Why This Home Exists
+              </h2>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="space-y-6 text-lg text-forest leading-relaxed">
-              <p>
-                Becca saw families struggling. She watched loved ones fade in large facilities where they were room numbers, not people. She watched families torn between guilt and exhaustion. And she decided to create something different.
-              </p>
-              <p>
-                Not a facility. A home. A place where six residents are treated like family, where caregivers know every person's story, and where families find the peace of mind they have been searching for.
-              </p>
-              <p>
-                This is what happens when someone who has walked this road with their own family says, "I can do this better." When they build not for profit margins, but for people. When they understand that you are not just looking for a place to put your parent. You are looking for a place where your parent can keep living, and where you can stop carrying this alone.
-              </p>
-            </div>
+            <GlassCard variant="white" className="p-8 sm:p-12 lg:p-14">
+              <div className="space-y-6 text-lg text-forest/85 leading-relaxed">
+                <p>
+                  Becca saw families struggling. She watched loved ones fade in large facilities where they were room numbers, not people. She watched families torn between guilt and exhaustion. And she decided to create something&nbsp;different.
+                </p>
+                <p>
+                  Not a facility. A home. A place where residents are treated like family, where caregivers know every person&rsquo;s story, and where families find the peace of mind they have been searching&nbsp;for.
+                </p>
+                <p>
+                  This is what happens when someone who has walked this road with their own family says, &ldquo;I can do this better.&rdquo; When they build not for profit margins, but for&nbsp;people.
+                </p>
+                <p>
+                  You are not looking for a place to put your parent. You are looking for a place where your parent can keep living, and where you can stop carrying this&nbsp;alone.
+                </p>
+              </div>
+            </GlassCard>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Our Promises Section (Outcomes, not features) */}
-      <section className="py-20 px-6 bg-sage-light">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-sage-light">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-16 text-center">
-              Our Promises to Your Family
-            </h2>
+            <div className="text-center mb-16">
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Promises</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
+                What We Promise Your Family
+              </h2>
+            </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {promises.map((promise, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <GlassCard className="p-8 h-full hover:shadow-xl transition-shadow">
-                  <h3 className="font-serif text-2xl text-forest mb-4">
+                <GlassCard variant="white" className="p-8 sm:p-10 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                  </div>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-forest mb-4 leading-tight">
                     {promise.title}
                   </h3>
-                  <p className="text-forest text-lg leading-relaxed">
+                  <p className="text-forest/75 text-lg leading-relaxed">
                     {promise.description}
                   </p>
                 </GlassCard>
@@ -146,31 +162,37 @@ export default function About() {
       </section>
 
       {/* Team Section (Guides, not just staff) */}
-      <section className="py-20 px-6 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 text-center">
-              The People Walking This Road With You
-            </h2>
+            <div className="text-center mb-16">
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Team</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-forest mb-4 leading-tight">
+                The People Walking This Road&nbsp;With&nbsp;You
+              </h2>
+              <p className="text-lg text-forest/75 max-w-2xl mx-auto">
+                Our team doesn&rsquo;t just provide care. They become part of your family&rsquo;s&nbsp;story.
+              </p>
+            </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
-            <p className="text-center text-lg text-forest max-w-2xl mx-auto mb-16">
-              Our team does not just provide care. They become part of your family's story.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto items-stretch">
             {teamMembers.map((member, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
-                <GlassCard className="p-8 flex flex-col h-full">
-                  <h3 className="font-serif text-2xl text-forest mb-2">
+                <GlassCard variant="white" className="p-8 sm:p-10 text-center h-full flex flex-col">
+                  <div
+                    aria-hidden="true"
+                    className="w-28 h-28 rounded-full bg-gradient-to-br from-sage/30 to-forest/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-cream shadow-inner"
+                  >
+                    {member.initials}
+                  </div>
+                  <h3 className="font-serif text-2xl text-forest mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sage font-semibold mb-4 text-lg">
+                  <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">
                     {member.role}
                   </p>
-                  <p className="text-forest leading-relaxed flex-grow">
+                  <p className="text-forest/75 leading-relaxed flex-grow">
                     {member.bio}
                   </p>
                 </GlassCard>
@@ -191,13 +213,13 @@ export default function About() {
                 </h2>
                 <div className="space-y-6 text-lg text-forest leading-relaxed">
                   <p>
-                    We want you here. For morning coffee. For dinner. For no reason at all. This is your parent's home, and by extension, it's yours.
+                    We want you here. For morning coffee. For dinner. For no reason at all. This is your parent&rsquo;s home, and by extension, it&rsquo;s&nbsp;yours.
                   </p>
                   <p>
-                    You do not hand off your parent at the door. You walk in whenever you need to. You are part of every decision. You know your parent is not just being cared for. Your parent is being loved.
+                    You do not hand off your parent at the door. You walk in whenever you need to. You are part of every decision. You know your parent is not just being cared for. Your parent is being&nbsp;loved.
                   </p>
                   <p>
-                    Open doors are not a policy at Burien Best Care Home. They are a promise. Your presence matters. Your voice matters. Your parent's connection to you matters more than any schedule or routine.
+                    Open doors are not a policy at Burien Best Care Home. They are a promise. Your presence matters. Your voice matters. Your parent&rsquo;s connection to you matters more than any schedule or&nbsp;routine.
                   </p>
                 </div>
               </div>
@@ -219,40 +241,40 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-8">
-              Come See It for Yourself
+            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
+              Come See It for&nbsp;Yourself
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <p className="text-lg text-forest mb-12">
-              The best way to know if we are right for your family is to walk through our door. See the home. Meet the team. Feel the difference.
+            <p className="text-lg sm:text-xl text-forest/75 mb-10 leading-relaxed">
+              The best way to know if we are right for your family is to walk through our door. See the home. Meet the team. Feel the&nbsp;difference.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
-                className="btn btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-block"
+                href="/contact#visit-form"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Schedule a Visit
               </Link>
-              <a
-                href="/contact"
-                className="btn btn-secondary px-8 py-4 rounded-full font-semibold text-lg inline-block"
+              <Link
+                href="/contact#family-guide"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Download Our Family Guide
-              </a>
+              </Link>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <p className="text-sm text-forest mt-8">
-              Licensed + Bonded + Insured. No surprises, no hidden fees, no excuses.
+            <p className="text-sm text-forest/60 mt-10">
+              Licensed &middot; Bonded &middot; Insured &middot; No surprises, no hidden fees, no excuses.
             </p>
           </ScrollReveal>
         </div>

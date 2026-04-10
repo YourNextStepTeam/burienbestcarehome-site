@@ -74,30 +74,31 @@ export default function HeroSection() {
           className="max-w-2xl w-full backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10"
           variants={itemVariants}
         >
-          {/* Eyebrow label — accent bar + bolder, brighter text for clear hierarchy */}
+          {/* Eyebrow label — bright cream accent bar + high-contrast chip so it reads on any photo */}
           <motion.p
-            className="flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-5 drop-shadow-md"
+            className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25"
             variants={itemVariants}
           >
-            <span aria-hidden="true" className="inline-block w-10 h-0.5 bg-cream" />
-            For families navigating senior care in Burien, WA
+            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
+            <span>For Families Navigating Senior Care in Burien,&nbsp;WA</span>
           </motion.p>
 
-          {/* Headline */}
+          {/* Headline — "safety" and "peace" highlighted in cream to pull the eye to key words */}
           <motion.h1
             id="hero-headline"
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-5 leading-[1.1] drop-shadow-lg"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-6 leading-[1.1] drop-shadow-lg"
             variants={itemVariants}
           >
-            Your parent's safety shouldn't keep you up at night.
+            Your parent&rsquo;s <span className="text-cream italic">safety</span> shouldn&rsquo;t keep you up at&nbsp;night.
           </motion.h1>
 
-          {/* Tightened Supporting Paragraph */}
+          {/* Supporting Paragraph — meaningful line breaks that keep phrases intact */}
           <motion.p
             className="text-base sm:text-lg lg:text-xl text-white mb-8 leading-relaxed drop-shadow"
             variants={itemVariants}
           >
-            You've noticed the changes. The small lapses. The worry in their voice when they're alone. We've helped dozens of families in Burien find peace of mind, and we'll walk you through this decision with compassion and clarity.
+            You&rsquo;ve noticed the changes. The small lapses. The worry in their voice when they&rsquo;re alone.
+            We walk families through this decision with compassion and clarity, so you can finally exhale.
           </motion.p>
 
           {/* CTA Buttons — 48px+ touch targets */}

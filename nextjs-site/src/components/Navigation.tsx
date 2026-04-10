@@ -138,7 +138,7 @@ export default function Navigation() {
 
           {/* Desktop CTA Button */}
           <Link
-            href="/contact"
+            href="/contact#visit-form"
             className={`hidden md:inline-flex items-center justify-center min-h-12 px-6 py-3 font-semibold rounded-lg transition-colors shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${ctaClasses}`}
           >
             Schedule a Visit
@@ -213,7 +213,7 @@ export default function Navigation() {
             </nav>
 
             <Link
-              href="/contact"
+              href="/contact#visit-form"
               onClick={() => setIsMobileMenuOpen(false)}
               className="inline-flex items-center justify-center w-full min-h-12 px-6 py-3 bg-sage text-cream font-semibold rounded-lg text-center hover:bg-forest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >

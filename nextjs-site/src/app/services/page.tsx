@@ -173,13 +173,19 @@ const recoveryCareFeaturesData: FeatureItem[] = [
 
 function FeatureGrid({ features }: { features: FeatureItem[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 items-stretch">
       {features.map((feature, index) => (
-        <div key={index} className="p-6 bg-cream/40 rounded-lg border border-sage/10">
-          <h4 className="font-semibold text-forest mb-2 font-serif text-lg">
+        <div
+          key={index}
+          className="p-6 sm:p-7 bg-white rounded-xl border border-sage/15 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-sage/40"
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-sage rounded-full" />
+          </div>
+          <h4 className="font-semibold text-forest mb-2 font-serif text-xl sm:text-2xl leading-tight">
             {feature.title}
           </h4>
-          <p className="text-forest/80 text-sm leading-relaxed">
+          <p className="text-forest/75 text-base leading-relaxed">
             {feature.description}
           </p>
         </div>
@@ -198,7 +204,7 @@ function ServiceSection({
 }: {
   id: string
   title: string
-  subtitle: string
+  subtitle: React.ReactNode
   paragraphs: string[]
   features: FeatureItem[]
   delay: number
@@ -206,20 +212,21 @@ function ServiceSection({
   return (
     <section id={id} className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <ScrollReveal delay={delay} className="w-full">
-        <GlassCard className="w-full max-w-4xl mx-auto p-8 md:p-12">
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest mb-2">
+        <GlassCard variant="white" className="w-full max-w-5xl mx-auto p-8 md:p-12 lg:p-16">
+          <div className="space-y-8">
+            <div className="text-center">
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Services</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-forest mb-5 leading-tight">
                 {title}
               </h2>
-              <h3 className="text-xl md:text-2xl text-sage font-semibold">
+              <h3 className="text-xl md:text-2xl text-forest/80 font-normal max-w-2xl mx-auto leading-snug">
                 {subtitle}
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-5 max-w-3xl mx-auto">
               {paragraphs.map((paragraph, index) => (
-                <p key={index} className="text-forest/90 leading-relaxed">
+                <p key={index} className="text-forest/80 leading-relaxed text-lg">
                   {paragraph}
                 </p>
               ))}
@@ -227,19 +234,19 @@ function ServiceSection({
 
             <FeatureGrid features={features} />
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage text-white rounded-lg font-semibold hover:bg-forest transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                href="/contact#visit-form"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Schedule a Visit
               </Link>
-              <a
-                href="/family-guide.pdf"
-                className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-sage text-sage rounded-lg font-semibold hover:bg-cream transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+              <Link
+                href="/contact#family-guide"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Download Our Family Guide
-              </a>
+              </Link>
             </div>
           </div>
         </GlassCard>
@@ -291,27 +298,34 @@ export default function ServicesPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/90 via-forest/75 to-forest/90" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/25" />
 
-        <ScrollReveal className="relative z-10 text-center text-white px-4 sm:px-6 py-20 md:py-24 max-w-3xl">
+        <ScrollReveal className="relative z-10 text-center px-4 sm:px-6 py-24 md:py-32 max-w-4xl">
+          <p className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25">
+            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
+            <span>Our Services</span>
+          </p>
           <h1
             id="services-hero-headline"
-            className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight drop-shadow-lg"
           >
-            Care That Sees Your Parent as a Person, Not a Patient
+            Care That Sees Your Parent as a&nbsp;<span className="text-cream italic">Person</span>, Not a Patient.
           </h1>
-          <p className="text-lg md:text-xl text-cream leading-relaxed">
-            Every care plan we build starts with one question: what does your parent need to feel safe, happy, and at home?
+          <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
+            Every care plan starts with one question: what does your parent need to feel safe, happy, and at&nbsp;home?
           </p>
         </ScrollReveal>
       </section>
 
       {/* Services Intro Section */}
-      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <ScrollReveal className="max-w-3xl mx-auto">
-          <p className="text-center text-forest/90 leading-relaxed text-lg">
-            At Burien Best Care Home, we don't believe in one-size-fits-all care. With only six residents, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks like.
-          </p>
+          <GlassCard variant="white" className="p-8 sm:p-10">
+            <p className="text-center text-forest/85 leading-relaxed text-lg sm:text-xl">
+              We don&rsquo;t believe in one-size-fits-all care. In an intimate home like ours, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
+            </p>
+          </GlassCard>
         </ScrollReveal>
       </section>
 
@@ -319,10 +333,16 @@ export default function ServicesPage() {
       <ServiceSection
         id="memory-care"
         title="Memory Care"
-        subtitle="Your parent with memory loss deserves more than supervision. They deserve connection."
+        subtitle={
+          <>
+            Your parent with memory loss deserves more than&nbsp;supervision.
+            <br className="hidden sm:block" />
+            <span className="text-sage italic"> They deserve connection.</span>
+          </>
+        }
         paragraphs={[
           'Your parent is more than their diagnosis. Even with memory loss, they remember the warmth of your touch. They feel the difference between someone going through the motions and someone who truly cares. Our memory care program is built on that truth.',
-          'We don\'t just manage symptoms. We preserve dignity. We maintain routines that feel familiar. We play music they grew up with, encourage activities that spark joy, and speak to them the way they deserve to be spoken to. And we make sure you know what\'s happening every single day.',
+          'We don\u2019t just manage symptoms. We preserve dignity. We maintain routines that feel familiar. We play music they grew up with, encourage activities that spark joy, and speak to them the way they deserve to be spoken to. And we make sure you know what\u2019s happening every single day.',
         ]}
         features={memoryCareFeaturesData}
         delay={0.1}
@@ -332,7 +352,11 @@ export default function ServicesPage() {
       <ServiceSection
         id="daily-living"
         title="Daily Living Assistance"
-        subtitle="When everyday tasks get harder, we help your parent keep their independence and their dignity."
+        subtitle={
+          <>
+            When everyday tasks get harder, we help your parent keep their independence&nbsp;and their&nbsp;dignity.
+          </>
+        }
         paragraphs={[
           'Needing help with bathing, dressing, or meals doesn\'t mean losing who you are. Your parent can still make choices. Still have preferences. Still maintain the self-respect that comes with dignity. That\'s the care we provide.',
           'Every interaction is designed to preserve independence while ensuring safety. We move at your parent\'s pace. We ask permission before helping. We treat every moment as if someone you love is watching (because someone is: you).',
@@ -345,9 +369,15 @@ export default function ServicesPage() {
       <ServiceSection
         id="respite-care"
         title="Respite Care"
-        subtitle="You need a break. Your parent needs to be safe. Both of those things can be true."
+        subtitle={
+          <>
+            You need a break. Your parent needs to be&nbsp;safe.
+            <br className="hidden sm:block" />
+            <span className="text-sage italic"> Both of those things can be true.</span>
+          </>
+        }
         paragraphs={[
-          'You\'ve been doing this for months. Maybe years. You love your parent fiercely, but you\'re exhausted. Burnt out. Running on empty. And you feel guilty about needing a break, when the truth is: needing rest doesn\'t make you a bad child. It makes you human.',
+          'You\u2019ve been doing this for months. Maybe years. You love your parent fiercely, but you\u2019re exhausted. Burnt out. Running on empty. And you feel guilty about needing a break, when the truth is: needing rest doesn\u2019t make you a bad child. It makes you human.',
           'Our respite care gives you permission to breathe while your parent receives the same attentive, personalized care they\'d get in any other stay. No rushing. No shortcuts. Just professional care from people who understand what your parent needs.',
         ]}
         features={respiteCareFeaturesData}
@@ -358,7 +388,15 @@ export default function ServicesPage() {
       <ServiceSection
         id="recovery"
         title="Post-Hospital Recovery"
-        subtitle="The hospital says they're ready to leave. But going home alone isn't an option. We bridge that gap."
+        subtitle={
+          <>
+            The hospital says they&rsquo;re ready to&nbsp;leave.
+            <br className="hidden sm:block" />
+            But going home alone isn&rsquo;t an&nbsp;option.
+            <br className="hidden sm:block" />
+            <span className="text-sage italic"> We bridge that gap.</span>
+          </>
+        }
         paragraphs={[
           'Coming home from the hospital is supposed to be good news. But you\'re terrified. What if they fall? What if they don\'t take their medications right? What if something goes wrong and you can\'t handle it? These fears are real, and they\'re valid.',
           'Our post-hospital recovery program gives your family the breathing room you need. Your parent gets 24/7 professional oversight from caregivers trained in recovery support. Medications coordinated. Progress monitored. Doctors kept informed. You get to focus on being their child again, not their nurse.',
@@ -371,43 +409,55 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light/30">
         <ScrollReveal delay={0.5} className="w-full">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest mb-12 text-center">
-              Why Families Choose a Home Over a Facility
-            </h2>
+            <div className="text-center mb-12">
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">The Difference</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest leading-tight">
+                Why Families Choose a Home&nbsp;Over a&nbsp;Facility
+              </h2>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {/* Card 1: Personalized */}
               <ScrollReveal delay={0.6} direction="up">
-                <GlassCard className="p-8 h-full">
-                  <h3 className="text-2xl font-serif font-bold text-forest mb-4">
+                <GlassCard variant="white" className="p-8 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                  </div>
+                  <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Personalized, Not Programmatic
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
-                    Care plans built with you, updated as needs change. Not pulled from a template. Not one of fifty identical routines. Built around your parent's story, preferences, and who they are.
+                  <p className="text-forest/75 leading-relaxed">
+                    Care plans built with you, updated as needs change. Not pulled from a template. Built around your parent&rsquo;s story, preferences, and who they&nbsp;are.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Card 2: Partners */}
               <ScrollReveal delay={0.7} direction="up">
-                <GlassCard className="p-8 h-full">
-                  <h3 className="text-2xl font-serif font-bold text-forest mb-4">
+                <GlassCard variant="white" className="p-8 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                  </div>
+                  <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Partners, Not Providers
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
-                    We involve your family in every decision. You're not filling out paperwork and stepping back. You're making care decisions together with people who genuinely want your parent to thrive.
+                  <p className="text-forest/75 leading-relaxed">
+                    You&rsquo;re not filling out paperwork and stepping back. You&rsquo;re making care decisions together with people who genuinely want your parent to&nbsp;thrive.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
-              {/* Card 3: Six Residents */}
+              {/* Card 3: Known by heart */}
               <ScrollReveal delay={0.8} direction="up">
-                <GlassCard className="p-8 h-full">
-                  <h3 className="text-2xl font-serif font-bold text-forest mb-4">
-                    Six Residents, One Family
+                <GlassCard variant="white" className="p-8 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                  </div>
+                  <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
+                    Known by Name, Not by Number
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
-                    Your parent is known by name, by story, by heart. Not a bed number. Not a resident code. A person we genuinely care for, woven into the fabric of our small home community.
+                  <p className="text-forest/75 leading-relaxed">
+                    Your parent is known by name, by story, by heart. Not a bed number. A person we genuinely care for, woven into our small home&nbsp;community.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -417,31 +467,31 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
         <ScrollReveal delay={0.9} className="w-full">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest mb-6">
-              Your Parent Deserves Care That Feels Like Home
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest mb-6 leading-tight">
+              Your Parent Deserves Care&nbsp;That Feels Like&nbsp;<span className="text-sage italic">Home</span>.
             </h2>
-            <p className="text-lg text-forest/80 leading-relaxed mb-8">
-              Whether you're planning ahead or need support right now, let's talk about what your family actually needs. We're here to listen, answer your questions, and help you make the decision that feels right.
+            <p className="text-lg sm:text-xl text-forest/75 leading-relaxed mb-10">
+              Whether you&rsquo;re planning ahead or need support right now, let&rsquo;s talk about what your family actually&nbsp;needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage text-white rounded-lg font-semibold hover:bg-forest transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                href="/contact#visit-form"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Schedule a Visit
               </Link>
-              <a
-                href="/family-guide.pdf"
-                className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-sage text-sage rounded-lg font-semibold hover:bg-cream transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+              <Link
+                href="/contact#family-guide"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Download Our Family Guide
-              </a>
+              </Link>
             </div>
-            <p className="text-sm text-forest/60 mt-8">
-              Licensed by Washington State DSHS. Bonded and insured. Serving families in Burien and King County since 2020.
+            <p className="text-sm text-forest/60 mt-10">
+              Licensed by Washington State DSHS &middot; Bonded and insured &middot; Serving families in Burien and King&nbsp;County.
             </p>
           </div>
         </ScrollReveal>

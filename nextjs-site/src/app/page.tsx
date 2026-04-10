@@ -1,11 +1,11 @@
 import Script from 'next/script'
-import Image from 'next/image'
 import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import ScrollReveal from '@/components/ScrollReveal'
 import GlassCard from '@/components/GlassCard'
 import FAQAccordion from '@/components/FAQAccordion'
 import OpenHouseForm from '@/components/OpenHouseForm'
+import TestimonialMarquee from '@/components/TestimonialMarquee'
 
 export default function Home() {
   // FAQ Items - 10 core family questions
@@ -177,42 +177,56 @@ export default function Home() {
 
         {/* The Problem Section (StoryBrand: Character + Problem) */}
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <ScrollReveal delay={0}>
               <div className="space-y-6">
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                  You've noticed the changes. And you can't unsee them.
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
+                  You&rsquo;ve noticed the changes.
+                  <br />
+                  And you <span className="text-terracotta">can&rsquo;t unsee</span> them.
                 </h2>
 
-                <p className="text-forest/70 text-lg leading-relaxed">
-                  A missed medication. A fall they didn't tell you about. Meals skipped because cooking feels overwhelming now. You notice your parent moving slower, forgetting more, struggling with things they used to do without thinking. And the guilt hits hard. You wish you could be there more. You worry about them being alone. You lie awake at night wondering if they're safe.
+                <p className="text-forest/80 text-lg leading-relaxed">
+                  A missed medication. A fall they didn&rsquo;t tell you about. Meals skipped because cooking feels overwhelming now.
+                  You notice your parent moving slower, forgetting more, struggling with things they used to do without thinking.
+                  And the guilt hits hard.
                 </p>
 
-                <p className="text-forest/70 text-lg leading-relaxed">
-                  Then there's the bigger thought: the idea of placing them somewhere else. It feels like giving up. Like admitting you can't handle this alone. Like you're abandoning them when they need you most.
+                <p className="text-forest/80 text-lg leading-relaxed">
+                  You wish you could be there more. You worry about them being alone.
+                  You lie awake at night wondering if they&rsquo;re safe.
+                </p>
+
+                <p className="text-forest/80 text-lg leading-relaxed">
+                  Then there&rsquo;s the bigger thought: the idea of placing them somewhere else. It feels like giving up.
+                  Like admitting you can&rsquo;t handle this alone. Like you&rsquo;re abandoning them when they need you most.
                 </p>
 
                 <p className="font-serif text-xl sm:text-2xl text-forest font-normal">
-                  But here's what we know: It's not giving up. It's stepping up.
+                  But here&rsquo;s what we know:
+                  <br />
+                  It&rsquo;s not giving up. It&rsquo;s <span className="text-sage italic">stepping&nbsp;up</span>.
                 </p>
 
-                <p className="text-forest/70 text-lg leading-relaxed">
-                  At Burien Best Care Home, we help families like yours find a solution that honors your parent's dignity and gives you peace of mind. You don't have to choose between loving them and getting them the right care. You can do both.
+                <p className="text-forest/80 text-lg leading-relaxed">
+                  At Burien Best Care Home, we help families like yours find a solution that honors your parent&rsquo;s dignity
+                  and gives you peace of mind. You don&rsquo;t have to choose between loving them and getting them the right care.
+                  You can do both.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                   <Link
-                    href="/contact"
-                    className="btn btn-primary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                    href="/contact#visit-form"
+                    className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage hover:bg-forest text-white font-semibold rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
                   >
                     Schedule a Visit
                   </Link>
-                  <a
-                    href="#family-guide"
-                    className="btn btn-secondary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                  <Link
+                    href="/contact#family-guide"
+                    className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-forest text-forest hover:bg-forest hover:text-cream font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
                   >
                     Download Our Family Guide
-                  </a>
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -231,39 +245,52 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Step 1 */}
               <ScrollReveal delay={0}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-5xl font-serif text-sage">1</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Schedule a Visit
-                  </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    Walk through our home. Meet our team. Ask every question on your mind. We'll show you what daily life looks like here, introduce you to residents and caregivers, and answer honestly about everything from cost to care specifics. No pressure, no sales pitch, just real conversation.
+                <GlassCard className="h-full p-8 flex flex-col">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">1</span>
+                    <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
+                      Schedule a Visit
+                    </h3>
+                  </div>
+                  <p className="text-forest/80 leading-relaxed flex-grow">
+                    Walk through our home. Meet our team. Ask every question on your mind.
+                    We&rsquo;ll show you what daily life looks like here, introduce you to residents and caregivers,
+                    and answer honestly about everything from cost to care specifics. No pressure, no sales pitch,
+                    just real conversation.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Step 2 */}
               <ScrollReveal delay={0.1}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-5xl font-serif text-sage">2</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Build a Care Plan Together
-                  </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    We'll create a personalized plan around your parent's needs, preferences, and daily rhythms. What time do they wake up? What foods do they love? Do they prefer quiet mornings or social activity? We listen and build care that fits them, not the other way around.
+                <GlassCard className="h-full p-8 flex flex-col">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">2</span>
+                    <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
+                      Build a Care Plan Together
+                    </h3>
+                  </div>
+                  <p className="text-forest/80 leading-relaxed flex-grow">
+                    We&rsquo;ll create a personalized plan around your parent&rsquo;s needs, preferences, and daily rhythms.
+                    What time do they wake up? What foods do they love? Do they prefer quiet mornings or social activity?
+                    We listen and build care that fits them, not the other way around.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Step 3 */}
               <ScrollReveal delay={0.2}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-5xl font-serif text-sage">3</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Watch Them Thrive
-                  </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    Your parent settles into a home where they're known by name, cared for around the clock, and genuinely happy. You stop worrying about falls and medication. You start noticing smiles again. That's when you know you made the right choice.
+                <GlassCard className="h-full p-8 flex flex-col">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">3</span>
+                    <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
+                      Watch Them Thrive
+                    </h3>
+                  </div>
+                  <p className="text-forest/80 leading-relaxed flex-grow">
+                    Your parent settles into a home where they&rsquo;re known by name, cared for around the clock,
+                    and genuinely happy. You stop worrying about falls and medication. You start noticing smiles again.
+                    That&rsquo;s when you know you made the right choice.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -271,17 +298,17 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
-                className="btn btn-primary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                href="/contact#visit-form"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage hover:bg-forest text-white font-semibold rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Schedule a Visit
               </Link>
-              <a
-                href="#family-guide"
-                className="btn btn-secondary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+              <Link
+                href="/contact#family-guide"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-forest text-forest hover:bg-forest hover:text-cream font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Download Our Family Guide
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -290,86 +317,92 @@ export default function Home() {
         <section id="our-home" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                What Life Looks Like for Your Loved One
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
+                What Life Looks Like for Your Loved&nbsp;One
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Outcome 1 */}
               <ScrollReveal delay={0}>
-                <GlassCard className="h-full p-8 space-y-4">
-                  <div className="text-4xl">🏡</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    A Home, Not a Room Number
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
+                    A Home, Not a Room&nbsp;Number
                   </h3>
-                  <p className="text-forest/70 leading-relaxed">
-                    Only six residents. Your parent is known by name, called by name, treated like family. They're not waiting in a room for someone to find time for them. They're part of a genuine home.
+                  <p className="text-forest/80 leading-relaxed">
+                    Only six residents. Your parent is known by name, called by name, treated like family.
+                    They&rsquo;re not waiting in a room for someone to find time for them. They&rsquo;re part of a genuine home.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Outcome 2 */}
               <ScrollReveal delay={0.1}>
-                <GlassCard className="h-full p-8 space-y-4">
-                  <div className="text-4xl">☀️</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Fresh Air and Sunshine Every Day
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
+                    Fresh Air and Sunshine Every&nbsp;Day
                   </h3>
-                  <p className="text-forest/70 leading-relaxed">
-                    Landscaped gardens. Covered patio. Nature at the doorstep. Your parent gets outside, breathes fresh air, feels the sun. It's healing in ways medication alone can't be.
+                  <p className="text-forest/80 leading-relaxed">
+                    Landscaped gardens. Covered patio. Nature at the doorstep. Your parent gets outside, breathes fresh air,
+                    feels the sun. It&rsquo;s healing in ways medication alone can&rsquo;t be.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Outcome 3 */}
               <ScrollReveal delay={0.2}>
-                <GlassCard className="h-full p-8 space-y-4">
-                  <div className="text-4xl">🍽️</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Meals They Actually Look Forward To
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
+                    Meals They Actually Look Forward&nbsp;To
                   </h3>
-                  <p className="text-forest/70 leading-relaxed">
-                    Three home-cooked meals plus snacks, tailored to their preferences. Not institutional food. Real food. Food that says someone cares enough to cook for them.
+                  <p className="text-forest/80 leading-relaxed">
+                    Three home-cooked meals plus snacks, tailored to their preferences. Not institutional food. Real food.
+                    Food that says someone cares enough to cook for them.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Outcome 4 */}
               <ScrollReveal delay={0.3}>
-                <GlassCard className="h-full p-8 space-y-4">
-                  <div className="text-4xl">👁️</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Someone Watching Over Them, Always
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
+                    Attentive Care, Around the&nbsp;Clock
                   </h3>
-                  <p className="text-forest/70 leading-relaxed">
-                    24/7 trained caregivers. Never alone. Never forgotten. Someone is always there to notice if something's wrong, to help when they need it, to make sure they're safe.
+                  <p className="text-forest/80 leading-relaxed">
+                    Trained caregivers on-site 24/7. Never alone. Never forgotten. Someone is always there to notice
+                    if something feels off, to help when they need it, and to make sure they&rsquo;re safe.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Outcome 5 */}
               <ScrollReveal delay={0.4}>
-                <GlassCard className="h-full p-8 space-y-4">
-                  <div className="text-4xl">✨</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Purpose and Joy, Daily
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
+                    Purpose and Joy,&nbsp;Daily
                   </h3>
-                  <p className="text-forest/70 leading-relaxed">
-                    Activities designed to engage mind and body. Art. Music. Gentle exercise. Social connection. Days filled with moments that matter, not empty hours waiting for bedtime.
+                  <p className="text-forest/80 leading-relaxed">
+                    Activities designed to engage mind and body. Art. Music. Gentle exercise. Social connection.
+                    Days filled with moments that matter, not empty hours waiting for bedtime.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Outcome 6 */}
               <ScrollReveal delay={0.5}>
-                <GlassCard className="h-full p-8 space-y-4">
-                  <div className="text-4xl">👨‍👩‍👧</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    You, Welcome Anytime
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
+                    You, Welcome&nbsp;Anytime
                   </h3>
-                  <p className="text-forest/70 leading-relaxed">
-                    Open-door policy. Visit for breakfast, lunch, dinner, coffee, or a quiet afternoon. Bring the grandkids. Share moments. Your parent gets their family close, and you stay involved in their care.
+                  <p className="text-forest/80 leading-relaxed">
+                    Open-door policy. Visit for breakfast, lunch, dinner, coffee, or a quiet afternoon. Bring the grandkids.
+                    Share moments. Your parent gets their family close, and you stay involved in their care.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -381,84 +414,89 @@ export default function Home() {
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light/30">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                Care That Meets Your Family Where You Are
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
+                Care That Meets Your Family Where&nbsp;You&nbsp;Are
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Memory Care */}
               <ScrollReveal delay={0}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-4xl">🧠</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Memory Care
                   </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    Your parent with dementia deserves more than management. They deserve moments of connection, comfort, and calm. We create a structured environment where confusion decreases and they feel safe, valued, and genuinely cared for.
+                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                    Your parent with dementia deserves more than management. They deserve moments of connection,
+                    comfort, and calm. We create a structured environment where confusion decreases and they feel
+                    safe, valued, and genuinely cared for.
                   </p>
                   <Link
                     href="/services#memory-care"
-                    className="text-sage hover:text-forest font-medium transition-colors"
+                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
                   >
-                    Learn More
+                    Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Daily Living Assistance */}
               <ScrollReveal delay={0.1}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-4xl">🤝</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Daily Living Assistance
                   </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    When everyday tasks become harder, we step in with dignity-first support so your parent can focus on living. Not being done to, but cared for. Not dependent, but supported.
+                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                    When everyday tasks become harder, we step in with dignity-first support so your parent can
+                    focus on living. Never done-to, always cared-for. Never dependent, always&nbsp;supported.
                   </p>
                   <Link
                     href="/services#daily-living"
-                    className="text-sage hover:text-forest font-medium transition-colors"
+                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
                   >
-                    Learn More
+                    Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Respite Care */}
               <ScrollReveal delay={0.2}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-4xl">🌅</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Respite Care
                   </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    You need a break. That doesn't make you a bad person. It makes you human. Let us care for your parent while you recharge. A weekend, a week, whatever you need. You come back stronger.
+                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                    You need a break. That doesn&rsquo;t make you a bad person. It makes you human. Let us care for your
+                    parent while you recharge. A weekend, a week, whatever you need. You come back&nbsp;stronger.
                   </p>
                   <Link
                     href="/services#respite-care"
-                    className="text-sage hover:text-forest font-medium transition-colors"
+                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
                   >
-                    Learn More
+                    Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
                 </GlassCard>
               </ScrollReveal>
 
               {/* Post-Hospital Recovery */}
               <ScrollReveal delay={0.3}>
-                <GlassCard className="h-full p-8 space-y-4 flex flex-col">
-                  <div className="text-4xl">🏥</div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
+                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Post-Hospital Recovery
                   </h3>
-                  <p className="text-forest/70 leading-relaxed flex-grow">
-                    The hospital says they're ready to go home. But home isn't ready for them. We bridge that gap. Medical coordination, physical support, and the time they need to fully recover. No rushed transitions.
+                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                    The hospital says they&rsquo;re ready to go home. But home isn&rsquo;t ready for them. We bridge that gap.
+                    Medical coordination, physical support, and the time they need to fully recover. No rushed&nbsp;transitions.
                   </p>
                   <Link
                     href="/services#recovery"
-                    className="text-sage hover:text-forest font-medium transition-colors"
+                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
                   >
-                    Learn More
+                    Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
                 </GlassCard>
               </ScrollReveal>
@@ -469,45 +507,62 @@ export default function Home() {
         {/* The Stakes Section (StoryBrand: Failure + Success Vision) */}
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
+                Two Futures. One Choice.
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
               {/* Left: Failure / What's at Risk */}
               <ScrollReveal delay={0}>
-                <div className="space-y-6">
-                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest">
-                    What Happens If You Do Nothing?
-                  </h3>
-                  <div className="space-y-4 text-forest/70 leading-relaxed">
-                    <p>
-                      A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can't focus. Your own health suffers.
-                    </p>
-                    <p>
-                      Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make crisis decisions instead of thoughtful ones. Care becomes reactive, not proactive.
-                    </p>
-                    <p>
-                      And the relationship shifts. Instead of being their child, you become their worried guardian, managing crisis after crisis. You both suffer.
-                    </p>
+                <GlassCard variant="white" className="p-8 sm:p-10 h-full border-terracotta/30">
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta rounded-full" />
+                      <span className="uppercase tracking-widest text-xs font-semibold text-terracotta">The Risk</span>
+                    </div>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
+                      What Happens If You Do <span className="text-terracotta italic">Nothing</span>?
+                    </h3>
+                    <div className="space-y-4 text-forest/75 leading-relaxed">
+                      <p>
+                        A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
+                      </p>
+                      <p>
+                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make crisis decisions instead of thoughtful&nbsp;ones.
+                      </p>
+                      <p>
+                        And the relationship shifts. Instead of being their child, you become their worried guardian, managing crisis after crisis. You both&nbsp;suffer.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </GlassCard>
               </ScrollReveal>
 
               {/* Right: Success Vision */}
               <ScrollReveal delay={0.1}>
-                <div className="space-y-6">
-                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest">
-                    What Becomes Possible
-                  </h3>
-                  <div className="space-y-4 text-forest/70 leading-relaxed">
-                    <p>
-                      You sleep through the night. You stop holding your breath every time the phone rings. Your parent thrives in a home where they're known, cared for, and genuinely happy.
-                    </p>
-                    <p>
-                      You visit for Sunday brunch, not crisis management. The grandkids come by and play with Grandma in the garden. Holidays at her home become cherished family traditions. You're present, not panicked.
-                    </p>
-                    <p>
-                      Your relationship heals. You're their child again, not their crisis manager. You get your parent back in a different way. You get peace of mind. This is what's possible.
-                    </p>
+                <GlassCard variant="white" className="p-8 sm:p-10 h-full border-sage/30">
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                      <span className="uppercase tracking-widest text-xs font-semibold text-sage">The Possibility</span>
+                    </div>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
+                      What Becomes <span className="text-sage italic">Possible</span>?
+                    </h3>
+                    <div className="space-y-4 text-forest/75 leading-relaxed">
+                      <p>
+                        You sleep through the night. You stop holding your breath every time the phone rings. Your parent thrives in a home where they&rsquo;re known, cared for, and genuinely&nbsp;happy.
+                      </p>
+                      <p>
+                        You visit for Sunday brunch, not crisis management. The grandkids come by and play with Grandma in the garden. Holidays become cherished family&nbsp;traditions.
+                      </p>
+                      <p>
+                        Your relationship heals. You&rsquo;re their child again, not their crisis manager. You get your parent back in a different way. You get peace of&nbsp;mind.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </GlassCard>
               </ScrollReveal>
             </div>
           </div>
@@ -517,17 +572,20 @@ export default function Home() {
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4">
-                You Are Invited: Community Open House
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">You&rsquo;re Invited</p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
+                Community Open House
               </h2>
-              <p className="text-forest/70 text-lg mb-4">
-                Join us for a tour of our home, meet our caregiving team, and learn about the care we provide. Light refreshments will be served. This is your opportunity to see firsthand what makes Burien Best Care Home special.
+              <p className="text-forest/75 text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
+                Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. Light refreshments will be&nbsp;served.
               </p>
-              <p className="text-sage font-medium text-lg">Date Coming Soon</p>
+              <p className="inline-block bg-cream text-sage font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
             </div>
 
             <ScrollReveal>
-              <OpenHouseForm />
+              <GlassCard variant="white" className="p-6 sm:p-10">
+                <OpenHouseForm />
+              </GlassCard>
             </ScrollReveal>
           </div>
         </section>
@@ -536,59 +594,50 @@ export default function Home() {
         <section id="our-team" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4">
-                You're Not Doing This Alone
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Team</p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
+                You&rsquo;re Not Doing This&nbsp;Alone
               </h2>
-              <p className="text-forest/70 text-lg max-w-2xl mx-auto">
-                Our team has walked this road with dozens of families. We know what you're feeling, and we know how to help. We are your guides through this transition.
+              <p className="text-forest/75 text-lg max-w-2xl mx-auto leading-relaxed">
+                Our team has walked this road with dozens of families. We know what you&rsquo;re feeling, and we know how to help. We are your guides through this&nbsp;transition.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto items-stretch">
               {/* Team Member 1: Becca Pitts */}
               <ScrollReveal delay={0}>
-                <GlassCard className="p-8 text-center space-y-4">
-                  <div className="w-24 h-24 rounded-full bg-sage-light mx-auto flex items-center justify-center text-5xl">
-                    👤
+                <GlassCard variant="white" className="p-8 sm:p-10 text-center h-full flex flex-col">
+                  <div
+                    aria-hidden="true"
+                    className="w-28 h-28 rounded-full bg-gradient-to-br from-sage/30 to-forest/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-cream shadow-inner"
+                  >
+                    BP
                   </div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Becca Pitts
                   </h3>
-                  <p className="text-sage font-medium">Owner & Care Director</p>
-                  <p className="text-forest/70 text-sm leading-relaxed">
-                    Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. With years of experience in senior care, she understands exactly what families need. When you visit, Becca will listen to your story and help you find the right solution for your family.
+                  <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
+                  <p className="text-forest/75 leading-relaxed flex-grow">
+                    Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. When you visit, Becca will listen to your story and help you find the right solution for your&nbsp;family.
                   </p>
                 </GlassCard>
               </ScrollReveal>
 
-              {/* Team Member 2: Mary Johnson */}
+              {/* Team Member 2: Daniela Torkelson */}
               <ScrollReveal delay={0.1}>
-                <GlassCard className="p-8 text-center space-y-4">
-                  <div className="w-24 h-24 rounded-full bg-sage-light mx-auto flex items-center justify-center text-5xl">
-                    👤
+                <GlassCard variant="white" className="p-8 sm:p-10 text-center h-full flex flex-col">
+                  <div
+                    aria-hidden="true"
+                    className="w-28 h-28 rounded-full bg-gradient-to-br from-sage/30 to-forest/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-cream shadow-inner"
+                  >
+                    DT
                   </div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    Mary Johnson
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-1">
+                    Daniela Torkelson
                   </h3>
-                  <p className="text-sage font-medium">Lead Caregiver</p>
-                  <p className="text-forest/70 text-sm leading-relaxed">
-                    Mary brings over 12 years of experience in residential senior care. She specializes in memory care and is often the first person families meet. Her gentle touch and patient demeanor create a comforting presence that reassures both residents and their families.
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-
-              {/* Team Member 3: James Rivera */}
-              <ScrollReveal delay={0.2}>
-                <GlassCard className="p-8 text-center space-y-4">
-                  <div className="w-24 h-24 rounded-full bg-sage-light mx-auto flex items-center justify-center text-5xl">
-                    👤
-                  </div>
-                  <h3 className="font-serif text-xl font-normal text-forest">
-                    James Rivera
-                  </h3>
-                  <p className="text-sage font-medium">Caregiver & Activities Coordinator</p>
-                  <p className="text-forest/70 text-sm leading-relaxed">
-                    James is passionate about creating meaningful engagement for our residents. He knows that joy and purpose matter just as much as physical care. He's excited to show families the activities that bring light to our residents' days.
+                  <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
+                  <p className="text-forest/75 leading-relaxed flex-grow">
+                    Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -596,50 +645,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section (Reframed) */}
-        <section id="testimonials" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light/30">
-          <div className="max-w-6xl mx-auto">
+        {/* Testimonials Section (Marquee) */}
+        <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-sage-light/30 overflow-hidden">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                Families Who Found Peace of Mind
+              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">In Their Own Words</p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
+                Families Who Found Peace of&nbsp;Mind
               </h2>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {/* Testimonial 1 */}
-              <ScrollReveal delay={0}>
-                <GlassCard className="p-8 space-y-4 flex flex-col">
-                  <p className="text-4xl text-sage opacity-30 font-serif">"</p>
-                  <p className="text-forest/80 leading-relaxed flex-grow">
-                    From the moment we walked in, we knew this was the right place for Mom. The care team treats her like their own family, and she has truly flourished here. She's happier, more engaged, and we have complete peace of mind knowing she's in such loving hands.
-                  </p>
-                  <p className="text-sage font-medium">Sarah M., Daughter of Resident</p>
-                </GlassCard>
-              </ScrollReveal>
-
-              {/* Testimonial 2 */}
-              <ScrollReveal delay={0.1}>
-                <GlassCard className="p-8 space-y-4 flex flex-col">
-                  <p className="text-4xl text-sage opacity-30 font-serif">"</p>
-                  <p className="text-forest/80 leading-relaxed flex-grow">
-                    Finding Burien Best Care Home was a blessing. After Dad's hospital stay, the transition was seamless. The staff communicated with us every step of the way, answered all our questions, and helped Dad feel comfortable and supported during a vulnerable time.
-                  </p>
-                  <p className="text-sage font-medium">James T., Son of Resident</p>
-                </GlassCard>
-              </ScrollReveal>
-
-              {/* Testimonial 3 */}
-              <ScrollReveal delay={0.2}>
-                <GlassCard className="p-8 space-y-4 flex flex-col">
-                  <p className="text-4xl text-sage opacity-30 font-serif">"</p>
-                  <p className="text-forest/80 leading-relaxed flex-grow">
-                    We searched for months, touring facility after facility. Nothing felt right until we found Burien Best Care Home. It actually feels like a home, not an institution. Our entire family feels confident that Grandma is getting the best possible care.
-                  </p>
-                  <p className="text-sage font-medium">Linda R., Daughter of Resident</p>
-                </GlassCard>
-              </ScrollReveal>
-            </div>
           </div>
+
+          <TestimonialMarquee />
         </section>
 
         {/* FAQ Section */}
@@ -660,32 +677,38 @@ export default function Home() {
         {/* Final CTA Section (Most families wait until a crisis) */}
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-              Most Families Wait Until a Crisis. You Don't Have To.
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
+              Most Families Wait Until a&nbsp;<span className="text-terracotta italic">Crisis</span>.
+              <br />
+              You Don&rsquo;t Have&nbsp;To.
             </h2>
 
-            <p className="text-forest/70 text-lg leading-relaxed">
-              Being proactive is an act of love. Taking the first step now, when you still have choices, is so much better than making decisions in panic. You deserve peace of mind. Your parent deserves quality care. Let's make this happen together.
+            <p className="text-forest/75 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+              Being proactive is an act of love. Taking the first step now, while you still have choices, is so much better than making decisions in&nbsp;panic.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-forest/75 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+              You deserve peace of mind. Your parent deserves quality care. Let&rsquo;s take the next step&nbsp;together.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link
-                href="/contact"
-                className="btn btn-primary px-8 py-3 font-medium rounded-lg transition-all duration-300 hover:shadow-lg"
+                href="/contact#visit-form"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Schedule a Visit
               </Link>
-              <a
-                href="#family-guide"
-                className="btn btn-secondary px-8 py-3 font-medium rounded-lg transition-all duration-300 hover:shadow-lg"
+              <Link
+                href="/contact#family-guide"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
               >
                 Download Our Family Guide
-              </a>
+              </Link>
             </div>
 
-            <div className="pt-8 border-t border-forest/20">
-              <p className="text-forest/70 text-sm">
-                Licensed by WA DSHS. 24/7 Care. Maximum 6 Residents. Burien, WA.
+            <div className="pt-10 mt-4 border-t border-forest/20">
+              <p className="text-forest/60 text-sm">
+                Licensed by WA DSHS &middot; 24/7 Care &middot; Intimate Adult Family Home &middot; Burien,&nbsp;WA
               </p>
             </div>
           </div>
