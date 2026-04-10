@@ -87,12 +87,23 @@ export default function Navigation() {
 
   const isActive = (href: string) => pathname === href;
 
+  // Text color treatment: when the nav is floating over the hero (unscrolled),
+  // use white with a subtle drop-shadow for legibility against any photo.
+  // Once scrolled and the nav sits on a cream background, switch to forest/sage.
+  const linkBase = isScrolled ? 'text-forest hover:text-sage' : 'text-white hover:text-cream drop-shadow-md';
+  const linkActive = isScrolled ? 'text-sage border-b-2 border-sage' : 'text-white border-b-2 border-white drop-shadow-md';
+  const logoColor = isScrolled ? 'text-forest hover:text-sage' : 'text-white hover:text-cream drop-shadow-md';
+  const hamburgerBar = isScrolled ? 'bg-forest' : 'bg-white';
+  const ctaClasses = isScrolled
+    ? 'bg-sage text-cream hover:bg-forest'
+    : 'bg-white text-forest hover:bg-cream';
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-cream/95 backdrop-blur-md shadow-md'
-          : 'bg-cream/70 backdrop-blur-sm'
+          : 'bg-black/20 backdrop-blur-sm'
       }`}
     >
       <nav
@@ -104,7 +115,7 @@ export default function Navigation() {
           <Link
             href="/"
             aria-label="Burien Best Care Home - home"
-            className="inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold text-forest hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream rounded"
+            className={`inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream rounded ${logoColor}`}
           >
             Burien Best Care Home
           </Link>
@@ -117,9 +128,7 @@ export default function Navigation() {
                 href={link.href}
                 aria-current={isActive(link.href) ? 'page' : undefined}
                 className={`inline-flex items-center min-h-12 font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded px-3 py-2 ${
-                  isActive(link.href)
-                    ? 'text-sage border-b-2 border-sage'
-                    : 'text-forest hover:text-sage'
+                  isActive(link.href) ? linkActive : linkBase
                 }`}
               >
                 {link.label}
@@ -130,7 +139,7 @@ export default function Navigation() {
           {/* Desktop CTA Button */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center justify-center min-h-12 px-6 py-3 bg-sage text-cream font-semibold rounded-lg hover:bg-forest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+            className={`hidden md:inline-flex items-center justify-center min-h-12 px-6 py-3 font-semibold rounded-lg transition-colors shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${ctaClasses}`}
           >
             Schedule a Visit
           </Link>
@@ -146,15 +155,15 @@ export default function Navigation() {
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 12 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-forest transition-colors"
+              className={`w-6 h-0.5 transition-colors ${hamburgerBar}`}
             />
             <motion.span
               animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-6 h-0.5 bg-forest"
+              className={`w-6 h-0.5 transition-colors ${hamburgerBar}`}
             />
             <motion.span
               animate={isMobileMenuOpen ? { rotate: -45, y: -12 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-forest"
+              className={`w-6 h-0.5 transition-colors ${hamburgerBar}`}
             />
           </button>
         </div>

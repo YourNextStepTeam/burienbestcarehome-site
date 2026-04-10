@@ -52,14 +52,14 @@ export default function HeroSection() {
         className="absolute inset-0 object-cover"
       />
 
-      {/* Layered gradient overlay — darker at the bottom-left for headline contrast, softer at top */}
+      {/* Layered gradient overlay — heavier base contrast so headline text carries on any photo */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80"
+        className="absolute inset-0 bg-gradient-to-br from-forest/80 via-forest/65 to-forest/85"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/20"
       />
 
       {/* Content Container */}
@@ -69,23 +69,24 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        {/* Glassmorphism Panel */}
+        {/* Glassmorphism Panel — brand-tinted (forest to sage) for both legibility and on-brand feel */}
         <motion.div
-          className="max-w-2xl w-full backdrop-blur-md bg-white/15 border border-white/25 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl"
+          className="max-w-2xl w-full backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10"
           variants={itemVariants}
         >
-          {/* Label */}
+          {/* Eyebrow label — accent bar + bolder, brighter text for clear hierarchy */}
           <motion.p
-            className="text-cream text-xs sm:text-sm font-semibold uppercase tracking-widest mb-4"
+            className="flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-5 drop-shadow-md"
             variants={itemVariants}
           >
+            <span aria-hidden="true" className="inline-block w-10 h-0.5 bg-cream" />
             For families navigating senior care in Burien, WA
           </motion.p>
 
           {/* Headline */}
           <motion.h1
             id="hero-headline"
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-5 leading-[1.1]"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-5 leading-[1.1] drop-shadow-lg"
             variants={itemVariants}
           >
             Your parent's safety shouldn't keep you up at night.
@@ -93,7 +94,7 @@ export default function HeroSection() {
 
           {/* Tightened Supporting Paragraph */}
           <motion.p
-            className="text-base sm:text-lg lg:text-xl text-white/95 mb-8 leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl text-white mb-8 leading-relaxed drop-shadow"
             variants={itemVariants}
           >
             You've noticed the changes. The small lapses. The worry in their voice when they're alone. We've helped dozens of families in Burien find peace of mind, and we'll walk you through this decision with compassion and clarity.
