@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 import GlassCard from '@/components/GlassCard'
 import ContactForm from '@/components/ContactForm'
@@ -55,20 +56,27 @@ export default function Contact() {
     <>
       {/* Hero Section */}
       <section
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        aria-labelledby="contact-hero-headline"
+        className="relative min-h-[70vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 text-center px-6 py-16 max-w-3xl">
-          <h1 className="font-serif text-5xl md:text-6xl text-white mb-6 leading-tight">
+        <Image
+          src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&q=80&auto=format&fit=crop"
+          alt=""
+          role="presentation"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80" />
+        <div className="relative z-10 text-center px-4 sm:px-6 py-20 md:py-24 max-w-3xl">
+          <h1
+            id="contact-hero-headline"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight"
+          >
             The First Step Is the Hardest. We'll Make It Easy.
           </h1>
-          <p className="text-xl md:text-2xl text-cream leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-cream leading-relaxed">
             No pressure. No sales pitch. Just an honest conversation about what your parent needs and how we can help.
           </p>
         </div>

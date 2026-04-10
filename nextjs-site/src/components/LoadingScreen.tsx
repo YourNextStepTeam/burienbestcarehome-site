@@ -44,12 +44,16 @@ export default function LoadingScreen() {
           className="fixed inset-0 bg-cream z-50 flex flex-col items-center justify-center"
         >
           <div className="text-center space-y-4">
-            <h1 className="font-serif text-5xl md:text-6xl text-sage font-bold">
+            <div
+              aria-hidden="true"
+              className="font-serif text-5xl md:text-6xl text-sage font-bold"
+            >
               Burien Best Care Home
-            </h1>
-            <p className="font-serif text-xl md:text-2xl text-sage/70">
+            </div>
+            <p aria-hidden="true" className="font-serif text-xl md:text-2xl text-sage/70">
               Where Family Feels Like Home
             </p>
+            <span className="sr-only">Loading Burien Best Care Home</span>
           </div>
         </motion.div>
       )}

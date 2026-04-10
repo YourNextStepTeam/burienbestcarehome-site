@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
@@ -36,32 +37,46 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background Image */}
-      <img
-        src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200"
-        alt="Peaceful senior care environment"
-        className="absolute inset-0 w-full h-full object-cover"
+    <section
+      aria-labelledby="hero-headline"
+      className="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden"
+    >
+      {/* Warm home background — replacing clinical imagery with a bright, welcoming interior */}
+      <Image
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80&auto=format&fit=crop"
+        alt=""
+        role="presentation"
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 object-cover"
       />
 
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
+      {/* Layered gradient overlay — darker at the bottom-left for headline contrast, softer at top */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+      />
 
       {/* Content Container */}
       <motion.div
-        className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8"
+        className="relative z-10 flex items-center justify-center w-full px-4 sm:px-6 lg:px-8 py-24 sm:py-28"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Glassmorphism Panel */}
         <motion.div
-          className="max-w-2xl w-full backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 sm:p-12 lg:p-16 shadow-2xl"
+          className="max-w-2xl w-full backdrop-blur-md bg-white/15 border border-white/25 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl"
           variants={itemVariants}
         >
           {/* Label */}
           <motion.p
-            className="text-sage-600 dark:text-sage-300 text-sm font-medium uppercase tracking-wide mb-4"
+            className="text-cream text-xs sm:text-sm font-semibold uppercase tracking-widest mb-4"
             variants={itemVariants}
           >
             For families navigating senior care in Burien, WA
@@ -69,21 +84,22 @@ export default function HeroSection() {
 
           {/* Headline */}
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            id="hero-headline"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-5 leading-[1.1]"
             variants={itemVariants}
           >
             Your parent's safety shouldn't keep you up at night.
           </motion.h1>
 
-          {/* Pain-Agitate-Solution Paragraph */}
+          {/* Tightened Supporting Paragraph */}
           <motion.p
-            className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl text-white/95 mb-8 leading-relaxed"
             variants={itemVariants}
           >
-            You've noticed the changes. The small lapses in memory. The worry in their voice when they're alone. And now you're facing the question every adult child dreads: what's the right move? What if you wait too long? What if you choose the wrong place and they're not truly happy, truly safe? We've helped dozens of families in Burien find peace of mind. We know this decision feels overwhelming, and we're here to walk you through it with compassion and clarity.
+            You've noticed the changes. The small lapses. The worry in their voice when they're alone. We've helped dozens of families in Burien find peace of mind, and we'll walk you through this decision with compassion and clarity.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons — 48px+ touch targets */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 mb-8"
             variants={itemVariants}
@@ -91,41 +107,39 @@ export default function HeroSection() {
             {/* Primary CTA */}
             <Link
               href="/contact"
-              className="flex items-center justify-center px-8 py-3 sm:py-4 bg-sage-600 hover:bg-sage-700 text-white font-semibold rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:bg-forest hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-cream/60 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
             >
               Schedule a Visit
             </Link>
 
             {/* Secondary/Transitional CTA */}
-            <button
-              onClick={() => {
-                // Placeholder for guide download functionality
-                console.log('Download guide clicked');
-              }}
-              className="flex items-center justify-center px-8 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors duration-300"
+            <Link
+              href="/contact#family-guide"
+              className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-white text-white font-semibold rounded-lg bg-white/5 hover:bg-white/20 transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-cream/60 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
             >
               Download Our Family Guide
-            </button>
+            </Link>
           </motion.div>
 
           {/* Trust Badges */}
-          <motion.div
-            className="flex flex-wrap gap-4 sm:gap-6 text-white/80 text-sm justify-center"
+          <motion.ul
+            aria-label="Trust signals"
+            className="flex flex-wrap gap-x-5 gap-y-2 text-white/90 text-sm"
             variants={itemVariants}
           >
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-sage-400 rounded-full" />
+            <li className="flex items-center gap-2">
+              <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
               Licensed by WA State DSHS
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-sage-400 rounded-full" />
+            </li>
+            <li className="flex items-center gap-2">
+              <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
               24/7 Care
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-sage-400 rounded-full" />
+            </li>
+            <li className="flex items-center gap-2">
+              <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
               Max 6 Residents
-            </span>
-          </motion.div>
+            </li>
+          </motion.ul>
         </motion.div>
       </motion.div>
     </section>

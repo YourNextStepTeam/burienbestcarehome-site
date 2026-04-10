@@ -1,8 +1,31 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { DM_Serif_Display, Inter } from 'next/font/google'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import LoadingScreen from '@/components/LoadingScreen'
 import './globals.css'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-dm-serif',
+})
+
+export const viewport: Viewport = {
+  themeColor: '#FFF5EB',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
+}
 
 export const metadata: Metadata = {
   title: {
@@ -19,7 +42,22 @@ export const metadata: Metadata = {
     'dementia care Burien',
   ],
   authors: [{ name: 'Burien Best Care Home' }],
+  creator: 'Burien Best Care Home',
+  publisher: 'Burien Best Care Home',
   metadataBase: new URL('https://burienbestcarehome.com'),
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Burien Best Care Home | Adult Family Home & Memory Care in Burien, WA',
     description:
@@ -28,14 +66,15 @@ export const metadata: Metadata = {
     siteName: 'Burien Best Care Home',
     locale: 'en_US',
     type: 'website',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Burien Best Care Home',
-      },
-    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Burien Best Care Home | Adult Family Home & Memory Care in Burien, WA',
+    description:
+      'Compassionate memory care and daily living assistance in a warm, home-like environment for seniors in Burien, WA.',
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 }
 
@@ -45,16 +84,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-cream text-forest min-h-screen font-sans">
+    <html lang="en" className={`${inter.variable} ${dmSerif.variable}`}>
+      <body className="bg-cream text-forest min-h-screen font-sans antialiased">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

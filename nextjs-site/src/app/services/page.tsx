@@ -268,24 +268,30 @@ export default function ServicesPage() {
         }}
       />
 
-      {/* Hero Section (60vh) */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=1200')`,
-          }}
-          role="img"
-          aria-label="Senior parent and adult daughter smiling together in warm home"
+      {/* Hero Section */}
+      <section
+        aria-labelledby="services-hero-headline"
+        className="relative min-h-[70vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
+      >
+        <Image
+          src="https://images.unsplash.com/photo-1478144592103-25e218a04891?w=1600&q=80&auto=format&fit=crop"
+          alt=""
+          role="presentation"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80" />
 
-        <div className="absolute inset-0 bg-black/40" />
-
-        <ScrollReveal className="relative z-10 text-center text-white px-4 max-w-3xl">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+        <ScrollReveal className="relative z-10 text-center text-white px-4 sm:px-6 py-20 md:py-24 max-w-3xl">
+          <h1
+            id="services-hero-headline"
+            className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal mb-6 leading-tight"
+          >
             Care That Sees Your Parent as a Person, Not a Patient
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-cream leading-relaxed">
             Every care plan we build starts with one question: what does your parent need to feel safe, happy, and at home?
           </p>
         </ScrollReveal>

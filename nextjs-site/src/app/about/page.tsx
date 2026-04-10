@@ -59,19 +59,27 @@ export default function About() {
     <>
       {/* Hero Section */}
       <section
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        aria-labelledby="about-hero-headline"
+        className="relative min-h-[70vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 text-center px-6 py-16 max-w-3xl">
-          <h1 className="font-serif text-5xl md:text-6xl text-white mb-6 leading-tight">
+        <Image
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80&auto=format&fit=crop"
+          alt=""
+          role="presentation"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/75 via-forest/55 to-forest/80" />
+        <div className="relative z-10 text-center px-4 sm:px-6 py-20 md:py-24 max-w-3xl">
+          <h1
+            id="about-hero-headline"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight"
+          >
             We Built This Home Because Your Family Deserves Better
           </h1>
-          <p className="text-xl md:text-2xl text-cream leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-cream leading-relaxed">
             After 20 years in senior care, we saw the same story over and over. Families forced to choose between institutions that felt cold and staying home until a crisis. We built Burien Best Care Home to give families a third option.
           </p>
         </div>
@@ -187,11 +195,12 @@ export default function About() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.2}>
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600"
-                  alt="Families belong here at our care home"
+                  src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80&auto=format&fit=crop"
+                  alt="Bright and welcoming living room with natural light and comfortable seating"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
