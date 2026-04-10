@@ -195,7 +195,7 @@ function ServiceSection({
   delay: number
 }) {
   return (
-    <section id={id} className="py-16 md:py-24 px-4">
+    <section id={id} className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <ScrollReveal delay={delay} className="w-full">
         <GlassCard className="w-full max-w-4xl mx-auto p-8 md:p-12">
           <div className="space-y-6">
@@ -221,13 +221,13 @@ function ServiceSection({
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/contact"
-                className="inline-block px-8 py-3 bg-sage text-white rounded-lg font-semibold hover:bg-forest transition-colors duration-300 text-center"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage text-white rounded-lg font-semibold hover:bg-forest transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Schedule a Visit
               </Link>
               <a
                 href="/family-guide.pdf"
-                className="inline-block px-8 py-3 border-2 border-sage text-sage rounded-lg font-semibold hover:bg-cream transition-colors duration-300 text-center"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-sage text-sage rounded-lg font-semibold hover:bg-cream transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Download Our Family Guide
               </a>
@@ -298,7 +298,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Intro Section */}
-      <section className="py-12 md:py-16 px-4 bg-cream">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-cream">
         <ScrollReveal className="max-w-3xl mx-auto">
           <p className="text-center text-forest/90 leading-relaxed text-lg">
             At Burien Best Care Home, we don't believe in one-size-fits-all care. With only six residents, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks like.
@@ -359,7 +359,7 @@ export default function ServicesPage() {
       />
 
       {/* What Makes Our Care Different */}
-      <section className="py-16 md:py-24 px-4 bg-sage-light/30">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light/30">
         <ScrollReveal delay={0.5} className="w-full">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest mb-12 text-center">
@@ -408,7 +408,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <ScrollReveal delay={0.9} className="w-full">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-forest mb-6">
@@ -420,13 +420,13 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-sage text-white rounded-lg font-semibold hover:bg-forest transition-colors duration-300 text-center"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage text-white rounded-lg font-semibold hover:bg-forest transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Schedule a Visit
               </Link>
               <a
                 href="/family-guide.pdf"
-                className="px-8 py-3 border-2 border-sage text-sage rounded-lg font-semibold hover:bg-cream transition-colors duration-300 text-center"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-sage text-sage rounded-lg font-semibold hover:bg-cream transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Download Our Family Guide
               </a>

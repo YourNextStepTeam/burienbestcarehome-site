@@ -298,9 +298,67 @@ textarea {
 
 /* Utility: Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+}
+
+/* Prevent horizontal overflow on any device */
+html,
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Tablet typography adjustments — between mobile and desktop */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Large desktop readability cap */
+@media (min-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Standalone buttons — ensure minimum touch target */
+button:not(.accordion-button),
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  min-height: 44px;
+}
+
+@media (pointer: coarse) {
+  button:not(.accordion-button),
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    min-height: 48px;
+  }
+}
+
+/* Image media queries default */
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
 }

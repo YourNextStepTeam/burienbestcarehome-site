@@ -228,7 +228,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Step 1 */}
               <ScrollReveal delay={0}>
                 <GlassCard className="h-full p-8 space-y-4 flex flex-col">
@@ -544,7 +544,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Team Member 1: Becca Pitts */}
               <ScrollReveal delay={0}>
                 <GlassCard className="p-8 text-center space-y-4">
@@ -605,7 +605,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Testimonial 1 */}
               <ScrollReveal delay={0}>
                 <GlassCard className="p-8 space-y-4 flex flex-col">
