@@ -16,12 +16,21 @@ export const metadata: Metadata = {
     'dementia care Washington',
     'respite care Burien',
   ],
+  alternates: {
+    canonical: '/services',
+  },
   openGraph: {
     title: 'Our Services | Burien Best Care Home',
     description:
       'Care that sees your parent as a person. Personalized services designed for outcomes, not one-size-fits-all.',
     type: 'website',
     url: 'https://burienbestcarehome.com/services',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Services | Memory Care & Senior Care in Burien, WA',
+    description:
+      'Memory care, daily living assistance, respite care, and post-hospital recovery in a small, family-centered home.',
   },
 }
 

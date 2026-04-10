@@ -7,13 +7,22 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Us | Our Story & Team',
   description:
-    'Meet Becca and the Burien Best Care Home team. We built this home for families like yours who need a better way to care for aging parents.',
+    'Meet Becca and the Burien Best Care Home team. We built this home for families like yours who need a better way to care for aging parents in Burien, WA.',
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: 'About Us | Our Story & Team',
     description:
       'Meet Becca and the Burien Best Care Home team. We built this home for families like yours who need a better way to care for aging parents.',
     url: 'https://burienbestcarehome.com/about',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Our Story & Team | Burien Best Care Home',
+    description:
+      'Meet Becca and the team behind Burien Best Care Home, a warm, family-centered alternative to institutional senior care.',
   },
 }
 

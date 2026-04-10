@@ -9,12 +9,21 @@ export const metadata: Metadata = {
   title: 'Contact Us | Schedule a Visit',
   description:
     'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family. No pressure, no sales pitch.',
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
     title: 'Contact Us | Schedule a Visit',
     description:
       'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family. No pressure, no sales pitch.',
     url: 'https://burienbestcarehome.com/contact',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Schedule a Visit | Burien Best Care Home',
+    description:
+      'Schedule a no-pressure visit. Meet our team and see if we are the right fit for your family.',
   },
 }
 
