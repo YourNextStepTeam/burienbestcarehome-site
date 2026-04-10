@@ -74,24 +74,29 @@ export default function OpenHouseForm() {
 
     setIsSubmitting(true)
 
+    // Static site: open user's email client pre-filled with the RSVP data
     try {
-      const response = await fetch('/api/openhouse', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      const subject = `Open House RSVP from ${formData.name}`
+      const bodyLines = [
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        formData.phone ? `Phone: ${formData.phone}` : null,
+        `Number of guests: ${formData.guests}`,
+      ].filter(Boolean)
+      const body = bodyLines.join('\n')
+      const mailto = `mailto:info@burienbestcarehome.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`
 
-      if (response.ok) {
-        setSubmitSuccess(true)
-        setFormData({ name: '', email: '', phone: '', guests: '' })
-        setTimeout(() => setSubmitSuccess(false), 5000)
-      } else {
-        setErrors({ name: 'Failed to submit form. Please try again.' })
-      }
-    } catch (error) {
-      setErrors({ name: 'An error occurred. Please try again.' })
+      window.location.href = mailto
+
+      setSubmitSuccess(true)
+      setFormData({ name: '', email: '', phone: '', guests: '' })
+      setTimeout(() => setSubmitSuccess(false), 8000)
+    } catch {
+      setErrors({
+        name: 'We could not open your email client. Please email info@burienbestcarehome.com directly.',
+      })
     } finally {
       setIsSubmitting(false)
     }

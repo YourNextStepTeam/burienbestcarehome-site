@@ -95,36 +95,49 @@ export default function ContactForm() {
 
     setIsSubmitting(true)
 
+    // Static site: open user's email client pre-filled with the form data
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      const subject = `Visit Request from ${formData.firstName} ${formData.lastName}`
+      const bodyLines = [
+        `Name: ${formData.firstName} ${formData.lastName}`,
+        `Email: ${formData.email}`,
+        formData.phone ? `Phone: ${formData.phone}` : null,
+        `Relationship to resident: ${formData.relationship}`,
+        `Type of care: ${formData.careType}`,
+        formData.visitDate ? `Preferred visit date: ${formData.visitDate}` : null,
+        `Preferred time: ${formData.visitTime}`,
+        '',
+        'Message:',
+        formData.message || '(none)',
+      ].filter(Boolean)
+      const body = bodyLines.join('\n')
+      const mailto = `mailto:info@burienbestcarehome.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`
 
-      if (response.ok) {
-        setIsSuccess(true)
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          relationship: '',
-          careType: '',
-          visitDate: '',
-          visitTime: '',
-          message: '',
-        })
-        setTimeout(() => {
-          setIsSuccess(false)
-        }, 5000)
-      } else {
-        setErrors({ submit: 'Failed to submit form. Please try again.' })
-      }
-    } catch (error) {
-      setErrors({ submit: 'An error occurred. Please try again later.' })
+      // Open the user's email client
+      window.location.href = mailto
+
+      setIsSuccess(true)
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        relationship: '',
+        careType: '',
+        visitDate: '',
+        visitTime: '',
+        message: '',
+      })
+      setTimeout(() => {
+        setIsSuccess(false)
+      }, 8000)
+    } catch {
+      setErrors({
+        submit:
+          'We could not open your email client. Please email us directly at info@burienbestcarehome.com or call (206) 555-0142.',
+      })
     } finally {
       setIsSubmitting(false)
     }
@@ -132,15 +145,23 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-sage-light border-2 border-sage rounded-2xl p-8 text-center max-w-2xl mx-auto">
+      <div
+        role="status"
+        aria-live="polite"
+        className="bg-sage-light border-2 border-sage rounded-2xl p-8 text-center max-w-2xl mx-auto"
+      >
         <h3 className="font-serif text-3xl text-forest mb-4">
-          Thank You!
+          Almost There!
         </h3>
         <p className="text-lg text-forest leading-relaxed mb-4">
-          We've received your visit request. We will contact you within 24 hours to confirm your preferred time and answer any questions you may have.
+          Your email client should open with your visit request ready to send. Just hit send, and we will respond within 24 hours to confirm your preferred time.
         </p>
         <p className="text-forest">
-          We look forward to welcoming you and your loved one to Burien Best Care Home.
+          If nothing opened, please email us directly at{' '}
+          <a href="mailto:info@burienbestcarehome.com" className="text-sage font-semibold underline">
+            info@burienbestcarehome.com
+          </a>
+          .
         </p>
       </div>
     )
