@@ -34,11 +34,23 @@ export default function Navigation() {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
+        hamburgerRef.current?.focus();
       }
     };
 
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
+  }, [isMobileMenuOpen]);
+
+  // Body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
   }, [isMobileMenuOpen]);
 
   // Focus trap for mobile menu
@@ -87,22 +99,24 @@ export default function Navigation() {
         aria-label="Main navigation"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-semibold text-forest hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 focus:ring-offset-cream rounded"
+            aria-label="Burien Best Care Home - home"
+            className="inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold text-forest hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream rounded"
           >
             Burien Best Care Home
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-2 lg:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sage rounded px-2 py-1 ${
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                className={`inline-flex items-center min-h-12 font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded px-3 py-2 ${
                   isActive(link.href)
                     ? 'text-sage border-b-2 border-sage'
                     : 'text-forest hover:text-sage'
@@ -116,7 +130,7 @@ export default function Navigation() {
           {/* Desktop CTA Button */}
           <Link
             href="/contact"
-            className="hidden md:inline-block px-6 py-2 bg-sage text-cream font-semibold rounded hover:bg-sage/90 transition-colors focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 focus:ring-offset-cream"
+            className="hidden md:inline-flex items-center justify-center min-h-12 px-6 py-3 bg-sage text-cream font-semibold rounded-lg hover:bg-forest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
           >
             Schedule a Visit
           </Link>
@@ -125,8 +139,8 @@ export default function Navigation() {
           <button
             ref={hamburgerRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none focus:ring-2 focus:ring-sage rounded"
-            aria-label="Toggle navigation menu"
+            className="md:hidden inline-flex flex-col items-center justify-center gap-1.5 min-w-12 min-h-12 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded"
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -171,13 +185,14 @@ export default function Navigation() {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="fixed top-16 right-0 bottom-0 w-64 bg-cream/95 backdrop-blur-md shadow-lg md:hidden flex flex-col p-6"
           >
-            <nav className="space-y-4 flex-1">
+            <nav aria-label="Mobile navigation" className="space-y-2 flex-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-4 py-2 rounded font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sage ${
+                  className={`flex items-center min-h-12 px-4 py-3 rounded-lg text-base font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage ${
                     isActive(link.href)
                       ? 'text-sage bg-cream'
                       : 'text-forest hover:text-sage hover:bg-cream/50'
@@ -191,7 +206,7 @@ export default function Navigation() {
             <Link
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full px-6 py-3 bg-sage text-cream font-semibold rounded text-center hover:bg-sage/90 transition-colors focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 focus:ring-offset-cream"
+              className="inline-flex items-center justify-center w-full min-h-12 px-6 py-3 bg-sage text-cream font-semibold rounded-lg text-center hover:bg-forest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >
               Schedule a Visit
             </Link>

@@ -66,7 +66,7 @@ h3.font-serif {
   background: var(--color-forest);
 }
 
-/* Skip to Content Link */
+/* Visually hidden utility for screen readers */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -79,19 +79,31 @@ h3.font-serif {
   border-width: 0;
 }
 
-a.skip-to-content:focus {
+/* Skip to Content Link (matches layout.tsx .skip-link class) */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
   width: auto;
   height: auto;
-  padding: 8px 16px;
-  overflow: visible;
-  clip: auto;
-  background-color: var(--color-sage);
-  color: white;
+  padding: 12px 20px;
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+  font-weight: 600;
   text-decoration: none;
+  border: 2px solid var(--color-sage);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Glassmorphism Card */

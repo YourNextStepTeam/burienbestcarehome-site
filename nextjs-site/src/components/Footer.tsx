@@ -12,14 +12,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-forest text-cream border-t-4 border-sage">
+    <footer className="bg-forest text-cream border-t-4 border-sage" role="contentinfo">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-sage">About Us</h3>
-            <p className="text-cream/90 leading-relaxed text-sm">
+            <h2 className="text-lg font-semibold mb-4 text-sage">About Us</h2>
+            <p className="text-cream/95 leading-relaxed text-sm">
               Burien Best Care Home provides compassionate, personalized care for adults in our warm and welcoming family environment.
             </p>
             <p className="text-sage font-medium mt-3">Where Family Feels Like Home</p>
@@ -27,14 +27,14 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-sage">Quick Links</h3>
-            <nav aria-label="Quick links">
-              <ul className="space-y-2">
+            <h2 className="text-lg font-semibold mb-4 text-sage">Quick Links</h2>
+            <nav aria-label="Footer quick links">
+              <ul className="space-y-1">
                 {quickLinks.map((link) => (
-                  <li key={link.href}>
+                  <li key={`${link.href}-${link.label}`}>
                     <Link
                       href={link.href}
-                      className="text-cream/90 hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-sage rounded px-1 py-0.5 inline-block min-w-12 min-h-12 flex items-center"
+                      className="inline-flex items-center min-h-12 px-2 py-2 -mx-2 rounded text-cream/95 hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                     >
                       {link.label}
                     </Link>
@@ -46,30 +46,30 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-sage">Contact</h3>
+            <h2 className="text-lg font-semibold mb-4 text-sage">Contact</h2>
             <address className="not-italic">
-              <div className="text-cream/90 text-sm space-y-3">
+              <div className="text-cream/95 text-sm space-y-4">
                 <div>
-                  <p className="font-medium text-sage">Address</p>
+                  <p className="font-medium text-sage mb-1">Address</p>
                   <p>Burien, WA 98148</p>
                 </div>
                 <div>
-                  <p className="font-medium text-sage">Phone</p>
-                  <Link
+                  <p className="font-medium text-sage mb-1">Phone</p>
+                  <a
                     href="tel:+12065550142"
-                    className="hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-sage rounded px-1 py-0.5 inline-block min-w-12 min-h-12 flex items-center"
+                    className="inline-flex items-center min-h-12 px-2 py-2 -mx-2 rounded hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                   >
                     (206) 555-0142
-                  </Link>
+                  </a>
                 </div>
                 <div>
-                  <p className="font-medium text-sage">Email</p>
-                  <Link
+                  <p className="font-medium text-sage mb-1">Email</p>
+                  <a
                     href="mailto:info@burienbestcarehome.com"
-                    className="hover:text-sage transition-colors break-all focus:outline-none focus:ring-2 focus:ring-sage rounded px-1 py-0.5 inline-block min-w-12 min-h-12 flex items-center"
+                    className="inline-flex items-center min-h-12 px-2 py-2 -mx-2 rounded break-all hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                   >
                     info@burienbestcarehome.com
-                  </Link>
+                  </a>
                 </div>
               </div>
             </address>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Hours Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-sage">Hours</h3>
+            <h2 className="text-lg font-semibold mb-4 text-sage">Hours</h2>
             <div className="text-cream/90 text-sm space-y-3">
               <div>
                 <p className="font-medium text-sage">Office Hours</p>
@@ -98,28 +98,30 @@ export default function Footer() {
 
         {/* Resources for Families */}
         <div className="border-t border-cream/20 pt-8 mb-8">
-          <h3 className="text-lg font-semibold mb-4 text-sage">Resources for Families</h3>
+          <h2 className="text-lg font-semibold mb-4 text-sage">Resources for Families</h2>
           <nav aria-label="Helpful resources">
-            <ul className="flex flex-wrap gap-4">
+            <ul className="flex flex-wrap gap-2">
               <li>
-                <Link
+                <a
                   href="https://yourbestseason.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cream/90 hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-sage rounded px-2 py-1 inline-block min-w-12 min-h-12 flex items-center"
+                  className="inline-flex items-center min-h-12 px-3 py-2 rounded text-cream/95 hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                 >
                   Your Best Season
-                </Link>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="https://yournextstephome.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cream/90 hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-sage rounded px-2 py-1 inline-block min-w-12 min-h-12 flex items-center"
+                  className="inline-flex items-center min-h-12 px-3 py-2 rounded text-cream/95 hover:text-sage transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                 >
                   Your Next Step Home
-                </Link>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
               </li>
             </ul>
           </nav>

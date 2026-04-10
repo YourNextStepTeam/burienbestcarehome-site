@@ -203,13 +203,13 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                   <Link
                     href="/contact"
-                    className="btn btn-primary px-8 py-3 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                    className="btn btn-primary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
                   >
                     Schedule a Visit
                   </Link>
                   <a
                     href="#family-guide"
-                    className="btn btn-secondary px-8 py-3 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                    className="btn btn-secondary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
                   >
                     Download Our Family Guide
                   </a>
@@ -272,13 +272,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="btn btn-primary px-8 py-3 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                className="btn btn-primary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Schedule a Visit
               </Link>
               <a
                 href="#family-guide"
-                className="btn btn-secondary px-8 py-3 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                className="btn btn-secondary inline-flex items-center justify-center min-h-12 px-8 py-4 font-medium rounded-lg transition-all duration-300 hover:shadow-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
               >
                 Download Our Family Guide
               </a>
