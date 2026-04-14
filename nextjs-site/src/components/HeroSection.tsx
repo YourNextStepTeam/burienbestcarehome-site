@@ -74,31 +74,32 @@ export default function HeroSection() {
           className="max-w-2xl w-full backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10"
           variants={itemVariants}
         >
-          {/* Eyebrow label — bright cream accent bar + high-contrast chip so it reads on any photo */}
+          {/* Eyebrow — plain text, not a pill. Small, easy to read, single line on tablet+ */}
           <motion.p
-            className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25"
+            className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 sm:whitespace-nowrap drop-shadow-sm"
             variants={itemVariants}
           >
-            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
-            <span>For Families Navigating Senior Care in Burien,&nbsp;WA</span>
+            For families navigating senior care in Burien,&nbsp;Washington
           </motion.p>
 
-          {/* Headline — "safety" and "peace" highlighted in cream to pull the eye to key words */}
+          {/* Headline — "safety" highlighted in brand sage; intentional break for breathing room */}
           <motion.h1
             id="hero-headline"
             className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-6 leading-[1.1] drop-shadow-lg"
             variants={itemVariants}
           >
-            Your parent&rsquo;s <span className="text-cream italic">safety</span> shouldn&rsquo;t keep you up at&nbsp;night.
+            Your parent&rsquo;s <span className="text-sage italic">safety</span>
+            <br />
+            shouldn&rsquo;t keep you up at&nbsp;night.
           </motion.h1>
 
-          {/* Supporting Paragraph — meaningful line breaks that keep phrases intact */}
+          {/* Supporting Paragraph — promise of ongoing care, not just one decision */}
           <motion.p
             className="text-base sm:text-lg lg:text-xl text-white mb-8 leading-relaxed drop-shadow"
             variants={itemVariants}
           >
             You&rsquo;ve noticed the changes. The small lapses. The worry in their voice when they&rsquo;re alone.
-            We walk families through this decision with compassion and clarity, so you can finally exhale.
+            We walk families through this decision with compassion and clarity, then carry that same care into every decision that follows, every moment of every&nbsp;day. So you can finally&nbsp;exhale.
           </motion.p>
 
           {/* CTA Buttons — 48px+ touch targets */}
