@@ -16,10 +16,12 @@ export default function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
+    { href: '/next-steps', label: 'Next Steps' },
     { href: '/contact', label: 'Contact' },
   ];
 
-  // Handle scroll detection
+  // Scroll detection: top-of-page = transparent nav over hero photo;
+  // scrolled = sage background with white text.
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -87,23 +89,15 @@ export default function Navigation() {
 
   const isActive = (href: string) => pathname === href;
 
-  // Text color treatment: when the nav is floating over the hero (unscrolled),
-  // use white with a subtle drop-shadow for legibility against any photo.
-  // Once scrolled and the nav sits on a cream background, switch to forest/sage.
-  const linkBase = isScrolled ? 'text-forest hover:text-sage' : 'text-white hover:text-cream drop-shadow-md';
-  const linkActive = isScrolled ? 'text-sage border-b-2 border-sage' : 'text-white border-b-2 border-white drop-shadow-md';
-  const logoColor = isScrolled ? 'text-forest hover:text-sage' : 'text-white hover:text-cream drop-shadow-md';
-  const hamburgerBar = isScrolled ? 'bg-forest' : 'bg-white';
-  const ctaClasses = isScrolled
-    ? 'bg-sage text-cream hover:bg-forest'
-    : 'bg-white text-forest hover:bg-cream';
+  // White text always — over hero photo and over sage once scrolled.
+  const linkBase = 'text-white hover:text-cream';
+  const linkActive = 'text-white border-b-2 border-white';
+  const logoColor = 'text-white hover:text-cream';
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-cream/95 backdrop-blur-md shadow-md'
-          : 'bg-black/20 backdrop-blur-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        isScrolled ? 'bg-sage shadow-md' : 'bg-transparent'
       }`}
     >
       <nav
@@ -115,55 +109,47 @@ export default function Navigation() {
           <Link
             href="/"
             aria-label="Burien Best Care Home - home"
-            className={`inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream rounded ${logoColor}`}
+            className={`inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sage rounded ${logoColor} ${isScrolled ? '' : 'drop-shadow-md'}`}
           >
             Burien Best Care Home
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-6">
+          <div className="hidden md:flex items-center gap-2 lg:gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? 'page' : undefined}
-                className={`inline-flex items-center min-h-12 font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded px-3 py-2 ${
+                className={`inline-flex items-center min-h-12 font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded px-3 py-2 ${
                   isActive(link.href) ? linkActive : linkBase
-                }`}
+                } ${isScrolled ? '' : 'drop-shadow-md'}`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Desktop CTA Button */}
-          <Link
-            href="/contact#visit-form"
-            className={`hidden md:inline-flex items-center justify-center min-h-12 px-6 py-3 font-semibold rounded-lg transition-colors shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${ctaClasses}`}
-          >
-            Schedule a Visit
-          </Link>
-
           {/* Mobile Hamburger Menu Button */}
           <button
             ref={hamburgerRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden inline-flex flex-col items-center justify-center gap-1.5 min-w-12 min-h-12 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage rounded"
+            className="md:hidden inline-flex flex-col items-center justify-center gap-1.5 min-w-12 min-h-12 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 12 } : { rotate: 0, y: 0 }}
-              className={`w-6 h-0.5 transition-colors ${hamburgerBar}`}
+              className="w-6 h-0.5 bg-white"
             />
             <motion.span
               animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className={`w-6 h-0.5 transition-colors ${hamburgerBar}`}
+              className="w-6 h-0.5 bg-white"
             />
             <motion.span
               animate={isMobileMenuOpen ? { rotate: -45, y: -12 } : { rotate: 0, y: 0 }}
-              className={`w-6 h-0.5 transition-colors ${hamburgerBar}`}
+              className="w-6 h-0.5 bg-white"
             />
           </button>
         </div>
@@ -192,7 +178,7 @@ export default function Navigation() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed top-16 right-0 bottom-0 w-64 bg-cream/95 backdrop-blur-md shadow-lg md:hidden flex flex-col p-6"
+            className="fixed top-16 right-0 bottom-0 w-64 bg-sage shadow-lg md:hidden flex flex-col p-6"
           >
             <nav aria-label="Mobile navigation" className="space-y-2 flex-1">
               {navLinks.map((link) => (
@@ -201,24 +187,16 @@ export default function Navigation() {
                   href={link.href}
                   aria-current={isActive(link.href) ? 'page' : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center min-h-12 px-4 py-3 rounded-lg text-base font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage ${
+                  className={`flex items-center min-h-12 px-4 py-3 rounded-lg text-base font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
                     isActive(link.href)
-                      ? 'text-sage bg-cream'
-                      : 'text-forest hover:text-sage hover:bg-cream/50'
+                      ? 'text-white bg-forest'
+                      : 'text-white hover:bg-forest/50'
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
-
-            <Link
-              href="/contact#visit-form"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center w-full min-h-12 px-6 py-3 bg-sage text-cream font-semibold rounded-lg text-center hover:bg-forest transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
-            >
-              Schedule a Visit
-            </Link>
           </motion.div>
         )}
       </AnimatePresence>

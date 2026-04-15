@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import ScheduleVisitButton from './ScheduleVisitButton';
 
 export default function HeroSection() {
   const [isReducedMotion, setIsReducedMotion] = useState(false);
@@ -74,12 +74,12 @@ export default function HeroSection() {
           className="max-w-2xl w-full backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10"
           variants={itemVariants}
         >
-          {/* Eyebrow — plain text, not a pill. Small, easy to read, single line on tablet+ */}
+          {/* Eyebrow — plain text, centered so left/right padding inside the glass panel is equal */}
           <motion.p
-            className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 sm:whitespace-nowrap drop-shadow-sm"
+            className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 text-center drop-shadow-sm"
             variants={itemVariants}
           >
-            For families in Burien, Kent, Renton &amp; across King&nbsp;County
+            For families in Burien, Kent, Renton &amp; across King County
           </motion.p>
 
           {/* Headline — "safety" highlighted in brand sage; intentional break for breathing room */}
@@ -102,26 +102,12 @@ export default function HeroSection() {
             We walk families through this decision with compassion and clarity, then carry that same care into every decision that follows, every moment of every&nbsp;day. So you can finally&nbsp;exhale.
           </motion.p>
 
-          {/* CTA Buttons — 48px+ touch targets */}
+          {/* CTA — single outlined "Schedule a Visit" button; stroke is white to contrast with the glass panel */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 mb-8"
+            className="flex justify-center mb-8"
             variants={itemVariants}
           >
-            {/* Primary CTA */}
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-terracotta-deep text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:bg-terracotta hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-cream/60 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
-            >
-              Schedule a Visit
-            </Link>
-
-            {/* Secondary/Transitional CTA */}
-            <Link
-              href="/contact#family-guide"
-              className="inline-flex items-center justify-center min-h-12 px-8 py-4 border-2 border-white text-white font-semibold rounded-lg bg-white/5 hover:bg-white/20 transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-cream/60 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
-            >
-              Download Our Family Guide
-            </Link>
+            <ScheduleVisitButton surface="on-dark" />
           </motion.div>
 
           {/* Trust Badges */}

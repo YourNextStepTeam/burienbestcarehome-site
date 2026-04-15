@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 import GlassCard from '@/components/GlassCard'
-import Link from 'next/link'
+import ScheduleVisitButton from '@/components/ScheduleVisitButton'
 
 export const metadata: Metadata = {
   title: 'About Us | Our Story & Team',
@@ -108,8 +108,8 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <GlassCard variant="glass" className="p-8 sm:p-12 lg:p-14">
-              <div className="space-y-6 text-lg text-ink-soft leading-relaxed">
+            <GlassCard variant="terracotta" className="p-8 sm:p-12 lg:p-14">
+              <div className="space-y-6 text-lg text-white/90 leading-relaxed">
                 <p>
                   We saw families struggling. We watched loved ones fade in large facilities where they were room numbers, not people. We watched families torn between guilt and exhaustion. And we decided to create something&nbsp;different.
                 </p>
@@ -126,12 +126,12 @@ export default function About() {
       </section>
 
       {/* Our Promises Section (Outcomes, not features) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-sage-light">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Promises</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
+              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">Our Promises</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
                 What We Promise Your Family
               </h2>
             </div>
@@ -142,7 +142,7 @@ export default function About() {
               <ScrollReveal key={index} delay={index * 0.1}>
                 <GlassCard variant="white" className="p-8 sm:p-10 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
                   </div>
                   <h3 className="font-serif text-2xl sm:text-3xl text-forest mb-4 leading-tight">
                     {promise.title}
@@ -158,7 +158,7 @@ export default function About() {
       </section>
 
       {/* Team Section (Guides, not just staff) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -175,24 +175,24 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto items-stretch">
             {teamMembers.map((member, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
-                <GlassCard variant="white" className="p-8 sm:p-10 text-center h-full flex flex-col">
+                <GlassCard variant="terracotta" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-gradient-to-br from-sage/30 to-forest/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-cream shadow-inner"
+                    className="w-28 h-28 rounded-full bg-white/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-white border-4 border-white/30 shadow-inner"
                   >
                     {member.initials}
                   </div>
-                  <h3 className="font-serif text-2xl text-forest mb-1">
+                  <h3 className="font-serif text-2xl text-white mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">
+                  <p className="text-cream font-semibold uppercase tracking-wide text-sm mb-4">
                     {member.role}
                   </p>
-                  <p className="text-ink-soft leading-relaxed flex-grow">
+                  <p className="text-white/90 leading-relaxed flex-grow">
                     {member.bio}
                   </p>
                   {index === 0 && (
-                    <p className="text-xs text-sage/60 font-semibold uppercase tracking-wide mt-4 pt-4 border-t border-sage/20">Founder &amp;&nbsp;Care&nbsp;Director</p>
+                    <p className="text-xs text-cream font-semibold uppercase tracking-wide mt-4 pt-4 border-t border-white/20">Founder &amp;&nbsp;Care&nbsp;Director</p>
                   )}
                 </GlassCard>
               </ScrollReveal>
@@ -202,15 +202,15 @@ export default function About() {
       </section>
 
       {/* Family Philosophy Section */}
-      <section className="py-20 px-6 bg-sage-light">
+      <section className="py-20 px-6 bg-terracotta-deep">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
               <div>
-                <h2 className="font-serif text-4xl md:text-5xl text-forest mb-8">
+                <h2 className="font-serif text-4xl md:text-5xl text-white mb-8">
                   A Place Where Families Belong
                 </h2>
-                <div className="space-y-6 text-lg text-forest leading-relaxed">
+                <div className="space-y-6 text-lg text-white/90 leading-relaxed">
                   <p>
                     Our door is always open. For morning coffee. For dinner. For no reason at all. Your parent&rsquo;s home is your home. Your pace is yours.
                   </p>
@@ -240,7 +240,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
@@ -255,19 +255,8 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
-              >
-                Schedule a Visit
-              </Link>
-              <Link
-                href="/contact#family-guide"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
-              >
-                Download Our Family Guide
-              </Link>
+            <div className="flex justify-center">
+              <ScheduleVisitButton surface="on-white" />
             </div>
           </ScrollReveal>
 

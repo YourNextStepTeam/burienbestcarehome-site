@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import Script from 'next/script'
 import ScrollReveal from '@/components/ScrollReveal'
 import GlassCard from '@/components/GlassCard'
+import ScheduleVisitButton from '@/components/ScheduleVisitButton'
 
 export const metadata: Metadata = {
   title: 'Our Services | Memory Care & Senior Care in Burien, WA',
@@ -171,21 +171,28 @@ const recoveryCareFeaturesData: FeatureItem[] = [
   },
 ]
 
-function FeatureGrid({ features }: { features: FeatureItem[] }) {
+type Surface = 'white' | 'terracotta'
+
+function FeatureGrid({ features, surface }: { features: FeatureItem[]; surface: Surface }) {
+  const onTerracotta = surface === 'terracotta'
+  const cardClass = onTerracotta
+    ? 'p-6 sm:p-7 bg-white rounded-xl border border-sage/15 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-sage/40'
+    : 'p-6 sm:p-7 bg-terracotta-deep rounded-xl border border-terracotta/40 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-white/40'
+  const accentClass = onTerracotta ? 'bg-sage' : 'bg-white'
+  const titleClass = onTerracotta ? 'text-forest' : 'text-white'
+  const bodyClass = onTerracotta ? 'text-ink-soft' : 'text-white/90'
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 items-stretch">
       {features.map((feature, index) => (
-        <div
-          key={index}
-          className="p-6 sm:p-7 bg-white rounded-xl border border-sage/15 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-sage/40"
-        >
+        <div key={index} className={cardClass}>
           <div className="flex items-center gap-3 mb-3">
-            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-sage rounded-full" />
+            <span aria-hidden="true" className={`inline-block w-8 h-0.5 rounded-full ${accentClass}`} />
           </div>
-          <h4 className="font-semibold text-forest mb-2 font-serif text-xl sm:text-2xl leading-tight">
+          <h4 className={`font-semibold mb-2 font-serif text-xl sm:text-2xl leading-tight ${titleClass}`}>
             {feature.title}
           </h4>
-          <p className="text-ink-soft text-base leading-relaxed">
+          <p className={`text-base leading-relaxed ${bodyClass}`}>
             {feature.description}
           </p>
         </div>
@@ -201,6 +208,7 @@ function ServiceSection({
   paragraphs,
   features,
   delay,
+  surface,
 }: {
   id: string
   title: string
@@ -208,48 +216,46 @@ function ServiceSection({
   paragraphs: string[]
   features: FeatureItem[]
   delay: number
+  surface: Surface
 }) {
+  const onTerracotta = surface === 'terracotta'
+  const sectionBg = onTerracotta ? 'bg-terracotta-deep' : 'bg-white'
+  const eyebrow = onTerracotta ? 'text-cream' : 'text-sage'
+  const heading = onTerracotta ? 'text-white' : 'text-forest'
+  const subheading = onTerracotta ? 'text-white/90' : 'text-ink-soft'
+  const body = onTerracotta ? 'text-white/90' : 'text-ink-soft'
+  const buttonSurface = onTerracotta ? 'on-terracotta' : 'on-white'
+
   return (
-    <section id={id} className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+    <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${sectionBg}`}>
       <ScrollReveal delay={delay} className="w-full">
-        <GlassCard variant="white" className="w-full max-w-5xl mx-auto p-8 md:p-12 lg:p-16">
+        <div className="w-full max-w-5xl mx-auto">
           <div className="space-y-8">
             <div className="text-center">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Services</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-forest mb-5 leading-tight">
+              <p className={`uppercase tracking-widest text-sm font-semibold mb-3 ${eyebrow}`}>Our Services</p>
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-normal mb-5 leading-tight ${heading}`}>
                 {title}
               </h2>
-              <h3 className="text-xl md:text-2xl text-ink-soft font-normal max-w-2xl mx-auto leading-snug">
+              <h3 className={`text-xl md:text-2xl font-normal max-w-2xl mx-auto leading-snug ${subheading}`}>
                 {subtitle}
               </h3>
             </div>
 
             <div className="space-y-5 max-w-3xl mx-auto">
               {paragraphs.map((paragraph, index) => (
-                <p key={index} className="text-ink-soft leading-relaxed text-lg">
+                <p key={index} className={`leading-relaxed text-lg ${body}`}>
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            <FeatureGrid features={features} />
+            <FeatureGrid features={features} surface={surface} />
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <Link
-                href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
-              >
-                Schedule a Visit
-              </Link>
-              <Link
-                href="/contact#family-guide"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
-              >
-                Download Our Family Guide
-              </Link>
+            <div className="flex pt-4 justify-center">
+              <ScheduleVisitButton surface={buttonSurface} />
             </div>
           </div>
-        </GlassCard>
+        </div>
       </ScrollReveal>
     </section>
   )
@@ -317,10 +323,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Intro Section */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <ScrollReveal className="max-w-3xl mx-auto">
-          <GlassCard variant="white" className="p-8 sm:p-10">
-            <p className="text-center text-ink-soft leading-relaxed text-lg sm:text-xl">
+          <GlassCard variant="terracotta" className="p-8 sm:p-10">
+            <p className="text-center text-white/90 leading-relaxed text-lg sm:text-xl">
               We don&rsquo;t believe in one-size-fits-all care. In our home, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
             </p>
           </GlassCard>
@@ -344,6 +350,7 @@ export default function ServicesPage() {
         ]}
         features={memoryCareFeaturesData}
         delay={0.1}
+        surface="terracotta"
       />
 
       {/* Daily Living Assistance Section */}
@@ -361,6 +368,7 @@ export default function ServicesPage() {
         ]}
         features={dailyLivingFeaturesData}
         delay={0.2}
+        surface="white"
       />
 
       {/* Respite Care Section */}
@@ -380,6 +388,7 @@ export default function ServicesPage() {
         ]}
         features={respiteCareFeaturesData}
         delay={0.3}
+        surface="terracotta"
       />
 
       {/* Post-Hospital Recovery Section */}
@@ -401,15 +410,16 @@ export default function ServicesPage() {
         ]}
         features={recoveryCareFeaturesData}
         delay={0.4}
+        surface="white"
       />
 
       {/* What Makes Our Care Different */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-sage-light/30">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
         <ScrollReveal delay={0.5} className="w-full">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">The Difference</p>
-              <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest leading-tight">
+              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">The Difference</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-normal text-white leading-tight">
                 Why Families Choose a Home&nbsp;Over a&nbsp;Facility
               </h2>
             </div>
@@ -419,7 +429,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.6} direction="up">
                 <GlassCard variant="white" className="p-8 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Personalized Care Plans
@@ -434,7 +444,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.7} direction="up">
                 <GlassCard variant="white" className="p-8 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     True Partnership in Care
@@ -449,7 +459,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.8} direction="up">
                 <GlassCard variant="white" className="p-8 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Known by Name and Heart
@@ -465,7 +475,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <ScrollReveal delay={0.9} className="w-full">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest mb-6 leading-tight">
@@ -474,19 +484,8 @@ export default function ServicesPage() {
             <p className="text-lg sm:text-xl text-ink-soft leading-relaxed mb-10">
               Whether you&rsquo;re planning ahead or need support right now, let&rsquo;s talk about what your family actually&nbsp;needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
-              >
-                Schedule a Visit
-              </Link>
-              <Link
-                href="/contact#family-guide"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
-              >
-                Download Our Family Guide
-              </Link>
+            <div className="flex justify-center">
+              <ScheduleVisitButton surface="on-white" />
             </div>
             <p className="text-sm text-forest/60 mt-10">
               Licensed by Washington State DSHS &middot; Bonded and insured &middot; Serving families in Burien, Kent, Renton and across King&nbsp;County.
