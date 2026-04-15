@@ -110,7 +110,7 @@ export default function HeroSection() {
             {/* Primary CTA */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:bg-forest hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-cream/60 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+              className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-terracotta-deep text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:bg-terracotta hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-cream/60 focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
             >
               Schedule a Visit
             </Link>

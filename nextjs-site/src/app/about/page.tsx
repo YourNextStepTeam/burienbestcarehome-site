@@ -80,9 +80,8 @@ export default function About() {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-forest/85 via-forest/75 to-forest/90" />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-black/20" />
         <div className="relative z-10 text-center px-4 sm:px-6 py-24 md:py-32 max-w-4xl">
-          <p className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25">
-            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
-            <span>Our Story</span>
+          <p className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-6 drop-shadow-sm">
+            Our Story
           </p>
           <h1
             id="about-hero-headline"
@@ -110,7 +109,7 @@ export default function About() {
 
           <ScrollReveal delay={0.2}>
             <GlassCard variant="white" className="p-8 sm:p-12 lg:p-14">
-              <div className="space-y-6 text-lg text-forest/85 leading-relaxed">
+              <div className="space-y-6 text-lg text-ink-soft leading-relaxed">
                 <p>
                   Becca saw families struggling. She watched loved ones fade in large facilities where they were room numbers, not people. She watched families torn between guilt and exhaustion. And she decided to create something&nbsp;different.
                 </p>
@@ -151,7 +150,7 @@ export default function About() {
                   <h3 className="font-serif text-2xl sm:text-3xl text-forest mb-4 leading-tight">
                     {promise.title}
                   </h3>
-                  <p className="text-forest/75 text-lg leading-relaxed">
+                  <p className="text-ink-soft text-lg leading-relaxed">
                     {promise.description}
                   </p>
                 </GlassCard>
@@ -170,7 +169,7 @@ export default function About() {
               <h2 className="font-serif text-4xl md:text-5xl text-forest mb-4 leading-tight">
                 The People Walking This Road&nbsp;With&nbsp;You
               </h2>
-              <p className="text-lg text-forest/75 max-w-2xl mx-auto">
+              <p className="text-lg text-ink-soft max-w-2xl mx-auto">
                 Our team doesn&rsquo;t just provide care. They become part of your family&rsquo;s&nbsp;story.
               </p>
             </div>
@@ -192,7 +191,7 @@ export default function About() {
                   <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">
                     {member.role}
                   </p>
-                  <p className="text-forest/75 leading-relaxed flex-grow">
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     {member.bio}
                   </p>
                 </GlassCard>
@@ -250,7 +249,7 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <p className="text-lg sm:text-xl text-forest/75 mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl text-ink-soft mb-10 leading-relaxed">
               The best way to know if we are right for your family is to walk through our door. See the home. Meet the team. Feel the&nbsp;difference.
             </p>
           </ScrollReveal>
@@ -259,7 +258,7 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
               >
                 Schedule a Visit
               </Link>

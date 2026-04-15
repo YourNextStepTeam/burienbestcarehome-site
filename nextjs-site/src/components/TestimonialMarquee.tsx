@@ -79,7 +79,7 @@ export default function TestimonialMarquee() {
               >
                 &ldquo;
               </p>
-              <p className="text-forest/80 leading-relaxed flex-grow italic">
+              <p className="text-ink-soft leading-relaxed flex-grow italic">
                 {t.quote}
               </p>
               <p className="text-sage font-semibold uppercase tracking-wide text-sm mt-6 pt-4 border-t border-sage/15">

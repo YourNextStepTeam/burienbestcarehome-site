@@ -196,18 +196,18 @@ export default function Home() {
                   And you <span className="text-terracotta">can&rsquo;t unsee</span> them.
                 </h2>
 
-                <p className="text-forest/80 text-lg leading-relaxed">
+                <p className="text-ink-soft text-lg leading-relaxed">
                   A missed medication. A fall they didn&rsquo;t tell you about. Meals skipped because cooking feels overwhelming now.
                   You notice your parent moving slower, forgetting more, struggling with things they used to do without thinking.
                   And the guilt hits hard.
                 </p>
 
-                <p className="text-forest/80 text-lg leading-relaxed">
+                <p className="text-ink-soft text-lg leading-relaxed">
                   You wish you could be there more. You worry about them being alone.
                   You lie awake at night wondering if they&rsquo;re safe.
                 </p>
 
-                <p className="text-forest/80 text-lg leading-relaxed">
+                <p className="text-ink-soft text-lg leading-relaxed">
                   Then there&rsquo;s the bigger thought: the idea of placing them somewhere else. It feels like giving up.
                   Like admitting you can&rsquo;t handle this alone. Like you&rsquo;re abandoning them when they need you most.
                 </p>
@@ -218,7 +218,7 @@ export default function Home() {
                   It&rsquo;s not giving up. It&rsquo;s <span className="text-sage italic">stepping&nbsp;up</span>.
                 </p>
 
-                <p className="text-forest/80 text-lg leading-relaxed">
+                <p className="text-ink-soft text-lg leading-relaxed">
                   At Burien Best Care Home, we help families like yours find a solution that honors your parent&rsquo;s dignity
                   and gives you peace of mind. You don&rsquo;t have to choose between loving them and getting them the right care.
                   You can do both.
@@ -227,7 +227,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                   <Link
                     href="/contact#visit-form"
-                    className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage hover:bg-forest text-white font-semibold rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                    className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-terracotta-deep hover:bg-terracotta text-white font-semibold rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2"
                   >
                     Schedule a Visit
                   </Link>
@@ -262,7 +262,7 @@ export default function Home() {
                       Schedule a Visit
                     </h3>
                   </div>
-                  <p className="text-forest/80 leading-relaxed flex-grow">
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     Walk through our home. Meet our team. Ask every question on your mind.
                     We&rsquo;ll show you what daily life looks like here, introduce you to residents and caregivers,
                     and answer honestly about everything from cost to care specifics. No pressure, no sales pitch,
@@ -280,7 +280,7 @@ export default function Home() {
                       Build a Care Plan Together
                     </h3>
                   </div>
-                  <p className="text-forest/80 leading-relaxed flex-grow">
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     We&rsquo;ll create a personalized plan around your parent&rsquo;s needs, preferences, and daily rhythms.
                     What time do they wake up? What foods do they love? Do they prefer quiet mornings or social activity?
                     We listen and build care that fits them, not the other way around.
@@ -297,7 +297,7 @@ export default function Home() {
                       Watch Them Thrive
                     </h3>
                   </div>
-                  <p className="text-forest/80 leading-relaxed flex-grow">
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     Your parent settles into a home where they&rsquo;re known by name, cared for around the clock,
                     and genuinely happy. You stop worrying about falls and medication. You start noticing smiles again.
                     That&rsquo;s when you know you made the right choice.
@@ -309,7 +309,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-sage hover:bg-forest text-white font-semibold rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center min-h-12 px-8 py-4 bg-terracotta-deep hover:bg-terracotta text-white font-semibold rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2"
               >
                 Schedule a Visit
               </Link>
@@ -340,7 +340,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     A Home, Not a Room&nbsp;Number
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Only eight residents. Your parent is known by name, called by name, treated like family.
                     They&rsquo;re not waiting in a room for someone to find time for them. They&rsquo;re part of a genuine home.
                   </p>
@@ -354,7 +354,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Fresh Air and Sunshine Every&nbsp;Day
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Landscaped gardens. Covered patio. Nature at the doorstep. Your parent gets outside, breathes fresh air,
                     feels the sun. It&rsquo;s healing in ways medication alone can&rsquo;t be.
                   </p>
@@ -368,7 +368,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Meals They Actually Look Forward&nbsp;To
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Three home-cooked meals plus snacks, tailored to their preferences. Not institutional food. Real food.
                     Food that says someone cares enough to cook for them.
                   </p>
@@ -382,7 +382,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Attentive Care, Around the&nbsp;Clock
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Trained caregivers on-site 24/7. Never alone. Never forgotten. Someone is always there to notice
                     if something feels off, to help when they need it, and to make sure they&rsquo;re safe.
                   </p>
@@ -396,7 +396,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Purpose and Joy,&nbsp;Daily
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Activities designed to engage mind and body. Art. Music. Gentle exercise. Social connection.
                     Days filled with moments that matter, not empty hours waiting for bedtime.
                   </p>
@@ -410,7 +410,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     You, Welcome&nbsp;Anytime
                   </h3>
-                  <p className="text-forest/80 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Open-door policy. Visit for breakfast, lunch, dinner, coffee, or a quiet afternoon. Bring the grandkids.
                     Share moments. Your parent gets their family close, and you stay involved in their care.
                   </p>
@@ -437,7 +437,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Memory Care
                   </h3>
-                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                  <p className="text-ink-soft leading-relaxed flex-grow mb-6">
                     Your parent with dementia deserves more than management. They deserve moments of connection,
                     comfort, and calm. We create a structured environment where confusion decreases and they feel
                     safe, valued, and genuinely cared for.
@@ -458,7 +458,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Daily Living Assistance
                   </h3>
-                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                  <p className="text-ink-soft leading-relaxed flex-grow mb-6">
                     When everyday tasks become harder, we step in with dignity-first support so your parent can
                     focus on living. Never done-to, always cared-for. Never dependent, always&nbsp;supported.
                   </p>
@@ -478,7 +478,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Respite Care
                   </h3>
-                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                  <p className="text-ink-soft leading-relaxed flex-grow mb-6">
                     You need a break. That doesn&rsquo;t make you a bad person. It makes you human. Let us care for your
                     parent while you recharge. A weekend, a week, whatever you need. You come back&nbsp;stronger.
                   </p>
@@ -498,7 +498,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Post-Hospital Recovery
                   </h3>
-                  <p className="text-forest/80 leading-relaxed flex-grow mb-6">
+                  <p className="text-ink-soft leading-relaxed flex-grow mb-6">
                     The hospital says they&rsquo;re ready to go home. But home isn&rsquo;t ready for them. We bridge that gap.
                     Medical coordination, physical support, and the time they need to fully recover. No rushed&nbsp;transitions.
                   </p>
@@ -534,7 +534,7 @@ export default function Home() {
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
                       What Happens If You Do <span className="text-terracotta italic">Nothing</span>?
                     </h3>
-                    <div className="space-y-4 text-forest/75 leading-relaxed">
+                    <div className="space-y-4 text-ink-soft leading-relaxed">
                       <p>
                         A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
                       </p>
@@ -560,7 +560,7 @@ export default function Home() {
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
                       What Becomes <span className="text-sage italic">Possible</span>?
                     </h3>
-                    <div className="space-y-4 text-forest/75 leading-relaxed">
+                    <div className="space-y-4 text-ink-soft leading-relaxed">
                       <p>
                         You sleep through the night. You stop holding your breath every time the phone rings. Your parent thrives in a home where they&rsquo;re known, cared for, and genuinely&nbsp;happy.
                       </p>
@@ -586,7 +586,7 @@ export default function Home() {
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
                 Community Open House
               </h2>
-              <p className="text-forest/75 text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-ink-soft text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
                 Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. Light refreshments will be&nbsp;served.
               </p>
               <p className="inline-block bg-cream text-sage font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
@@ -608,7 +608,7 @@ export default function Home() {
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
                 You&rsquo;re Not Doing This&nbsp;Alone
               </h2>
-              <p className="text-forest/75 text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="text-ink-soft text-lg max-w-2xl mx-auto leading-relaxed">
                 Our team has walked this road with dozens of families. We know what you&rsquo;re feeling, and we know how to help. We are your guides through this&nbsp;transition.
               </p>
             </div>
@@ -627,7 +627,7 @@ export default function Home() {
                     Becca Pitts
                   </h3>
                   <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
-                  <p className="text-forest/75 leading-relaxed flex-grow">
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. When you visit, Becca will listen to your story and help you find the right solution for your&nbsp;family.
                   </p>
                 </GlassCard>
@@ -646,7 +646,7 @@ export default function Home() {
                     Daniela Torkelson
                   </h3>
                   <p className="text-sage font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
-                  <p className="text-forest/75 leading-relaxed flex-grow">
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>
                 </GlassCard>
@@ -693,18 +693,18 @@ export default function Home() {
               You Don&rsquo;t Have&nbsp;To.
             </h2>
 
-            <p className="text-forest/75 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ink-soft text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
               Being proactive is an act of love. Taking the first step now, while you still have choices, is so much better than making decisions in&nbsp;panic.
             </p>
 
-            <p className="text-forest/75 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ink-soft text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
               You deserve peace of mind. Your parent deserves quality care. Let&rsquo;s take the next step&nbsp;together.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link
                 href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
               >
                 Schedule a Visit
               </Link>

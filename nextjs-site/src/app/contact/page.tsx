@@ -81,9 +81,8 @@ export default function Contact() {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/25" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 py-24 md:py-32 max-w-4xl">
-          <p className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25">
-            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
-            <span>Start the Conversation</span>
+          <p className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-6 drop-shadow-sm">
+            Start the Conversation
           </p>
           <h1
             id="contact-hero-headline"
@@ -108,7 +107,7 @@ export default function Contact() {
               <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
                 Reach Out However Feels&nbsp;Right
               </h2>
-              <p className="text-lg text-forest/75 max-w-2xl mx-auto mt-4">
+              <p className="text-lg text-ink-soft max-w-2xl mx-auto mt-4">
                 Call, email, or drop by for a visit. Whatever feels most comfortable for&nbsp;you.
               </p>
             </div>
@@ -153,7 +152,7 @@ export default function Contact() {
                     <p className="font-serif text-2xl sm:text-3xl text-forest leading-tight">
                       Burien, WA&nbsp;98148
                     </p>
-                    <p className="text-forest/75 mt-2">
+                    <p className="text-ink-soft mt-2">
                       Care provided 24/7 &middot; Visits welcome anytime
                     </p>
                   </div>
@@ -162,7 +161,7 @@ export default function Contact() {
                 <div className="mt-8 pt-6 border-t border-sage/20 flex flex-col sm:flex-row gap-3">
                   <a
                     href="tel:+12065550142"
-                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 bg-sage text-white font-semibold rounded-lg shadow-md hover:bg-forest hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 bg-terracotta-deep text-white font-semibold rounded-lg shadow-md hover:bg-terracotta hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
                   >
                     Call Now
                   </a>
@@ -193,7 +192,7 @@ export default function Contact() {
                   <p className="font-serif text-2xl text-forest leading-tight mb-3">
                     The Heart of Burien,&nbsp;Washington
                   </p>
-                  <p className="text-forest/70 text-sm leading-relaxed">
+                  <p className="text-ink-soft/90 text-sm leading-relaxed">
                     A quiet residential neighborhood, just minutes from downtown Burien and easily accessible from I&ndash;5 and SR&ndash;509. Exact address shared when you schedule a&nbsp;visit.
                   </p>
                 </div>
@@ -212,7 +211,7 @@ export default function Contact() {
               <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight mb-4">
                 Come See Our Home for&nbsp;Yourself
               </h2>
-              <p className="text-lg text-forest/75 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed">
                 Tour the home, meet our team, and see how your parent could live here. We will answer every question honestly, even the hard&nbsp;ones.
               </p>
             </div>
@@ -234,7 +233,7 @@ export default function Contact() {
             <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight mb-6">
               Start With Our Family&nbsp;Guide
             </h2>
-            <p className="text-lg sm:text-xl text-forest/75 leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-ink-soft leading-relaxed mb-10 max-w-2xl mx-auto">
               A free, no-pressure guide walking you through the questions every family asks when choosing senior care. Written by people who&rsquo;ve walked this road with their&nbsp;own.
             </p>
           </ScrollReveal>
@@ -242,7 +241,7 @@ export default function Contact() {
           <ScrollReveal delay={0.1}>
             <a
               href="mailto:info@burienbestcarehome.com?subject=Please%20send%20me%20the%20Family%20Guide&body=Hi%2C%20please%20send%20me%20a%20copy%20of%20your%20Family%20Guide.%20Thanks%21"
-              className="inline-flex items-center justify-center min-h-14 px-10 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+              className="inline-flex items-center justify-center min-h-14 px-10 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
             >
               Request Our Family Guide
             </a>
@@ -262,7 +261,7 @@ export default function Contact() {
               <h2 className="font-serif text-4xl md:text-5xl text-forest mb-4 leading-tight">
                 Here&rsquo;s Exactly What Happens When You&nbsp;Visit
               </h2>
-              <p className="text-lg text-forest/75 max-w-2xl mx-auto">
+              <p className="text-lg text-ink-soft max-w-2xl mx-auto">
                 We know this feels big. Here&rsquo;s what the experience looks like, step by&nbsp;step.
               </p>
             </div>
@@ -282,7 +281,7 @@ export default function Contact() {
                       <h3 className="font-serif text-xl sm:text-2xl text-forest mb-2 leading-tight">
                         {step.title}
                       </h3>
-                      <p className="text-base sm:text-lg text-forest/75 leading-relaxed">
+                      <p className="text-base sm:text-lg text-ink-soft leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -315,7 +314,7 @@ export default function Contact() {
                 <h3 className="font-serif text-2xl text-forest mb-3 leading-tight">
                   Your Best Season
                 </h3>
-                <p className="text-forest/75 mb-6 flex-grow leading-relaxed">
+                <p className="text-ink-soft mb-6 flex-grow leading-relaxed">
                   Information and resources to help you navigate senior care decisions with confidence and&nbsp;clarity.
                 </p>
                 <a
@@ -337,7 +336,7 @@ export default function Contact() {
                 <h3 className="font-serif text-2xl text-forest mb-3 leading-tight">
                   Your Next Step Home
                 </h3>
-                <p className="text-forest/75 mb-6 flex-grow leading-relaxed">
+                <p className="text-ink-soft mb-6 flex-grow leading-relaxed">
                   A guide to understanding adult family homes and finding the right fit for your loved one&rsquo;s&nbsp;needs.
                 </p>
                 <a
@@ -359,7 +358,7 @@ export default function Contact() {
                 <h3 className="font-serif text-2xl text-forest mb-3 leading-tight">
                   Washington State DSHS
                 </h3>
-                <p className="text-forest/75 mb-6 flex-grow leading-relaxed">
+                <p className="text-ink-soft mb-6 flex-grow leading-relaxed">
                   State resources and regulations for adult family homes and senior care services in&nbsp;Washington.
                 </p>
                 <a
@@ -386,7 +385,7 @@ export default function Contact() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <p className="text-lg sm:text-xl text-forest/75 mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl text-ink-soft mb-10 leading-relaxed">
               You have been carrying this decision alone long enough. Let us walk this road with&nbsp;you.
             </p>
           </ScrollReveal>
@@ -395,7 +394,7 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
               >
                 Schedule a Visit
               </Link>

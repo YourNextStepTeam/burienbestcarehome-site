@@ -238,7 +238,7 @@ export default function OpenHouseForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full inline-flex items-center justify-center min-h-14 bg-sage hover:bg-forest text-white text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+        className="w-full inline-flex items-center justify-center min-h-14 bg-terracotta-deep hover:bg-terracotta text-white text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
       >
         {isSubmitting ? 'Submitting\u2026' : 'Reserve Your Spot \u2192'}
       </button>

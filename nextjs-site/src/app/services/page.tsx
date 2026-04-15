@@ -185,7 +185,7 @@ function FeatureGrid({ features }: { features: FeatureItem[] }) {
           <h4 className="font-semibold text-forest mb-2 font-serif text-xl sm:text-2xl leading-tight">
             {feature.title}
           </h4>
-          <p className="text-forest/75 text-base leading-relaxed">
+          <p className="text-ink-soft text-base leading-relaxed">
             {feature.description}
           </p>
         </div>
@@ -219,14 +219,14 @@ function ServiceSection({
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-forest mb-5 leading-tight">
                 {title}
               </h2>
-              <h3 className="text-xl md:text-2xl text-forest/80 font-normal max-w-2xl mx-auto leading-snug">
+              <h3 className="text-xl md:text-2xl text-ink-soft font-normal max-w-2xl mx-auto leading-snug">
                 {subtitle}
               </h3>
             </div>
 
             <div className="space-y-5 max-w-3xl mx-auto">
               {paragraphs.map((paragraph, index) => (
-                <p key={index} className="text-forest/80 leading-relaxed text-lg">
+                <p key={index} className="text-ink-soft leading-relaxed text-lg">
                   {paragraph}
                 </p>
               ))}
@@ -237,7 +237,7 @@ function ServiceSection({
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <Link
                 href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
               >
                 Schedule a Visit
               </Link>
@@ -302,9 +302,8 @@ export default function ServicesPage() {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/25" />
 
         <ScrollReveal className="relative z-10 text-center px-4 sm:px-6 py-24 md:py-32 max-w-4xl">
-          <p className="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold uppercase tracking-[0.15em] mb-6 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/25">
-            <span aria-hidden="true" className="inline-block w-8 h-0.5 bg-cream" />
-            <span>Our Services</span>
+          <p className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-6 drop-shadow-sm">
+            Our Services
           </p>
           <h1
             id="services-hero-headline"
@@ -322,7 +321,7 @@ export default function ServicesPage() {
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-cream">
         <ScrollReveal className="max-w-3xl mx-auto">
           <GlassCard variant="white" className="p-8 sm:p-10">
-            <p className="text-center text-forest/85 leading-relaxed text-lg sm:text-xl">
+            <p className="text-center text-ink-soft leading-relaxed text-lg sm:text-xl">
               We don&rsquo;t believe in one-size-fits-all care. In an intimate home like ours, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
             </p>
           </GlassCard>
@@ -426,7 +425,7 @@ export default function ServicesPage() {
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Personalized, Not Programmatic
                   </h3>
-                  <p className="text-forest/75 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Care plans built with you, updated as needs change. Not pulled from a template. Built around your parent&rsquo;s story, preferences, and who they&nbsp;are.
                   </p>
                 </GlassCard>
@@ -441,7 +440,7 @@ export default function ServicesPage() {
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Partners, Not Providers
                   </h3>
-                  <p className="text-forest/75 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     You&rsquo;re not filling out paperwork and stepping back. You&rsquo;re making care decisions together with people who genuinely want your parent to&nbsp;thrive.
                   </p>
                 </GlassCard>
@@ -456,7 +455,7 @@ export default function ServicesPage() {
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Known by Name, Not by Number
                   </h3>
-                  <p className="text-forest/75 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Your parent is known by name, by story, by heart. Not a bed number. A person we genuinely care for, woven into our small home&nbsp;community.
                   </p>
                 </GlassCard>
@@ -473,13 +472,13 @@ export default function ServicesPage() {
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest mb-6 leading-tight">
               Your Parent Deserves Care&nbsp;That Feels Like&nbsp;<span className="text-sage italic">Home</span>.
             </h2>
-            <p className="text-lg sm:text-xl text-forest/75 leading-relaxed mb-10">
+            <p className="text-lg sm:text-xl text-ink-soft leading-relaxed mb-10">
               Whether you&rsquo;re planning ahead or need support right now, let&rsquo;s talk about what your family actually&nbsp;needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-sage text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-forest hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
               >
                 Schedule a Visit
               </Link>
