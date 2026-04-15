@@ -264,6 +264,55 @@ function ServiceSection({
 export default function ServicesPage() {
   return (
     <>
+      {/* JSON-LD Structured Data: Service catalog */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Service',
+                name: 'Memory Care',
+                serviceType: 'Memory Care',
+                provider: { '@type': 'AssistedLivingFacility', name: 'Burien Best Care Home', url: 'https://burienbestcarehome.com' },
+                areaServed: { '@type': 'AdministrativeArea', name: 'King County, Washington' },
+                description: 'Specialized dementia and Alzheimer\u2019s care in a small, home-like adult family home with consistent caregivers and personalized routines.',
+                url: 'https://burienbestcarehome.com/services#memory-care',
+              },
+              {
+                '@type': 'Service',
+                name: 'Daily Living Assistance',
+                serviceType: 'Personal Care',
+                provider: { '@type': 'AssistedLivingFacility', name: 'Burien Best Care Home', url: 'https://burienbestcarehome.com' },
+                areaServed: { '@type': 'AdministrativeArea', name: 'King County, Washington' },
+                description: 'Dignity-first help with bathing, dressing, meals, medications, and mobility so seniors can keep their independence.',
+                url: 'https://burienbestcarehome.com/services#daily-living',
+              },
+              {
+                '@type': 'Service',
+                name: 'Respite Care',
+                serviceType: 'Respite Care',
+                provider: { '@type': 'AssistedLivingFacility', name: 'Burien Best Care Home', url: 'https://burienbestcarehome.com' },
+                areaServed: { '@type': 'AdministrativeArea', name: 'King County, Washington' },
+                description: 'Short-term stays from a weekend to several weeks so family caregivers can rest while their parent receives full personalized care.',
+                url: 'https://burienbestcarehome.com/services#respite-care',
+              },
+              {
+                '@type': 'Service',
+                name: 'Post-Hospital Recovery',
+                serviceType: 'Post-Acute Care',
+                provider: { '@type': 'AssistedLivingFacility', name: 'Burien Best Care Home', url: 'https://burienbestcarehome.com' },
+                areaServed: { '@type': 'AdministrativeArea', name: 'King County, Washington' },
+                description: '24/7 recovery support with medication coordination, mobility assistance, and ongoing monitoring after a hospital stay.',
+                url: 'https://burienbestcarehome.com/services#recovery',
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* JSON-LD Structured Data: BreadcrumbList */}
       <Script
         id="breadcrumb-schema"

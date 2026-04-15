@@ -72,7 +72,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
+            '@type': ['LocalBusiness', 'AssistedLivingFacility'],
             name: 'Burien Best Care Home',
             image: 'https://burienbestcarehome.com/og-image.png',
             description:
