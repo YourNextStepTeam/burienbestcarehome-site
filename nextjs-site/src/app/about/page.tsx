@@ -87,7 +87,7 @@ export default function About() {
             id="about-hero-headline"
             className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            A Home Built for Families Who Wanted&nbsp;<span className="text-sage italic">Real</span>&nbsp;Alternatives.
+            A Home Built for Families Who Wanted&nbsp;<span className="text-sage-light italic">Real</span>&nbsp;Alternatives.
           </h1>
           <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
             We kept watching families forced to choose between cold institutions and staying home until a crisis. We built Burien Best Care Home to give families a third option. A place with the warmth of home and the professionalism of trained caregivers. Peace of mind, without the&nbsp;distance.
@@ -100,7 +100,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Why</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Our Why</p>
               <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
                 Why This Home Exists
               </h2>
@@ -162,7 +162,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Team</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Our Team</p>
               <h2 className="font-serif text-4xl md:text-5xl text-forest mb-4 leading-tight">
                 The People Walking This Road&nbsp;With&nbsp;You
               </h2>

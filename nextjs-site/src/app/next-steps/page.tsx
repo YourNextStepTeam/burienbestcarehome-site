@@ -47,7 +47,7 @@ export default function NextSteps() {
             id="next-steps-hero-headline"
             className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            A clear path,&nbsp;<span className="text-sage italic">at your pace</span>.
+            A clear path,&nbsp;<span className="text-sage-light italic">at your pace</span>.
           </h1>
           <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
             Once a visit feels right, this is what working together looks like. No rush, no surprises.
@@ -59,7 +59,7 @@ export default function NextSteps() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Coming Soon</p>
+            <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Coming Soon</p>
             <h2 className="font-serif text-3xl md:text-4xl text-forest leading-tight mb-6">
               The Path Forward
             </h2>

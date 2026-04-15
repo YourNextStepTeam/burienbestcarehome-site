@@ -82,7 +82,7 @@ export default function TestimonialMarquee() {
               <p className="text-ink-soft leading-relaxed flex-grow italic">
                 {t.quote}
               </p>
-              <p className="text-sage font-semibold uppercase tracking-wide text-sm mt-6 pt-4 border-t border-sage/15">
+              <p className="text-forest font-semibold uppercase tracking-wide text-sm mt-6 pt-4 border-t border-sage/30">
                 {t.author}
               </p>
             </GlassCard>

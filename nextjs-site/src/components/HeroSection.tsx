@@ -88,7 +88,7 @@ export default function HeroSection() {
             className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-6 leading-[1.1] drop-shadow-lg"
             variants={itemVariants}
           >
-            Your parent&rsquo;s <span className="text-sage italic">safety</span>
+            Your parent&rsquo;s <span className="text-sage-light italic">safety</span>
             <br />
             shouldn&rsquo;t keep you up at&nbsp;night.
           </motion.h1>

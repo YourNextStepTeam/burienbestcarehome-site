@@ -216,7 +216,7 @@ export default function Home() {
                 <p className="font-serif text-xl sm:text-2xl text-forest font-normal">
                   But here&rsquo;s what we know:
                   <br />
-                  It&rsquo;s not giving up. It&rsquo;s <span className="text-sage italic">stepping&nbsp;up</span>.
+                  It&rsquo;s not giving up. It&rsquo;s <span className="text-terracotta-deep italic">stepping&nbsp;up</span>.
                 </p>
 
                 <p className="text-ink-soft text-lg leading-relaxed">
@@ -423,7 +423,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#memory-care"
-                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
+                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -443,7 +443,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#daily-living"
-                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
+                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -463,7 +463,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#respite-care"
-                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
+                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -483,7 +483,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#recovery"
-                    className="inline-flex items-center text-sage hover:text-forest font-semibold transition-colors"
+                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -534,10 +534,10 @@ export default function Home() {
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
-                      <span className="uppercase tracking-widest text-xs font-semibold text-sage">The Possibility</span>
+                      <span className="uppercase tracking-widest text-xs font-semibold text-sage-light">The Possibility</span>
                     </div>
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white leading-tight">
-                      What Becomes <span className="text-sage italic">Possible</span>?
+                      What Becomes <span className="text-sage-light italic">Possible</span>?
                     </h3>
                     <div className="text-left space-y-4 text-white/90 leading-relaxed">
                       <p>
@@ -583,7 +583,7 @@ export default function Home() {
         <section id="our-team" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Our Team</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Our Team</p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
                 You&rsquo;re Not Doing This&nbsp;Alone
               </h2>

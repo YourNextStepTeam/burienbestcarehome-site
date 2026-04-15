@@ -220,7 +220,7 @@ function ServiceSection({
 }) {
   const onTerracotta = surface === 'terracotta'
   const sectionBg = onTerracotta ? 'bg-terracotta-deep' : 'bg-white'
-  const eyebrow = onTerracotta ? 'text-cream' : 'text-sage'
+  const eyebrow = onTerracotta ? 'text-cream' : 'text-forest'
   const heading = onTerracotta ? 'text-white' : 'text-forest'
   const subheading = onTerracotta ? 'text-white/90' : 'text-ink-soft'
   const body = onTerracotta ? 'text-white/90' : 'text-ink-soft'
@@ -313,7 +313,7 @@ export default function ServicesPage() {
               id="services-hero-headline"
               className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight"
             >
-              Care That Treats Your Parent as a&nbsp;<span className="text-sage italic">Person</span>.
+              Care That Treats Your Parent as a&nbsp;<span className="text-sage-light italic">Person</span>.
             </h1>
             <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto">
               Every care plan starts with one question: what does your parent need to feel safe, happy, and at&nbsp;home?
@@ -341,7 +341,7 @@ export default function ServicesPage() {
           <>
             Your parent with memory loss deserves more than&nbsp;supervision.
             <br className="hidden sm:block" />
-            <span> They deserve <em className="text-sage not-italic font-semibold">connection</em>.</span>
+            <span> They deserve <em className="text-white not-italic font-semibold">connection</em>.</span>
           </>
         }
         paragraphs={[
@@ -401,7 +401,7 @@ export default function ServicesPage() {
             <br className="hidden sm:block" />
             But going home alone isn&rsquo;t an&nbsp;option.
             <br className="hidden sm:block" />
-            <span> We <em className="text-sage not-italic font-semibold">bridge</em> that gap.</span>
+            <span> We <em className="text-forest not-italic font-semibold">bridge</em> that gap.</span>
           </>
         }
         paragraphs={[
@@ -479,7 +479,7 @@ export default function ServicesPage() {
         <ScrollReveal delay={0.9} className="w-full">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest mb-6 leading-tight">
-              Your Parent Deserves Care&nbsp;That Feels Like&nbsp;<span className="text-sage italic">Home</span>.
+              Your Parent Deserves Care&nbsp;That Feels Like&nbsp;<span className="text-terracotta-deep italic">Home</span>.
             </h2>
             <p className="text-lg sm:text-xl text-ink-soft leading-relaxed mb-10">
               Whether you&rsquo;re planning ahead or need support right now, let&rsquo;s talk about what your family actually&nbsp;needs.

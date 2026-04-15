@@ -39,7 +39,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
             aria-controls={`faq-answer-${index}`}
             className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left hover:bg-sage/5 transition-colors"
           >
-            <h3 className="font-serif text-lg text-sage font-semibold">
+            <h3 className="font-serif text-lg text-forest font-semibold">
               {item.question}
             </h3>
             <motion.div
@@ -47,7 +47,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               transition={{ duration: 0.3 }}
               className="flex-shrink-0"
             >
-              <ChevronDown className="w-6 h-6 text-sage" />
+              <ChevronDown className="w-6 h-6 text-forest" />
             </motion.div>
           </button>
 
@@ -63,7 +63,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="px-6 py-4 border-t border-sage/10 text-sage/80 leading-relaxed">
+                <div className="px-6 py-4 border-t border-sage/20 text-ink-soft leading-relaxed">
                   {item.answer}
                 </div>
               </motion.div>

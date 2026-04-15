@@ -88,7 +88,7 @@ export default function Contact() {
             id="contact-hero-headline"
             className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            The First Step Is the&nbsp;<span className="text-sage italic">Hardest</span>.
+            The First Step Is the&nbsp;<span className="text-sage-light italic">Hardest</span>.
             <br />
             We&rsquo;ll Make It Easy.
           </h1>
@@ -103,7 +103,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12 sm:mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Get in Touch</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Get in Touch</p>
               <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
                 Reach Out However Feels&nbsp;Right
               </h2>
@@ -211,7 +211,7 @@ export default function Contact() {
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">What to Expect</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">What to Expect</p>
               <h2 className="font-serif text-4xl md:text-5xl text-forest mb-4 leading-tight">
                 Here&rsquo;s Exactly What Happens When You&nbsp;Visit
               </h2>
@@ -334,7 +334,7 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
-              Your Family Deserves&nbsp;<span className="text-sage italic">Peace of Mind</span>.
+              Your Family Deserves&nbsp;<span className="text-terracotta-deep italic">Peace of Mind</span>.
             </h2>
           </ScrollReveal>
 

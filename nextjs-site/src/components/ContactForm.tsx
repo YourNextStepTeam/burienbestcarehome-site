@@ -158,7 +158,7 @@ export default function ContactForm() {
         </p>
         <p className="text-forest">
           If nothing opened, please email us directly at{' '}
-          <a href="mailto:info@burienbestcarehome.com" className="text-sage font-semibold underline">
+          <a href="mailto:info@burienbestcarehome.com" className="text-forest font-semibold underline">
             info@burienbestcarehome.com
           </a>
           .
@@ -190,7 +190,7 @@ export default function ContactForm() {
             placeholder="John"
           />
           {errors.firstName && (
-            <p className="text-terracotta text-sm mt-1">{errors.firstName}</p>
+            <p className="text-terracotta-deep text-sm mt-1 font-medium">{errors.firstName}</p>
           )}
         </div>
 
@@ -213,7 +213,7 @@ export default function ContactForm() {
             placeholder="Smith"
           />
           {errors.lastName && (
-            <p className="text-terracotta text-sm mt-1">{errors.lastName}</p>
+            <p className="text-terracotta-deep text-sm mt-1 font-medium">{errors.lastName}</p>
           )}
         </div>
       </div>
@@ -239,7 +239,7 @@ export default function ContactForm() {
             placeholder="john@example.com"
           />
           {errors.email && (
-            <p className="text-terracotta text-sm mt-1">{errors.email}</p>
+            <p className="text-terracotta-deep text-sm mt-1 font-medium">{errors.email}</p>
           )}
         </div>
 
@@ -286,7 +286,7 @@ export default function ContactForm() {
             <option value="other">Other</option>
           </select>
           {errors.relationship && (
-            <p className="text-terracotta text-sm mt-1">{errors.relationship}</p>
+            <p className="text-terracotta-deep text-sm mt-1 font-medium">{errors.relationship}</p>
           )}
         </div>
 
@@ -314,7 +314,7 @@ export default function ContactForm() {
             <option value="not-sure">Not Sure Yet</option>
           </select>
           {errors.careType && (
-            <p className="text-terracotta text-sm mt-1">{errors.careType}</p>
+            <p className="text-terracotta-deep text-sm mt-1 font-medium">{errors.careType}</p>
           )}
         </div>
       </div>
@@ -358,7 +358,7 @@ export default function ContactForm() {
             <option value="flexible">Flexible</option>
           </select>
           {errors.visitTime && (
-            <p className="text-terracotta text-sm mt-1">{errors.visitTime}</p>
+            <p className="text-terracotta-deep text-sm mt-1 font-medium">{errors.visitTime}</p>
           )}
         </div>
       </div>
@@ -387,7 +387,7 @@ export default function ContactForm() {
 
       {/* Error Message */}
       {errors.submit && (
-        <div className="bg-terracotta/10 border-2 border-terracotta rounded-lg p-4 text-terracotta">
+        <div className="bg-terracotta/10 border-2 border-terracotta-deep rounded-lg p-4 text-terracotta-deep font-medium" role="alert">
           {errors.submit}
         </div>
       )}

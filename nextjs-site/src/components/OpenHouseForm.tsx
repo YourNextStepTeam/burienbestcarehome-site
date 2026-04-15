@@ -115,7 +115,7 @@ export default function OpenHouseForm() {
           exit={{ opacity: 0, y: -10 }}
           className="rounded-lg bg-sage/10 border border-sage p-4"
         >
-          <p className="text-sage font-medium">
+          <p className="text-forest font-medium">
             Thank you! We have received your RSVP and will be in touch soon.
           </p>
         </motion.div>
@@ -146,7 +146,7 @@ export default function OpenHouseForm() {
           aria-describedby={errors.name ? 'name-error' : undefined}
         />
         {errors.name && (
-          <p id="name-error" className="text-terracotta text-sm mt-1">
+          <p id="name-error" className="text-terracotta-deep text-sm mt-1 font-medium">
             {errors.name}
           </p>
         )}
@@ -177,7 +177,7 @@ export default function OpenHouseForm() {
           aria-describedby={errors.email ? 'email-error' : undefined}
         />
         {errors.email && (
-          <p id="email-error" className="text-terracotta text-sm mt-1">
+          <p id="email-error" className="text-terracotta-deep text-sm mt-1 font-medium">
             {errors.email}
           </p>
         )}
@@ -228,7 +228,7 @@ export default function OpenHouseForm() {
           <option value="4">4 Guests</option>
         </select>
         {errors.guests && (
-          <p id="guests-error" className="text-terracotta text-sm mt-1">
+          <p id="guests-error" className="text-terracotta-deep text-sm mt-1 font-medium">
             {errors.guests}
           </p>
         )}
