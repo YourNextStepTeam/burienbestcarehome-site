@@ -24,7 +24,7 @@ export default function Navigation() {
   // scrolled = sage background with white text.
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -97,7 +97,7 @@ export default function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        isScrolled ? 'bg-sage shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-forest shadow-md' : 'bg-transparent'
       }`}
     >
       <nav
@@ -109,7 +109,7 @@ export default function Navigation() {
           <Link
             href="/"
             aria-label="Burien Best Care Home - home"
-            className={`inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sage rounded ${logoColor} ${isScrolled ? '' : 'drop-shadow-md'}`}
+            className={`inline-flex items-center min-h-12 text-lg sm:text-xl font-serif font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded ${logoColor} ${isScrolled ? '' : 'drop-shadow-md'}`}
           >
             Burien Best Care Home
           </Link>
@@ -178,7 +178,7 @@ export default function Navigation() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed top-16 right-0 bottom-0 w-64 bg-sage shadow-lg md:hidden flex flex-col p-6"
+            className="fixed top-16 right-0 bottom-0 w-64 bg-forest shadow-lg md:hidden flex flex-col p-6"
           >
             <nav aria-label="Mobile navigation" className="space-y-2 flex-1">
               {navLinks.map((link) => (
