@@ -79,7 +79,7 @@ export default function HeroSection() {
             className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 sm:whitespace-nowrap drop-shadow-sm"
             variants={itemVariants}
           >
-            For families navigating senior care in Burien,&nbsp;Washington
+            For families in Burien, Kent, Renton &amp; across King&nbsp;County
           </motion.p>
 
           {/* Headline — "safety" highlighted in brand sage; intentional break for breathing room */}
@@ -140,7 +140,7 @@ export default function HeroSection() {
             </li>
             <li className="flex items-center gap-2">
               <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
-              Max 6 Residents
+              Max 8 Residents
             </li>
           </motion.ul>
         </motion.div>

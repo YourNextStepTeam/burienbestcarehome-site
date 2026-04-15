@@ -18,7 +18,7 @@ export default function Home() {
     {
       question: 'What is an adult family home and how is it different from assisted living?',
       answer:
-        'An adult family home is a small, intimate residential setting licensed to care for up to six individuals. Unlike larger assisted living facilities that can house hundreds of residents, our adult family home provides a true home-like environment with personalized, individualized care. Our residents are family, not room numbers, and benefit from the warmth, attention, and genuine connection that only a true home can provide.',
+        'An adult family home is a small, intimate residential setting licensed to care for up to eight individuals. Unlike larger assisted living facilities that can house hundreds of residents, our adult family home provides a true home-like environment with personalized, individualized care. Our residents are family, not room numbers, and benefit from the warmth, attention, and genuine connection that only a true home can provide.',
     },
     {
       question: 'How much does this cost? Can we afford it?',
@@ -33,7 +33,7 @@ export default function Home() {
     {
       question: 'Will they get enough attention with other residents?',
       answer:
-        'This is one of the biggest differences between Burien Best Care Home and larger facilities. We care for a maximum of six residents. That means your parent isn\'t competing for staff attention with dozens of others. Our small size allows for genuine relationships and individualized care that simply isn\'t possible in larger settings.',
+        'This is one of the biggest differences between Burien Best Care Home and larger facilities. We care for a maximum of eight residents. That means your parent isn\'t competing for staff attention with dozens of others. Our small size allows for genuine relationships and individualized care that simply isn\'t possible in larger settings.',
     },
     {
       question: 'Can we visit anytime?',
@@ -75,7 +75,7 @@ export default function Home() {
             name: 'Burien Best Care Home',
             image: 'https://burienbestcarehome.com/og-image.png',
             description:
-              'Compassionate adult family home providing memory care, daily living assistance, respite care, and post-hospital recovery for seniors in Burien, Washington.',
+              'Compassionate adult family home providing memory care, daily living assistance, respite care, and post-hospital recovery for seniors in Burien, Kent, Renton, Tukwila, SeaTac, and across King County, Washington.',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Burien',
@@ -105,7 +105,17 @@ export default function Home() {
               'Post-Hospital Recovery',
               'Adult Family Home',
             ],
-            areaServed: 'King County, Washington',
+            areaServed: [
+              { '@type': 'City', name: 'Burien' },
+              { '@type': 'City', name: 'Kent' },
+              { '@type': 'City', name: 'Renton' },
+              { '@type': 'City', name: 'Tukwila' },
+              { '@type': 'City', name: 'SeaTac' },
+              { '@type': 'City', name: 'Des Moines' },
+              { '@type': 'City', name: 'Normandy Park' },
+              { '@type': 'City', name: 'White Center' },
+              { '@type': 'AdministrativeArea', name: 'King County, Washington' },
+            ],
             founder: {
               '@type': 'Person',
               name: 'Becca Pitts',
@@ -331,7 +341,7 @@ export default function Home() {
                     A Home, Not a Room&nbsp;Number
                   </h3>
                   <p className="text-forest/80 leading-relaxed">
-                    Only six residents. Your parent is known by name, called by name, treated like family.
+                    Only eight residents. Your parent is known by name, called by name, treated like family.
                     They&rsquo;re not waiting in a room for someone to find time for them. They&rsquo;re part of a genuine home.
                   </p>
                 </GlassCard>
