@@ -338,7 +338,7 @@ export default function Home() {
                 <GlassCard variant="white" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    A Home, Not a Room&nbsp;Number
+                    A Real Home
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
                     Only eight residents. Your parent is known by name, called by name, treated like family.
@@ -425,7 +425,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
-                Care That Meets Your Family Where&nbsp;You&nbsp;Are
+                Care Shaped Around Your Family
               </h2>
             </div>
 
@@ -525,7 +525,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
               {/* Left: Failure / What's at Risk */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="white" className="p-8 sm:p-10 h-full border-terracotta/30">
+                <GlassCard variant="white" className="p-8 sm:p-10 h-full border-2 border-terracotta-deep/40">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta rounded-full" />
@@ -534,7 +534,7 @@ export default function Home() {
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
                       What Happens If You Do <span className="text-terracotta italic">Nothing</span>?
                     </h3>
-                    <div className="space-y-4 text-ink-soft leading-relaxed">
+                    <div className="text-left space-y-4 text-ink-soft leading-relaxed">
                       <p>
                         A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
                       </p>
@@ -560,7 +560,7 @@ export default function Home() {
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
                       What Becomes <span className="text-sage italic">Possible</span>?
                     </h3>
-                    <div className="space-y-4 text-ink-soft leading-relaxed">
+                    <div className="text-left space-y-4 text-ink-soft leading-relaxed">
                       <p>
                         You sleep through the night. You stop holding your breath every time the phone rings. Your parent thrives in a home where they&rsquo;re known, cared for, and genuinely&nbsp;happy.
                       </p>
@@ -587,7 +587,7 @@ export default function Home() {
                 Community Open House
               </h2>
               <p className="text-ink-soft text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
-                Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. Light refreshments will be&nbsp;served.
+                Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. We&rsquo;ll have light refreshments&nbsp;available.
               </p>
               <p className="inline-block bg-cream text-sage font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
             </div>
@@ -674,7 +674,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                The 10 Questions Every Family Asks
+                Questions You Should Ask
               </h2>
             </div>
 
@@ -694,7 +694,7 @@ export default function Home() {
             </h2>
 
             <p className="text-ink-soft text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-              Being proactive is an act of love. Taking the first step now, while you still have choices, is so much better than making decisions in&nbsp;panic.
+              Being proactive is an act of love. Taking a step now, while you still have choices, gives you time to make thoughtful&nbsp;decisions.
             </p>
 
             <p className="text-ink-soft text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">

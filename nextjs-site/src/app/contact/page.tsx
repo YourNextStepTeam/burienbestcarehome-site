@@ -8,14 +8,14 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Contact Us | Schedule a Visit',
   description:
-    'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family. No pressure, no sales pitch.',
+    'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family.',
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: 'Contact Us | Schedule a Visit',
     description:
-      'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family. No pressure, no sales pitch.',
+      'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family.',
     url: 'https://burienbestcarehome.com/contact',
     type: 'website',
   },
@@ -31,33 +31,33 @@ export default function Contact() {
   const visitSteps = [
     {
       number: 1,
-      title: 'A Warm Welcome',
+      title: 'You Reach Out, We Respond',
       description:
-        'You will be greeted by name as you arrive. We want you to feel comfortable and at home from the moment you step through our door. No clipboard. No cold reception. Just genuine welcome.',
+        'You call or email, and we\u2019ll get back to you within 24 hours. We\u2019ll listen to what matters most to your family and find a time that works for you.',
     },
     {
       number: 2,
-      title: 'A Real Tour',
+      title: 'We Schedule Your Visit',
       description:
-        'We will show you the living spaces, dining areas, bedrooms, and common areas where our residents spend their days. Ask anything. Knock on doors. This is not a show.',
+        'We\u2019ll work around your schedule. No rush, no pressure. You\u2019ll get all the details you need and answers to any questions before you arrive.',
     },
     {
       number: 3,
-      title: 'Meet the Team',
+      title: 'You Tour the Home and Meet Our Team',
       description:
-        'You will meet the caregivers who would be supporting your loved one. Ask them hard questions. You will know in minutes if you can trust them with the person you love most.',
+        'You\u2019ll see the living spaces, meet the people who\u2019ll care for your parent, and ask anything you want. We\u2019ll talk you through how we do things here and what a typical day looks like.',
     },
     {
       number: 4,
-      title: 'An Honest Conversation',
+      title: 'We Talk About What Matters Most',
       description:
-        'We sit down and talk honestly about your loved one, their needs, and your family. No sales pitch, no pressure. We will tell you if we are the right fit. If we are not, we will help you find somewhere that is.',
+        'We\u2019ll sit down and get to know your parent and your family. We\u2019ll listen more than we talk. If we\u2019re the right fit, we\u2019ll be honest about that. If we\u2019re not, we\u2019ll help you find the right place.',
     },
     {
       number: 5,
-      title: 'Next Steps, Only If You\u2019re Ready',
+      title: 'You Decide in Your Own Time',
       description:
-        'If this feels right, we can discuss next steps at your pace. If you need time to think, we completely understand. This is the biggest decision you have made in years. We are not rushing you.',
+        'If everything feels right, we can talk next steps at your pace. Take time to think. Ask us more questions. We understand this is one of the biggest decisions you\u2019ll ever make.',
     },
   ]
 
@@ -88,12 +88,12 @@ export default function Contact() {
             id="contact-hero-headline"
             className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            The First Step Is the&nbsp;<span className="text-cream italic">Hardest</span>.
+            The First Step Is the&nbsp;<span className="text-sage italic">Hardest</span>.
             <br />
             We&rsquo;ll Make It Easy.
           </h1>
           <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            No pressure. No sales pitch. Just an honest conversation about what your parent needs and how we can&nbsp;help.
+            Just an honest conversation about what your parent needs and how we can&nbsp;help.
           </p>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function Contact() {
                 Reach Out However Feels&nbsp;Right
               </h2>
               <p className="text-lg text-ink-soft max-w-2xl mx-auto mt-4">
-                Call, email, or drop by for a visit. Whatever feels most comfortable for&nbsp;you.
+                Call or email to schedule a visit. We look forward to meeting you and your family.
               </p>
             </div>
           </ScrollReveal>
@@ -118,15 +118,12 @@ export default function Contact() {
             <ScrollReveal delay={0}>
               <GlassCard variant="white" className="p-8 sm:p-10 h-full flex flex-col">
                 <div className="space-y-8 flex-grow">
-                  {/* Phone */}
+                  {/* Phone - Placeholder */}
                   <div>
                     <p className="uppercase tracking-widest text-xs font-semibold text-sage mb-2">Call Us</p>
-                    <a
-                      href="tel:+12065550142"
-                      className="font-serif text-3xl sm:text-4xl text-forest hover:text-sage transition-colors block leading-tight"
-                    >
-                      (206) 555-0142
-                    </a>
+                    <p className="font-serif text-3xl sm:text-4xl text-forest/40 block leading-tight">
+                      Phone number coming soon
+                    </p>
                     <p className="text-sm text-forest/60 mt-1">Mon&ndash;Fri, 9am&ndash;5pm Pacific</p>
                   </div>
 
@@ -146,28 +143,22 @@ export default function Contact() {
 
                   <div className="h-px bg-sage/20" />
 
-                  {/* Address + Hours */}
+                  {/* Hours */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-sage mb-2">Visit Us</p>
+                    <p className="uppercase tracking-widest text-xs font-semibold text-sage mb-2">Care Hours</p>
                     <p className="font-serif text-2xl sm:text-3xl text-forest leading-tight">
-                      Burien, WA&nbsp;98148
+                      24/7 Care
                     </p>
                     <p className="text-ink-soft mt-2">
-                      Care provided 24/7 &middot; Visits welcome anytime
+                      We're here for your family around the clock
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-sage/20 flex flex-col sm:flex-row gap-3">
                   <a
-                    href="tel:+12065550142"
-                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 bg-terracotta-deep text-white font-semibold rounded-lg shadow-md hover:bg-terracotta hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
-                  >
-                    Call Now
-                  </a>
-                  <a
                     href="mailto:info@burienbestcarehome.com"
-                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 bg-white text-forest font-semibold rounded-lg border-2 border-forest/20 hover:bg-cream hover:border-sage transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
+                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 bg-terracotta-deep text-white font-semibold rounded-lg shadow-md hover:bg-terracotta hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
                   >
                     Email Us
                   </a>
@@ -175,27 +166,16 @@ export default function Contact() {
               </GlassCard>
             </ScrollReveal>
 
-            {/* Map card */}
+            {/* Address Section */}
             <ScrollReveal delay={0.1}>
-              <GlassCard variant="white" className="p-0 h-full overflow-hidden flex flex-col">
-                <div className="relative w-full flex-grow min-h-[320px]">
-                  <iframe
-                    title="Map of Burien, Washington"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-122.36%2C47.44%2C-122.29%2C47.49&amp;layer=mapnik&amp;marker=47.47%2C-122.33"
-                    className="absolute inset-0 w-full h-full border-0"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-                <div className="p-6 sm:p-8 bg-white">
-                  <p className="uppercase tracking-widest text-xs font-semibold text-sage mb-1">Located in</p>
-                  <p className="font-serif text-2xl text-forest leading-tight mb-3">
-                    The Heart of Burien,&nbsp;Washington
-                  </p>
-                  <p className="text-ink-soft/90 text-sm leading-relaxed">
-                    A quiet residential neighborhood, just minutes from downtown Burien and easily accessible from I&ndash;5 and SR&ndash;509. Exact address shared when you schedule a&nbsp;visit.
-                  </p>
-                </div>
+              <GlassCard variant="white" className="p-6 sm:p-8 h-full flex flex-col">
+                <p className="uppercase tracking-widest text-xs font-semibold text-sage mb-1">Located in</p>
+                <p className="font-serif text-2xl text-forest leading-tight mb-3">
+                  Burien, Washington
+                </p>
+                <p className="text-ink-soft/90 leading-relaxed flex-grow">
+                  Address available upon request. We'll share the exact location when you schedule a&nbsp;visit.
+                </p>
               </GlassCard>
             </ScrollReveal>
           </div>
@@ -225,32 +205,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Family Guide Section */}
-      <section id="family-guide" className="py-20 px-4 sm:px-6 lg:px-8 bg-cream scroll-mt-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <ScrollReveal>
-            <p className="uppercase tracking-widest text-sm font-semibold text-sage mb-3">Not Ready to Visit Yet?</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight mb-6">
-              Start With Our Family&nbsp;Guide
-            </h2>
-            <p className="text-lg sm:text-xl text-ink-soft leading-relaxed mb-10 max-w-2xl mx-auto">
-              A free, no-pressure guide walking you through the questions every family asks when choosing senior care. Written by people who&rsquo;ve walked this road with their&nbsp;own.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <a
-              href="mailto:info@burienbestcarehome.com?subject=Please%20send%20me%20the%20Family%20Guide&body=Hi%2C%20please%20send%20me%20a%20copy%20of%20your%20Family%20Guide.%20Thanks%21"
-              className="inline-flex items-center justify-center min-h-14 px-10 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
-            >
-              Request Our Family Guide
-            </a>
-            <p className="text-sm text-forest/60 mt-4">
-              We&rsquo;ll email it to you. No forms. No sales&nbsp;calls.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* What to Expect Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-sage-light">
@@ -391,20 +345,12 @@ export default function Contact() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="#visit-form"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
-              >
-                Schedule a Visit
-              </Link>
-              <a
-                href="tel:+12065550142"
-                className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-white text-forest text-lg font-semibold rounded-lg border-2 border-forest/20 shadow-md hover:bg-cream hover:border-sage hover:shadow-lg transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-sage/40"
-              >
-                Call (206) 555-0142
-              </a>
-            </div>
+            <Link
+              href="#visit-form"
+              className="inline-flex items-center justify-center min-h-14 px-8 py-4 bg-terracotta-deep text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-terracotta hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
+            >
+              Schedule a Visit
+            </Link>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>

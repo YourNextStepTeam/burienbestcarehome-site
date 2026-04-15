@@ -44,19 +44,19 @@ export default function About() {
 
   const promises = [
     {
-      title: 'Your Parent\u2019s Dignity Comes First',
+      title: 'Your Parent\u2019s Dignity First',
       description: 'We never rush, never talk down, never treat care as a checklist. Your parent is not a task. They are a person with a lifetime of stories and wisdom.',
     },
     {
-      title: 'You Are Always Part of the Team',
-      description: 'Open communication, welcome visits, your input shapes their care. This is partnership. You do not step back. You step in.',
+      title: 'We Keep You Informed',
+      description: 'Open communication, welcome visits, honest conversations. You stay in the loop on what matters. You choose how involved to be.',
     },
     {
-      title: 'Small by Design, Not by Accident',
-      description: 'An intimate adult family home. Because real care requires real attention. We say no to growth so we can say yes to each person.',
+      title: 'Small by Design',
+      description: 'An adult family home with up to eight residents. Because real care requires real attention. We say no to growth so we can say yes to each person.',
     },
     {
-      title: 'We Do What We Say',
+      title: 'Clear Commitments, Kept',
       description: 'Licensed, bonded, insured. No hidden fees, no surprises, no excuses. You know exactly what you are getting.',
     },
   ]
@@ -87,16 +87,16 @@ export default function About() {
             id="about-hero-headline"
             className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            We Built This Home Because Your Family Deserves&nbsp;<span className="text-cream italic">Better</span>.
+            A Home Built for Families Who Wanted&nbsp;<span className="text-sage italic">Real</span>&nbsp;Alternatives.
           </h1>
           <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            We kept watching families forced to choose between cold institutions and staying home until a crisis. We built Burien Best Care Home to give families a third&nbsp;option.
+            We kept watching families forced to choose between cold institutions and staying home until a crisis. We built Burien Best Care Home to give families a third option. A place with the warmth of home and the professionalism of trained caregivers. Peace of mind, without the&nbsp;distance.
           </p>
         </div>
       </section>
 
       {/* Our Why Section (The Guide's Backstory) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -108,19 +108,16 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <GlassCard variant="white" className="p-8 sm:p-12 lg:p-14">
+            <GlassCard variant="glass" className="p-8 sm:p-12 lg:p-14">
               <div className="space-y-6 text-lg text-ink-soft leading-relaxed">
                 <p>
-                  Becca saw families struggling. She watched loved ones fade in large facilities where they were room numbers, not people. She watched families torn between guilt and exhaustion. And she decided to create something&nbsp;different.
+                  We saw families struggling. We watched loved ones fade in large facilities where they were room numbers, not people. We watched families torn between guilt and exhaustion. And we decided to create something&nbsp;different.
                 </p>
                 <p>
                   Not a facility. A home. A place where residents are treated like family, where caregivers know every person&rsquo;s story, and where families find the peace of mind they have been searching&nbsp;for.
                 </p>
                 <p>
-                  This is what happens when someone who has walked this road with their own family says, &ldquo;I can do this better.&rdquo; When they build not for profit margins, but for&nbsp;people.
-                </p>
-                <p>
-                  You are not looking for a place to put your parent. You are looking for a place where your parent can keep living, and where you can stop carrying this&nbsp;alone.
+                  You are looking for peace of mind. You are looking for a place where someone who genuinely knows your parent can carry the responsibility of their care with the same love you&nbsp;would.
                 </p>
               </div>
             </GlassCard>
@@ -170,7 +167,7 @@ export default function About() {
                 The People Walking This Road&nbsp;With&nbsp;You
               </h2>
               <p className="text-lg text-ink-soft max-w-2xl mx-auto">
-                Our team doesn&rsquo;t just provide care. They become part of your family&rsquo;s&nbsp;story.
+                We become part of your family&rsquo;s&nbsp;story.
               </p>
             </div>
           </ScrollReveal>
@@ -194,6 +191,9 @@ export default function About() {
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     {member.bio}
                   </p>
+                  {index === 0 && (
+                    <p className="text-xs text-sage/60 font-semibold uppercase tracking-wide mt-4 pt-4 border-t border-sage/20">Founder &amp;&nbsp;Care&nbsp;Director</p>
+                  )}
                 </GlassCard>
               </ScrollReveal>
             ))}
@@ -212,13 +212,13 @@ export default function About() {
                 </h2>
                 <div className="space-y-6 text-lg text-forest leading-relaxed">
                   <p>
-                    We want you here. For morning coffee. For dinner. For no reason at all. This is your parent&rsquo;s home, and by extension, it&rsquo;s&nbsp;yours.
+                    Our door is always open. For morning coffee. For dinner. For no reason at all. Your parent&rsquo;s home is your home. Your pace is yours.
                   </p>
                   <p>
-                    You do not hand off your parent at the door. You walk in whenever you need to. You are part of every decision. You know your parent is not just being cared for. Your parent is being&nbsp;loved.
+                    We keep families informed about what matters. We welcome your visits and your questions. You decide how involved you want to be. There is no right amount. We meet you where you&nbsp;are.
                   </p>
                   <p>
-                    Open doors are not a policy at Burien Best Care Home. They are a promise. Your presence matters. Your voice matters. Your parent&rsquo;s connection to you matters more than any schedule or&nbsp;routine.
+                    Your parent is not just being cared for. Your parent is being loved. And you are never an intrusion. You belong&nbsp;here.
                   </p>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export default function About() {
 
           <ScrollReveal delay={0.3}>
             <p className="text-sm text-forest/60 mt-10">
-              Licensed &middot; Bonded &middot; Insured &middot; No surprises, no hidden fees, no excuses.
+              Licensed. Bonded. Insured. No surprises, no hidden fees, no excuses.
             </p>
           </ScrollReveal>
         </div>

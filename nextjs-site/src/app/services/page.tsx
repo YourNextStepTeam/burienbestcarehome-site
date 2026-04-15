@@ -63,7 +63,7 @@ const memoryCareFeaturesData: FeatureItem[] = [
   {
     title: 'Family Communication',
     description:
-      'You\'ll never wonder how they\'re doing. We keep you informed, always. Photos, updates, stories from their day.',
+      'You\'ll stay connected with regular updates about their day. We keep you informed and involved in their care.',
   },
   {
     title: 'Medication Management',
@@ -124,7 +124,7 @@ const respiteCareFeaturesData: FeatureItem[] = [
   {
     title: 'Regular Family Updates',
     description:
-      'Stay connected with daily communication about activities, meals, and moments of joy throughout their stay.',
+      'Stay connected with regular communication about activities, meals, and moments of joy throughout their stay.',
   },
   {
     title: 'Smooth Transitions',
@@ -155,9 +155,9 @@ const recoveryCareFeaturesData: FeatureItem[] = [
       'Precise tracking of medications and health metrics. Recovery progress monitored daily, doctors kept informed.',
   },
   {
-    title: 'Physical Therapy Support',
+    title: 'Physical Therapy Coordination',
     description:
-      'Assistance with exercises and mobility rehabilitation. Gentle, consistent support that rebuilds strength.',
+      'Coordination with your parent\'s physical therapist and support for exercises at home. Consistent help that rebuilds strength.',
   },
   {
     title: 'Healing-Focused Nutrition',
@@ -302,18 +302,17 @@ export default function ServicesPage() {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/25" />
 
         <ScrollReveal className="relative z-10 text-center px-4 sm:px-6 py-24 md:py-32 max-w-4xl">
-          <p className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-6 drop-shadow-sm">
-            Our Services
-          </p>
-          <h1
-            id="services-hero-headline"
-            className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight drop-shadow-lg"
-          >
-            Care That Sees Your Parent as a&nbsp;<span className="text-cream italic">Person</span>, Not a Patient.
-          </h1>
-          <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            Every care plan starts with one question: what does your parent need to feel safe, happy, and at&nbsp;home?
-          </p>
+          <div className="backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10">
+            <h1
+              id="services-hero-headline"
+              className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight"
+            >
+              Care That Treats Your Parent as a&nbsp;<span className="text-sage italic">Person</span>.
+            </h1>
+            <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto">
+              Every care plan starts with one question: what does your parent need to feel safe, happy, and at&nbsp;home?
+            </p>
+          </div>
         </ScrollReveal>
       </section>
 
@@ -322,7 +321,7 @@ export default function ServicesPage() {
         <ScrollReveal className="max-w-3xl mx-auto">
           <GlassCard variant="white" className="p-8 sm:p-10">
             <p className="text-center text-ink-soft leading-relaxed text-lg sm:text-xl">
-              We don&rsquo;t believe in one-size-fits-all care. In an intimate home like ours, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
+              We don&rsquo;t believe in one-size-fits-all care. In our home, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
             </p>
           </GlassCard>
         </ScrollReveal>
@@ -336,7 +335,7 @@ export default function ServicesPage() {
           <>
             Your parent with memory loss deserves more than&nbsp;supervision.
             <br className="hidden sm:block" />
-            <span className="text-sage italic"> They deserve connection.</span>
+            <span> They deserve <em className="text-sage not-italic font-semibold">connection</em>.</span>
           </>
         }
         paragraphs={[
@@ -372,7 +371,7 @@ export default function ServicesPage() {
           <>
             You need a break. Your parent needs to be&nbsp;safe.
             <br className="hidden sm:block" />
-            <span className="text-sage italic"> Both of those things can be true.</span>
+            <span> Both of those things can be true.</span>
           </>
         }
         paragraphs={[
@@ -393,7 +392,7 @@ export default function ServicesPage() {
             <br className="hidden sm:block" />
             But going home alone isn&rsquo;t an&nbsp;option.
             <br className="hidden sm:block" />
-            <span className="text-sage italic"> We bridge that gap.</span>
+            <span> We <em className="text-sage not-italic font-semibold">bridge</em> that gap.</span>
           </>
         }
         paragraphs={[
@@ -423,10 +422,10 @@ export default function ServicesPage() {
                     <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
-                    Personalized, Not Programmatic
+                    Personalized Care Plans
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Care plans built with you, updated as needs change. Not pulled from a template. Built around your parent&rsquo;s story, preferences, and who they&nbsp;are.
+                    Each care plan is built with you and updated as your parent&rsquo;s needs change. We customize around your parent&rsquo;s story, preferences, and who they&nbsp;are.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -438,10 +437,10 @@ export default function ServicesPage() {
                     <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
-                    Partners, Not Providers
+                    True Partnership in Care
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    You&rsquo;re not filling out paperwork and stepping back. You&rsquo;re making care decisions together with people who genuinely want your parent to&nbsp;thrive.
+                    You&rsquo;re not stepping back after intake paperwork. You&rsquo;re making care decisions together with people who genuinely want your parent to&nbsp;thrive.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -453,10 +452,10 @@ export default function ServicesPage() {
                     <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
-                    Known by Name, Not by Number
+                    Known by Name and Heart
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Your parent is known by name, by story, by heart. Not a bed number. A person we genuinely care for, woven into our small home&nbsp;community.
+                    Your parent is known by name, by story, and by heart. They&rsquo;re a person we genuinely care for, woven into our small home&nbsp;community.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -490,7 +489,7 @@ export default function ServicesPage() {
               </Link>
             </div>
             <p className="text-sm text-forest/60 mt-10">
-              Licensed by Washington State DSHS &middot; Bonded and insured &middot; Serving families in Burien and King&nbsp;County.
+              Licensed by Washington State DSHS &middot; Bonded and insured &middot; Serving families in Burien, Kent, Renton and across King&nbsp;County.
             </p>
           </div>
         </ScrollReveal>
