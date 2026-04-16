@@ -3,9 +3,9 @@ interface GlassCardProps {
   className?: string
   /**
    * Card surface treatment.
-   *   - glass: default tinted cream glass with sage border (use on white or photo sections)
-   *   - white: solid white card (use on terracotta sections so it pops)
-   *   - terracotta: solid terracotta-deep card with white text (use on white sections so it pops)
+   *   - glass: default tinted cream glass with sage border
+   *   - white: solid white card (use on terracotta-light sections)
+   *   - terracotta: soft terracotta-light card with dark text (use on white sections)
    */
   variant?: 'glass' | 'white' | 'terracotta'
 }
@@ -25,9 +25,9 @@ export default function GlassCard({
         'transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl hover:border-sage/50 hover:ring-2 hover:ring-sage/20'
       break
     case 'terracotta':
-      base = 'bg-terracotta-deep border border-terracotta/40 shadow-lg text-white'
+      base = 'bg-terracotta-light border border-terracotta/20 shadow-lg text-forest'
       hover =
-        'transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl hover:border-white/40 hover:ring-2 hover:ring-white/20'
+        'transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl hover:border-terracotta/40 hover:ring-2 hover:ring-terracotta/15'
       break
     case 'glass':
     default:

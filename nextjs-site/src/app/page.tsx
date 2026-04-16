@@ -234,10 +234,10 @@ export default function Home() {
         </section>
 
         {/* Your Simple Plan Section (StoryBrand: Plan) — TERRACOTTA */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
                 Three Steps to Peace of Mind
               </h2>
             </div>
@@ -297,7 +297,7 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center">
-              <ScheduleVisitButton surface="on-terracotta" />
+              <ScheduleVisitButton surface="on-white" />
             </div>
           </div>
         </section>
@@ -315,11 +315,11 @@ export default function Home() {
               {/* Outcome 1 */}
               <ScrollReveal delay={0}>
                 <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-white rounded-full mb-5" />
-                  <h3 className="font-serif text-2xl font-normal text-white mb-3 leading-tight">
+                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     A Real Home
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Only eight residents. Your parent is known by name, called by name, treated like family.
                     They&rsquo;re not waiting in a room for someone to find time for them. They&rsquo;re part of a genuine home.
                   </p>
@@ -329,11 +329,11 @@ export default function Home() {
               {/* Outcome 2 */}
               <ScrollReveal delay={0.1}>
                 <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-white rounded-full mb-5" />
-                  <h3 className="font-serif text-2xl font-normal text-white mb-3 leading-tight">
+                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Fresh Air and Sunshine Every&nbsp;Day
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Landscaped gardens. Covered patio. Nature at the doorstep. Your parent gets outside, breathes fresh air,
                     feels the sun. It&rsquo;s healing in ways medication alone can&rsquo;t be.
                   </p>
@@ -343,11 +343,11 @@ export default function Home() {
               {/* Outcome 3 */}
               <ScrollReveal delay={0.2}>
                 <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-white rounded-full mb-5" />
-                  <h3 className="font-serif text-2xl font-normal text-white mb-3 leading-tight">
+                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Meals They Actually Look Forward&nbsp;To
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Three home-cooked meals plus snacks, tailored to their preferences. Not institutional food. Real food.
                     Food that says someone cares enough to cook for them.
                   </p>
@@ -357,11 +357,11 @@ export default function Home() {
               {/* Outcome 4 */}
               <ScrollReveal delay={0.3}>
                 <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-white rounded-full mb-5" />
-                  <h3 className="font-serif text-2xl font-normal text-white mb-3 leading-tight">
+                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Attentive Care, Around the&nbsp;Clock
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Trained caregivers on-site 24/7. Never alone. Never forgotten. Someone is always there to notice
                     if something feels off, to help when they need it, and to make sure they&rsquo;re safe.
                   </p>
@@ -371,11 +371,11 @@ export default function Home() {
               {/* Outcome 5 */}
               <ScrollReveal delay={0.4}>
                 <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-white rounded-full mb-5" />
-                  <h3 className="font-serif text-2xl font-normal text-white mb-3 leading-tight">
+                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Purpose and Joy,&nbsp;Daily
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Activities designed to engage mind and body. Art. Music. Gentle exercise. Social connection.
                     Days filled with moments that matter, not empty hours waiting for bedtime.
                   </p>
@@ -385,11 +385,11 @@ export default function Home() {
               {/* Outcome 6 */}
               <ScrollReveal delay={0.5}>
                 <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-white rounded-full mb-5" />
-                  <h3 className="font-serif text-2xl font-normal text-white mb-3 leading-tight">
+                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     You, Welcome&nbsp;Anytime
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-ink-soft leading-relaxed">
                     Open-door policy. Visit for breakfast, lunch, dinner, coffee, or a quiet afternoon. Bring the grandkids.
                     Share moments. Your parent gets their family close, and you stay involved in their care.
                   </p>
@@ -400,10 +400,10 @@ export default function Home() {
         </section>
 
         {/* Care That Meets Your Family Section (Outcome-Focused Services) — TERRACOTTA */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
                 Care Shaped Around Your Family
               </h2>
             </div>
@@ -507,13 +507,13 @@ export default function Home() {
                 <GlassCard variant="terracotta" className="p-8 sm:p-10 h-full">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-white rounded-full" />
-                      <span className="uppercase tracking-widest text-xs font-semibold text-white/90">The Risk</span>
+                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta rounded-full" />
+                      <span className="uppercase tracking-widest text-xs font-semibold text-ink-soft">The Risk</span>
                     </div>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white leading-tight">
-                      What Happens If You Do <span className="text-cream italic">Nothing</span>?
+                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
+                      What Happens If You Do <span className="text-terracotta italic">Nothing</span>?
                     </h3>
-                    <div className="text-left space-y-4 text-white/90 leading-relaxed">
+                    <div className="text-left space-y-4 text-ink-soft leading-relaxed">
                       <p>
                         A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
                       </p>
@@ -558,17 +558,17 @@ export default function Home() {
         </section>
 
         {/* Open House Section */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">You&rsquo;re Invited</p>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white mb-4 leading-tight">
+              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">You&rsquo;re Invited</p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
                 Community Open House
               </h2>
-              <p className="text-white/90 text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-ink-soft text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
                 Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. We&rsquo;ll have light refreshments available.
               </p>
-              <p className="inline-block bg-white text-terracotta-deep font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
+              <p className="inline-block bg-white text-terracotta-light font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
             </div>
 
             <ScrollReveal>
@@ -598,15 +598,15 @@ export default function Home() {
                 <GlassCard variant="terracotta" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-white/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-white border-4 border-white/30 shadow-inner"
+                    className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
                   >
                     BP
                   </div>
-                  <h3 className="font-serif text-2xl font-normal text-white mb-1">
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Becca Pitts
                   </h3>
-                  <p className="text-cream font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
-                  <p className="text-white/90 leading-relaxed flex-grow">
+                  <p className="text-terracotta font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. When you visit, Becca will listen to your story and help you find the right solution for your&nbsp;family.
                   </p>
                 </GlassCard>
@@ -617,15 +617,15 @@ export default function Home() {
                 <GlassCard variant="terracotta" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-white/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-white border-4 border-white/30 shadow-inner"
+                    className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
                   >
                     DT
                   </div>
-                  <h3 className="font-serif text-2xl font-normal text-white mb-1">
+                  <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Daniela Torkelson
                   </h3>
-                  <p className="text-cream font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
-                  <p className="text-white/90 leading-relaxed flex-grow">
+                  <p className="text-terracotta font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
+                  <p className="text-ink-soft leading-relaxed flex-grow">
                     Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>
                 </GlassCard>
@@ -635,11 +635,11 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section (Marquee) — TERRACOTTA */}
-        <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-terracotta-deep overflow-hidden">
+        <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-terracotta-light overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">In Their Own Words</p>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight">
+              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">In Their Own Words</p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
                 Families Who Found Peace of&nbsp;Mind
               </h2>
             </div>
@@ -664,28 +664,28 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section — TERRACOTTA */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-[1.15]">
-              Most Families Wait Until a&nbsp;<span className="text-cream italic">Crisis</span>.
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
+              Most Families Wait Until a&nbsp;<span className="text-terracotta italic">Crisis</span>.
               <br />
               You Don&rsquo;t Have&nbsp;To.
             </h2>
 
-            <p className="text-white/90 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ink-soft text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
               Being proactive is an act of love. Taking a step now, while you still have choices, gives you time to make thoughtful&nbsp;decisions.
             </p>
 
-            <p className="text-white/90 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ink-soft text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
               You deserve peace of mind. Your parent deserves quality care. Let&rsquo;s take the next step&nbsp;together.
             </p>
 
             <div className="flex justify-center pt-4">
-              <ScheduleVisitButton surface="on-terracotta" />
+              <ScheduleVisitButton surface="on-white" />
             </div>
 
-            <div className="pt-10 mt-4 border-t border-white/20">
-              <p className="text-white/70 text-sm">
+            <div className="pt-10 mt-4 border-t border-terracotta/20">
+              <p className="text-ink-soft text-sm">
                 Licensed by WA DSHS &middot; 24/7 Care &middot; Adult Family Home &middot; Burien,&nbsp;WA
               </p>
             </div>

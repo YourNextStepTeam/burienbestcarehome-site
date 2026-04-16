@@ -28,7 +28,7 @@ const styles: Record<Surface, string> = {
   'on-white':
     'border-terracotta-deep text-terracotta-deep hover:bg-terracotta-deep hover:text-white focus-visible:ring-terracotta-deep/40 focus-visible:ring-offset-white',
   'on-terracotta':
-    'border-white text-white hover:bg-white hover:text-terracotta-deep focus-visible:ring-white/80 focus-visible:ring-offset-transparent',
+    'border-terracotta-deep text-terracotta-deep hover:bg-terracotta-deep hover:text-white focus-visible:ring-terracotta-deep/40 focus-visible:ring-offset-terracotta-light',
   'on-sage-light':
     'border-forest text-forest hover:bg-forest hover:text-white focus-visible:ring-forest/40 focus-visible:ring-offset-sage-light',
 };

@@ -116,49 +116,49 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {/* Contact details card */}
             <ScrollReveal delay={0}>
-              <GlassCard variant="terracotta" className="p-8 sm:p-10 h-full flex flex-col">
+              <GlassCard variant="white" className="p-8 sm:p-10 h-full flex flex-col">
                 <div className="space-y-8 flex-grow">
                   {/* Phone - Placeholder */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-cream mb-2">Call Us</p>
-                    <p className="font-serif text-3xl sm:text-4xl text-white/50 block leading-tight">
+                    <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-2">Call Us</p>
+                    <p className="font-serif text-3xl sm:text-4xl text-forest/50 block leading-tight">
                       Phone number coming soon
                     </p>
-                    <p className="text-sm text-white/70 mt-1">Mon&ndash;Fri, 9am&ndash;5pm Pacific</p>
+                    <p className="text-sm text-ink-soft mt-1">Mon&ndash;Fri, 9am&ndash;5pm Pacific</p>
                   </div>
 
-                  <div className="h-px bg-white/20" />
+                  <div className="h-px bg-terracotta/20" />
 
                   {/* Email */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-cream mb-2">Email Us</p>
+                    <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-2">Email Us</p>
                     <a
                       href="mailto:info@burienbestcarehome.com"
-                      className="font-serif text-2xl sm:text-3xl text-white hover:text-cream transition-colors block break-all leading-tight"
+                      className="font-serif text-2xl sm:text-3xl text-forest hover:text-terracotta transition-colors block break-all leading-tight"
                     >
                       info@burienbestcarehome.com
                     </a>
-                    <p className="text-sm text-white/70 mt-1">We respond within 24&nbsp;hours</p>
+                    <p className="text-sm text-ink-soft mt-1">We respond within 24&nbsp;hours</p>
                   </div>
 
-                  <div className="h-px bg-white/20" />
+                  <div className="h-px bg-terracotta/20" />
 
                   {/* Hours */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-cream mb-2">Care Hours</p>
-                    <p className="font-serif text-2xl sm:text-3xl text-white leading-tight">
+                    <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-2">Care Hours</p>
+                    <p className="font-serif text-2xl sm:text-3xl text-forest leading-tight">
                       24/7 Care
                     </p>
-                    <p className="text-white/90 mt-2">
+                    <p className="text-ink-soft mt-2">
                       We're here for your family around the clock
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/20 flex flex-col sm:flex-row gap-3">
+                <div className="mt-8 pt-6 border-t border-terracotta/20 flex flex-col sm:flex-row gap-3">
                   <a
                     href="mailto:info@burienbestcarehome.com"
-                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-terracotta-deep transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/70"
+                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 border-2 border-terracotta-deep text-terracotta-deep font-semibold rounded-lg hover:bg-terracotta-deep hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/70"
                   >
                     Email Us
                   </a>
@@ -168,12 +168,12 @@ export default function Contact() {
 
             {/* Address Section */}
             <ScrollReveal delay={0.1}>
-              <GlassCard variant="terracotta" className="p-6 sm:p-8 h-full flex flex-col">
-                <p className="uppercase tracking-widest text-xs font-semibold text-cream mb-1">Located in</p>
-                <p className="font-serif text-2xl text-white leading-tight mb-3">
+              <GlassCard variant="white" className="p-6 sm:p-8 h-full flex flex-col">
+                <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-1">Located in</p>
+                <p className="font-serif text-2xl text-forest leading-tight mb-3">
                   Burien, Washington
                 </p>
-                <p className="text-white/90 leading-relaxed flex-grow">
+                <p className="text-ink-soft leading-relaxed flex-grow">
                   Address available upon request. We'll share the exact location when you schedule a&nbsp;visit.
                 </p>
               </GlassCard>
@@ -183,15 +183,15 @@ export default function Contact() {
       </section>
 
       {/* Schedule a Visit Form Section */}
-      <section id="visit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-deep scroll-mt-20">
+      <section id="visit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-light scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-10">
-              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">Schedule a Visit</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Schedule a Visit</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight mb-4">
                 Come See Our Home for&nbsp;Yourself
               </h2>
-              <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-ink-soft max-w-2xl mx-auto leading-relaxed">
                 Tour the home, meet our team, and see how your parent could live here. We will answer every question honestly, even the hard&nbsp;ones.
               </p>
             </div>
@@ -227,15 +227,15 @@ export default function Contact() {
                 <GlassCard variant="terracotta" className="p-6 sm:p-8">
                   <div className="flex items-start gap-5 sm:gap-6">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-white/20 border-2 border-white/40 font-serif text-2xl sm:text-3xl font-normal text-white shadow-sm">
+                      <div className="flex items-center justify-center h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-terracotta/20 border-2 border-terracotta/40 font-serif text-2xl sm:text-3xl font-normal text-forest shadow-sm">
                         {step.number}
                       </div>
                     </div>
                     <div className="flex-grow pt-1">
-                      <h3 className="font-serif text-xl sm:text-2xl text-white mb-2 leading-tight">
+                      <h3 className="font-serif text-xl sm:text-2xl text-forest mb-2 leading-tight">
                         {step.title}
                       </h3>
-                      <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+                      <p className="text-base sm:text-lg text-ink-soft leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -248,12 +248,12 @@ export default function Contact() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">More Support</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
+              <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">More Support</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
                 Resources for Families in&nbsp;Transition
               </h2>
             </div>

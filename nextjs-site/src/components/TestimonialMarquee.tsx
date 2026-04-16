@@ -53,11 +53,11 @@ export default function TestimonialMarquee() {
       {/* Edge fade masks for polished marquee edges */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-sage-light/70 to-transparent z-10"
+        className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-terracotta-light/70 to-transparent z-10"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-sage-light/70 to-transparent z-10"
+        className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-terracotta-light/70 to-transparent z-10"
       />
 
       <div

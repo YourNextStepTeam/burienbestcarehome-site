@@ -177,10 +177,10 @@ function FeatureGrid({ features, surface }: { features: FeatureItem[]; surface: 
   const onTerracotta = surface === 'terracotta'
   const cardClass = onTerracotta
     ? 'p-6 sm:p-7 bg-white rounded-xl border border-sage/15 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-sage/40'
-    : 'p-6 sm:p-7 bg-terracotta-deep rounded-xl border border-terracotta/40 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-white/40'
-  const accentClass = onTerracotta ? 'bg-sage' : 'bg-white'
-  const titleClass = onTerracotta ? 'text-forest' : 'text-white'
-  const bodyClass = onTerracotta ? 'text-ink-soft' : 'text-white/90'
+    : 'p-6 sm:p-7 bg-terracotta-light rounded-xl border border-terracotta/20 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-terracotta/40'
+  const accentClass = onTerracotta ? 'bg-sage' : 'bg-terracotta'
+  const titleClass = 'text-forest'
+  const bodyClass = 'text-ink-soft'
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 items-stretch">
@@ -219,12 +219,12 @@ function ServiceSection({
   surface: Surface
 }) {
   const onTerracotta = surface === 'terracotta'
-  const sectionBg = onTerracotta ? 'bg-terracotta-deep' : 'bg-white'
-  const eyebrow = onTerracotta ? 'text-cream' : 'text-forest'
-  const heading = onTerracotta ? 'text-white' : 'text-forest'
-  const subheading = onTerracotta ? 'text-white/90' : 'text-ink-soft'
-  const body = onTerracotta ? 'text-white/90' : 'text-ink-soft'
-  const buttonSurface = onTerracotta ? 'on-terracotta' : 'on-white'
+  const sectionBg = onTerracotta ? 'bg-terracotta-light' : 'bg-white'
+  const eyebrow = 'text-terracotta'
+  const heading = 'text-forest'
+  const subheading = 'text-ink-soft'
+  const body = 'text-ink-soft'
+  const buttonSurface = 'on-white'
 
   return (
     <section id={id} className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${sectionBg}`}>
@@ -463,12 +463,12 @@ export default function ServicesPage() {
       />
 
       {/* What Makes Our Care Different */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-deep">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
         <ScrollReveal delay={0.5} className="w-full">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <p className="uppercase tracking-widest text-sm font-semibold text-cream mb-3">The Difference</p>
-              <h2 className="text-4xl md:text-5xl font-serif font-normal text-white leading-tight">
+              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">The Difference</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest leading-tight">
                 Why Families Choose a Home&nbsp;Over a&nbsp;Facility
               </h2>
             </div>
