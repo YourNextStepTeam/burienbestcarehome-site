@@ -372,9 +372,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Intro Section */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <ScrollReveal className="max-w-3xl mx-auto">
-          <GlassCard variant="terracotta" className="p-8 sm:p-10">
+          <GlassCard variant="tinted" className="p-8 sm:p-10">
             <p className="text-center text-white/90 leading-relaxed text-lg sm:text-xl">
               We don&rsquo;t believe in one-size-fits-all care. In our home, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
             </p>
@@ -463,7 +463,7 @@ export default function ServicesPage() {
       />
 
       {/* What Makes Our Care Different */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
         <ScrollReveal delay={0.5} className="w-full">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -524,7 +524,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
         <ScrollReveal delay={0.9} className="w-full">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest mb-6 leading-tight">
