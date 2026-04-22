@@ -56,7 +56,7 @@ export default function NextSteps() {
       </section>
 
       {/* Placeholder body — content to be moved from Contact in a later pass */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Coming Soon</p>
