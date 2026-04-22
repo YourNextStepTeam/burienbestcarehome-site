@@ -1,5 +1,55 @@
 # Session Log
 
+## Session: April 22, 2026 - Glassmorphic Redesign + Auto-Deploy Pipeline
+
+### What Was Built
+Full site-wide visual refresh. Brett and Becca both flagged that the site (outside the hero) felt "from the 90s or early 2000s or cartoonish" — too much terracotta pink/peach, not modern enough. This session returned the site to a dark-slate + mossy-green palette, added a grain-textured layered gradient backdrop, wired glass panels into every page, and established a fully automated GitHub-to-Vercel deploy pipeline.
+
+**Palette change:**
+- OUT: Sage #7D9B76, Cream #FFF5EB, Terracotta #C4856A, Forest #2D4A3E, terracotta-light pink-peach.
+- IN: Slate #2D3E4A (primary), Moss #5A6E58 (brand green), Fog #E8ECE6 (cool wash), Bone #FDFBF7 (warm off-white), Clay #B8876B (sparing warm accent), Ink #1A2028 (body).
+- Legacy class names (`bg-sage`, `bg-cream`, `bg-terracotta-light`, `text-forest`, etc.) are now aliased to new palette values in `globals.css`, so the rest of the codebase doesn't have to be rewritten class-by-class.
+
+**Backdrop system:**
+- Layered `body` background: two low-opacity radial gradients (moss top-right, slate bottom-left) over a linear cream→fog wash, `background-attachment: fixed`.
+- `body::before` overlays an inline-SVG fractalNoise grain at 3.5% opacity with `mix-blend-mode: multiply`.
+- Every `<section>` on every page is now `bg-transparent` so the backdrop shows through.
+
+**Glass system:**
+- New `.glass-panel` utility: blur(22px) saturate(130%), semi-transparent bone, inset highlight, soft shadow.
+- `GlassCard` component expanded from one variant to three: `glass`, `white`, `tinted` (moss-tint replaces the old terracotta variant).
+- `prefers-reduced-transparency` fallback strips backdrop-filter.
+- Headings (h1–h4) now default to slate — fixes the green-on-H1 readability issue.
+
+**Files touched (6 commits landed via GitHub web upload flow, Vercel auto-deploys on each):**
+1. `nextjs-site/src/app/globals.css` — full @theme rewrite + body backdrop + glass-panel utility. Original scrollbar/form/accordion/parallax/safe-area/responsive utilities preserved.
+2. `nextjs-site/src/app/layout.tsx` — body class simplification, themeColor updated.
+3. `nextjs-site/src/app/page.tsx` — all section backgrounds to transparent, Problem section + Final CTA wrapped in glass-panel, variant="terracotta" → variant="tinted", Date-Coming-Soon pill re-tokenized.
+4. `nextjs-site/src/app/about/page.tsx` — section-bg sweep + tinted variant.
+5. `nextjs-site/src/app/contact/page.tsx` — section-bg sweep + tinted variant.
+6. `nextjs-site/src/app/services/page.tsx` — section-bg sweep + tinted variant.
+7. `nextjs-site/src/app/next-steps/page.tsx` — section-bg sweep + tinted variant.
+8. `nextjs-site/src/components/GlassCard.tsx` — glass/white/tinted variants.
+
+### Deployment Pipeline Established
+- GitHub repo: `YourNextStepTeam/burienbestcarehome-site` (master branch)
+- Vercel auto-deploys on every push to master → `burienbestcarehome.site`
+- Pipeline verified: each of the 6 commits above triggered a Vercel build automatically.
+- Claude can push commits via GitHub web UI using the `/upload/<branch>/<path>/` URL pattern through the Chrome MCP — no manual copy/paste needed.
+
+### What's Next
+- Stand up `/blog` infrastructure + write 15 SEO/AEO/GEO-optimized blog drafts
+- Schema markup overhaul site-wide
+- Build `/next-steps` as real page (currently stub)
+- Accessibility audit and fixes
+- CTA functional QA across whole site
+- Connect forms to backend (Formspree, Netlify Forms, or custom API)
+- Add real photography (replace Unsplash placeholders)
+- Create "Family Guide" PDF for transitional CTA download
+- Add real phone number and address
+
+---
+
 ## Session: April 9, 2026 - Next.js Website Build
 
 ### What Was Built
@@ -36,13 +86,6 @@ Complete Next.js website rebuild for Burien Best Care Home (burienbestcarehome.c
 - Primary ICP: Adult daughter (38-55) making care decisions
 - Dual CTAs throughout: Direct ("Schedule a Visit") + Transitional ("Download Our Family Guide")
 
-**Design System:**
-- Color palette: Sage (#7D9B76), Cream (#FFF5EB), Terracotta (#C4856A), Forest (#2D4A3E)
-- Typography: DM Serif Display (headlines), Inter (body, 18px+ minimum)
-- Glassmorphism: backdrop-blur panels, semi-transparent cards
-- Scroll-triggered reveal animations
-- Parallax hero backgrounds
-
 **Accessibility:**
 - Skip-to-content link
 - WCAG AA contrast ratios
@@ -58,11 +101,3 @@ Complete Next.js website rebuild for Burien Best Care Home (burienbestcarehome.c
 - Open Graph meta tags
 - Meta descriptions targeting local keywords
 - Semantic HTML5 structure
-
-### What's Next
-- Connect forms to backend (Formspree, Netlify Forms, or custom API)
-- Add real photography (replace Unsplash placeholders)
-- Create "Family Guide" PDF for transitional CTA download
-- Deploy to Vercel
-- Set up Google Analytics / Search Console
-- Add real phone number and address
