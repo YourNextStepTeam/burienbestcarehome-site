@@ -24,13 +24,13 @@ interface ScheduleVisitButtonProps {
 
 const styles: Record<Surface, string> = {
   'on-dark':
-    'border-white text-white hover:bg-white/15 focus-visible:ring-white/70 focus-visible:ring-offset-transparent',
+    'bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] focus-visible:ring-[color:var(--color-sunshine)]/60 focus-visible:ring-offset-transparent',
   'on-white':
-    'border-terracotta-deep text-terracotta-deep hover:bg-terracotta-deep hover:text-white focus-visible:ring-terracotta-deep/40 focus-visible:ring-offset-white',
+    'bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] focus-visible:ring-[color:var(--color-sunshine)]/50 focus-visible:ring-offset-white',
   'on-terracotta':
-    'border-terracotta-deep text-terracotta-deep hover:bg-terracotta-deep hover:text-white focus-visible:ring-terracotta-deep/40 focus-visible:ring-offset-terracotta-light',
+    'bg-[color:var(--color-slate)] border-[color:var(--color-slate)] text-white hover:bg-[color:var(--color-ink)] hover:border-[color:var(--color-ink)] focus-visible:ring-[color:var(--color-slate)]/40 focus-visible:ring-offset-[color:var(--color-bone)]',
   'on-sage-light':
-    'border-forest text-forest hover:bg-forest hover:text-white focus-visible:ring-forest/40 focus-visible:ring-offset-sage-light',
+    'bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] focus-visible:ring-[color:var(--color-sunshine)]/50 focus-visible:ring-offset-[color:var(--color-bone)]',
 };
 
 export default function ScheduleVisitButton({

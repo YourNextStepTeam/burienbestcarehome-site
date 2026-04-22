@@ -7,7 +7,7 @@ interface GlassCardProps {
    *            Sits on the body gradient and picks up warmth from it.
    *   - white: opaque bone-white card. Use when translucency is undesirable
    *            (e.g. over busy photography).
-   *   - tinted: subtle moss-tinted glass — used for secondary content or to
+   *   - tinted: sunshine-tinted frosted glass — used for secondary content or to
    *             differentiate a cluster of cards from a plain-glass neighbor.
    */
   variant?: 'glass' | 'white' | 'tinted'
@@ -30,9 +30,9 @@ export default function GlassCard({
       break
     case 'tinted':
       base =
-        'backdrop-blur-xl backdrop-saturate-150 bg-[rgba(216,226,213,0.48)] border border-[color:rgba(90,110,88,0.22)] shadow-[0_1px_0_rgba(255,255,255,0.4)_inset,0_14px_32px_-14px_rgba(45,62,74,0.15)] text-ink'
+        'backdrop-blur-xl backdrop-saturate-150 bg-[rgba(253,244,222,0.55)] border border-[color:rgba(217,154,43,0.28)] shadow-[0_1px_0_rgba(255,255,255,0.55)_inset,0_14px_32px_-14px_rgba(45,62,74,0.12)] text-ink'
       hover =
-        'transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[rgba(216,226,213,0.58)] hover:border-[color:rgba(90,110,88,0.4)]'
+        'transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[rgba(253,244,222,0.72)] hover:border-[color:rgba(217,154,43,0.45)]'
       break
     case 'glass':
     default:

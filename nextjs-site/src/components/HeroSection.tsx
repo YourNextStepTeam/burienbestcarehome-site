@@ -83,10 +83,10 @@ export default function HeroSection() {
           {/* Headline — "safety" highlighted in brand sage; intentional break for breathing room */}
           <motion.h1
             id="hero-headline"
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-[color:var(--color-slate)] mb-6 leading-[1.1]"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-[color:var(--color-ink)] mb-6 leading-[1.1]"
             variants={itemVariants}
           >
-            Your parent&rsquo;s <span className="italic text-[color:var(--color-moss)]">safety</span>
+            Your parent&rsquo;s <span className="italic font-semibold text-[color:var(--color-sunshine-deep)]">safety</span>
             <br />
             shouldn&rsquo;t keep you up at&nbsp;night.
           </motion.h1>
