@@ -1,5 +1,35 @@
 # Session Log
 
+## Session: April 22, 2026 - Phase C Sunshine Polish
+
+### What Was Built
+Second-pass visual polish after Brett reviewed the deployed glassmorphic redesign. Core complaint: site was "too slate-y + brown-y," accent bars looked muddy, Schedule a Visit button looked like "an ugly brown outline." Brett described wanting the sunshine/lemon energy of "a glass bowl of lemons on the kitchen table." This session locked in **sunshine yellow (`#F3B94D`)** as the site's single pop/accent color.
+
+### Token Changes
+- Added `--color-sunshine: #F3B94D` and `--color-sunshine-deep: #D99A2B` to `@theme` in `globals.css`.
+- Kept terracotta/clay family aliases pointed at muted clay (NOT aliased to sunshine) so form validation colors stay visible.
+- Removed the 3-blob radial backdrop (moss + slate + clay). Replaced with a single soft sunshine wash top-right over a cream→bone vertical gradient.
+- Removed the blanket `h1,h2,h3,h4 { color: slate; }` rule — explicit text-color classes now win per-heading, which unblocks dark-on-dark fixes on the Possibility card.
+
+### Component Changes
+- `ScheduleVisitButton`: all four surface variants flipped from outlined-clay to filled-sunshine with dark ink text and deep-sunshine on hover.
+- `GlassCard`: `tinted` variant rebuilt from mint-tint to sunshine-tint (warm frosted glass that keeps the yellow accent family visible).
+- `HeroSection`: H1 slate → ink (near-black), "safety" italic swapped from moss green to sunshine-deep semibold italic.
+
+### Page Changes
+- `app/page.tsx`: all 6 feature-grid accent bars + all 4 Care Shaped accent bars now use sunshine. "stepping up" italic → sunshine-deep. "What Becomes Possible?" + "The Possibility" eyebrow on the dark Possibility card → sunshine. "can't unsee" and "Nothing" kept in slate (problem tone) but now use sunshine underline. Eight GlassCard `variant="white"` converted to `variant="glass"` for true frosted-glass feel over the backdrop.
+- `app/about/page.tsx`, `services/page.tsx`, `contact/page.tsx`: batched the same transforms — accent bars → sunshine, italic emphasis → sunshine-deep, outlined CTA buttons → filled sunshine, uppercase eyebrow pills → slate-soft for legibility.
+
+### Verification
+- `npm run build` → compiled successfully, all 10 static pages generated.
+
+### What's Next
+- Push to master → Vercel auto-deploys → verify visually on `burienbestcarehome.site`.
+- Optional follow-up: photo perspective correction on `/public/hero-home.jpg` (leaning right pillar).
+- Phase D pickups still pending: `/blog` infra + 15 posts, schema overhaul, `/next-steps` real buildout, a11y audit, CTA functional QA, form backend.
+
+---
+
 ## Session: April 22, 2026 - Glassmorphic Redesign + Auto-Deploy Pipeline
 
 ### What Was Built

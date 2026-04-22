@@ -2,7 +2,36 @@
 
 ## Design Decisions
 
+### Sunshine Polish Pass (April 22, 2026 — Phase C)
+Second iteration on the glassmorphic redesign. Brett flagged that slate-blue H1s read too cool, terracotta accent bars looked brown/muddy, and the CTA button didn't pop. Locked in **sunshine yellow** as the site's single accent/pop color — "lemons in a glass bowl on a kitchen table" energy.
+
+**New tokens (in addition to the Phase B palette):**
+- Sunshine: `#F3B94D` — pop accent, filled CTA buttons, horizontal accent bars, italic highlights on dark surfaces.
+- Sunshine Deep: `#D99A2B` — CTA hover, italic highlights on light surfaces, sunshine-deep button hover.
+
+**Homepage changes:**
+- Hero H1 color: slate → **ink** (`#1A2028`, near-black) for maximum weight + readability.
+- "safety" italic in the H1: moss green → **sunshine deep**, italic, font-semibold.
+- Schedule a Visit button (`ScheduleVisitButton` component, all four `surface` variants): outlined clay → **filled sunshine with dark ink text**, deep-sunshine on hover.
+- Every `<GlassCard variant="white">` on the homepage → **`variant="glass"`** so cards read as true frosted glass over the warm-cream backdrop.
+- `GlassCard` `tinted` variant: mint-tinted → **sunshine-tinted frosted glass** (`rgba(253,244,222,0.55)` body with sunshine-deep-tinted border).
+- Feature-grid accent bars ("Two Futures…", "Care Shaped Around Your Family"): all 10 bars now sunshine, consistent across sections.
+- "stepping up" italic emphasis → sunshine deep; "What Becomes Possible?" italic on the dark card → sunshine.
+- "What Happens If You Do Nothing?" italic "Nothing" and "can't unsee" phrases kept in slate (problem-agitation tone) with a sunshine underline accent — warmth without making warning copy read cheery.
+
+**Inner pages (about, services, contact, next-steps) — same transforms batched:**
+- All `bg-terracotta`/`bg-terracotta-deep` horizontal accent bars → sunshine.
+- All `text-terracotta[-deep] italic` emphasis on light surfaces → sunshine-deep italic font-semibold.
+- All outlined `border-terracotta-deep` CTA buttons → filled sunshine buttons with ink text.
+- Uppercase-eyebrow pill labels (`text-terracotta` on light bg) → `text-slate-soft` for legibility.
+
+**Backdrop simplification:**
+- The 3-blob radial gradient backdrop (moss top-right + slate bottom-left + clay bottom-right) from Phase B read as "dirty" against section transitions. Replaced with a single soft sunshine wash at 88% -10% (12% opacity) over a clean `cream → bone` vertical gradient. Grain overlay preserved.
+
+**Forms left alone:** `ContactForm`, `OpenHouseForm`, and the terracotta-deep error text / required-field asterisks stay muted clay so validation states remain high-contrast and unambiguous. The `terracotta` tokens are NOT aliased to sunshine — instead, sunshine is its own explicit token and applied directly where the pop is wanted.
+
 ### Glassmorphic Redesign (April 22, 2026)
+
 Full visual refresh away from the terracotta/pink-peach palette. The site now reads modern, natural, and Mac-like.
 
 **New palette (primary tokens):**
