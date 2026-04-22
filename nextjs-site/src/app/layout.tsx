@@ -20,7 +20,7 @@ const dmSerif = DM_Serif_Display({
 })
 
 export const viewport: Viewport = {
-  themeColor: '#FFF5EB',
+  themeColor: '#F7F3EC',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -85,7 +85,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${dmSerif.variable}`}>
-      <body className="bg-cream text-forest min-h-screen font-sans antialiased">
+      <body className="text-ink min-h-screen font-sans antialiased">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

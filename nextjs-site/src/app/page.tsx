@@ -182,15 +182,15 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen">
         {/* Hero Section */}
         <HeroSection />
 
-        {/* The Problem Section (StoryBrand: Character + Problem) — WHITE */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        {/* The Problem Section (StoryBrand: Character + Problem) — floats on gradient */}
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal delay={0}>
-              <div className="space-y-6">
+              <div className="glass-panel p-8 sm:p-12 lg:p-16 space-y-6">
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
                   You&rsquo;ve noticed the changes.
                   <br />
@@ -214,9 +214,7 @@ export default function Home() {
                 </p>
 
                 <p className="font-serif text-xl sm:text-2xl text-forest font-normal">
-                  But here&rsquo;s what we know:
-                  <br />
-                  It&rsquo;s not giving up. It&rsquo;s <span className="text-terracotta-deep italic">stepping&nbsp;up</span>.
+                  But here&rsquo;s the truth: this isn&rsquo;t giving up, it&rsquo;s <span className="text-terracotta-deep italic">stepping&nbsp;up</span>.
                 </p>
 
                 <p className="text-ink-soft text-lg leading-relaxed">
@@ -233,8 +231,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Your Simple Plan Section (StoryBrand: Plan) — TERRACOTTA */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
+        {/* Your Simple Plan Section (StoryBrand: Plan) — WARM STONE */}
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-stone-50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
@@ -254,9 +252,8 @@ export default function Home() {
                   </div>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Walk through our home. Meet our team. Ask every question on your mind.
-                    We&rsquo;ll show you what daily life looks like here, introduce you to residents and caregivers,
-                    and answer honestly about everything from cost to care specifics. No pressure, no sales pitch,
-                    just real conversation.
+                    We&rsquo;ll show you what daily life looks like, introduce you to the people who live and work here,
+                    and answer honestly about cost, care, and what to expect. No pressure, no sales pitch.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -303,7 +300,7 @@ export default function Home() {
         </section>
 
         {/* What Your Parent Gets Section (Hormozi Value Stack: Outcomes) — WHITE with terracotta cards */}
-        <section id="our-home" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="our-home" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
@@ -314,7 +311,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Outcome 1 */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
+                <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     A Real Home
@@ -328,7 +325,7 @@ export default function Home() {
 
               {/* Outcome 2 */}
               <ScrollReveal delay={0.1}>
-                <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
+                <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Fresh Air and Sunshine Every&nbsp;Day
@@ -342,7 +339,7 @@ export default function Home() {
 
               {/* Outcome 3 */}
               <ScrollReveal delay={0.2}>
-                <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
+                <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Meals They Actually Look Forward&nbsp;To
@@ -356,7 +353,7 @@ export default function Home() {
 
               {/* Outcome 4 */}
               <ScrollReveal delay={0.3}>
-                <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
+                <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Attentive Care, Around the&nbsp;Clock
@@ -370,7 +367,7 @@ export default function Home() {
 
               {/* Outcome 5 */}
               <ScrollReveal delay={0.4}>
-                <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
+                <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Purpose and Joy,&nbsp;Daily
@@ -384,7 +381,7 @@ export default function Home() {
 
               {/* Outcome 6 */}
               <ScrollReveal delay={0.5}>
-                <GlassCard variant="terracotta" className="h-full p-8 flex flex-col">
+                <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     You, Welcome&nbsp;Anytime
@@ -400,7 +397,7 @@ export default function Home() {
         </section>
 
         {/* Care That Meets Your Family Section (Outcome-Focused Services) — TERRACOTTA */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
@@ -494,7 +491,7 @@ export default function Home() {
         </section>
 
         {/* The Stakes Section (StoryBrand: Failure + Success Vision) — WHITE, terracotta risk / forest possibility cards */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
@@ -504,7 +501,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
               {/* Left: Failure / What's at Risk */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="terracotta" className="p-8 sm:p-10 h-full">
+                <GlassCard variant="tinted" className="p-8 sm:p-10 h-full">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta rounded-full" />
@@ -558,7 +555,7 @@ export default function Home() {
         </section>
 
         {/* Open House Section */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">You&rsquo;re Invited</p>
@@ -568,7 +565,7 @@ export default function Home() {
               <p className="text-ink-soft text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
                 Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. We&rsquo;ll have light refreshments available.
               </p>
-              <p className="inline-block bg-white text-terracotta-light font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
+              <p className="inline-block bg-[color:var(--color-clay)] text-[color:var(--color-bone)] font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
             </div>
 
             <ScrollReveal>
@@ -580,7 +577,7 @@ export default function Home() {
         </section>
 
         {/* You're Not Doing This Alone Section (Guides) — WHITE with terracotta cards */}
-        <section id="our-team" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="our-team" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Our Team</p>
@@ -595,7 +592,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto items-stretch">
               {/* Team Member 1: Becca Pitts */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="terracotta" className="p-8 sm:p-10 text-center h-full flex flex-col">
+                <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
                     className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
@@ -614,7 +611,7 @@ export default function Home() {
 
               {/* Team Member 2: Daniela Torkelson */}
               <ScrollReveal delay={0.1}>
-                <GlassCard variant="terracotta" className="p-8 sm:p-10 text-center h-full flex flex-col">
+                <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
                     className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
@@ -635,7 +632,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section (Marquee) — TERRACOTTA */}
-        <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-terracotta-light overflow-hidden">
+        <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-transparent overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">In Their Own Words</p>
@@ -649,7 +646,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section — WHITE */}
-        <section id="faq" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="faq" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
@@ -663,9 +660,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Final CTA Section — TERRACOTTA */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+        {/* Final CTA Section — floats on gradient */}
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
+          <div className="max-w-4xl mx-auto glass-panel p-8 sm:p-12 lg:p-16 text-center space-y-8">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
               Most Families Wait Until a&nbsp;<span className="text-terracotta italic">Crisis</span>.
               <br />
