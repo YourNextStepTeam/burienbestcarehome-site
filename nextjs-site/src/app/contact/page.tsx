@@ -99,7 +99,7 @@ export default function Contact() {
       </section>
 
       {/* Reach Out Section - Rebuilt: no icons, split layout with map */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12 sm:mb-16">
@@ -183,7 +183,7 @@ export default function Contact() {
       </section>
 
       {/* Schedule a Visit Form Section */}
-      <section id="visit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-light scroll-mt-20">
+      <section id="visit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-10">
@@ -207,7 +207,7 @@ export default function Contact() {
 
 
       {/* What to Expect Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -224,7 +224,7 @@ export default function Contact() {
           <div className="space-y-5">
             {visitSteps.map((step, index) => (
               <ScrollReveal key={index} delay={index * 0.08}>
-                <GlassCard variant="terracotta" className="p-6 sm:p-8">
+                <GlassCard variant="tinted" className="p-6 sm:p-8">
                   <div className="flex items-start gap-5 sm:gap-6">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-terracotta/20 border-2 border-terracotta/40 font-serif text-2xl sm:text-3xl font-normal text-forest shadow-sm">
@@ -248,7 +248,7 @@ export default function Contact() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-terracotta-light">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -330,7 +330,7 @@ export default function Contact() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
