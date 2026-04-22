@@ -194,7 +194,7 @@ export default function Home() {
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
                   You&rsquo;ve noticed the changes.
                   <br />
-                  And you <span className="text-terracotta">can&rsquo;t unsee</span> them.
+                  And you <span className="italic text-[color:var(--color-slate)] underline decoration-2 underline-offset-4 decoration-[color:var(--color-sunshine-deep)]">can&rsquo;t unsee</span> them.
                 </h2>
 
                 <p className="text-ink-soft text-lg leading-relaxed">
@@ -214,7 +214,7 @@ export default function Home() {
                 </p>
 
                 <p className="font-serif text-xl sm:text-2xl text-forest font-normal">
-                  But here&rsquo;s the truth: this isn&rsquo;t giving up, it&rsquo;s <span className="text-terracotta-deep italic">stepping&nbsp;up</span>.
+                  But here&rsquo;s the truth: this isn&rsquo;t giving up, it&rsquo;s <span className="text-[color:var(--color-sunshine-deep)] italic font-semibold">stepping&nbsp;up</span>.
                 </p>
 
                 <p className="text-ink-soft text-lg leading-relaxed">
@@ -243,7 +243,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Step 1 */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">1</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
@@ -260,7 +260,7 @@ export default function Home() {
 
               {/* Step 2 */}
               <ScrollReveal delay={0.1}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">2</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
@@ -277,7 +277,7 @@ export default function Home() {
 
               {/* Step 3 */}
               <ScrollReveal delay={0.2}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">3</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
@@ -312,7 +312,7 @@ export default function Home() {
               {/* Outcome 1 */}
               <ScrollReveal delay={0}>
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     A Real Home
                   </h3>
@@ -326,7 +326,7 @@ export default function Home() {
               {/* Outcome 2 */}
               <ScrollReveal delay={0.1}>
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Fresh Air and Sunshine Every&nbsp;Day
                   </h3>
@@ -340,7 +340,7 @@ export default function Home() {
               {/* Outcome 3 */}
               <ScrollReveal delay={0.2}>
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Meals They Actually Look Forward&nbsp;To
                   </h3>
@@ -354,7 +354,7 @@ export default function Home() {
               {/* Outcome 4 */}
               <ScrollReveal delay={0.3}>
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Attentive Care, Around the&nbsp;Clock
                   </h3>
@@ -368,7 +368,7 @@ export default function Home() {
               {/* Outcome 5 */}
               <ScrollReveal delay={0.4}>
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     Purpose and Joy,&nbsp;Daily
                   </h3>
@@ -382,7 +382,7 @@ export default function Home() {
               {/* Outcome 6 */}
               <ScrollReveal delay={0.5}>
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-terracotta rounded-full mb-5" />
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
                     You, Welcome&nbsp;Anytime
                   </h3>
@@ -408,8 +408,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Memory Care */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Memory Care
                   </h3>
@@ -420,7 +420,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#memory-care"
-                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
+                    className="inline-flex items-center text-forest hover:text-[color:var(--color-sunshine-deep)] font-semibold underline underline-offset-4 decoration-2 decoration-[color:var(--color-sunshine)]/60 hover:decoration-[color:var(--color-sunshine-deep)] transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -429,8 +429,8 @@ export default function Home() {
 
               {/* Daily Living Assistance */}
               <ScrollReveal delay={0.1}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Daily Living Assistance
                   </h3>
@@ -440,7 +440,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#daily-living"
-                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
+                    className="inline-flex items-center text-forest hover:text-[color:var(--color-sunshine-deep)] font-semibold underline underline-offset-4 decoration-2 decoration-[color:var(--color-sunshine)]/60 hover:decoration-[color:var(--color-sunshine-deep)] transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -449,8 +449,8 @@ export default function Home() {
 
               {/* Respite Care */}
               <ScrollReveal delay={0.2}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Respite Care
                   </h3>
@@ -460,7 +460,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#respite-care"
-                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
+                    className="inline-flex items-center text-forest hover:text-[color:var(--color-sunshine-deep)] font-semibold underline underline-offset-4 decoration-2 decoration-[color:var(--color-sunshine)]/60 hover:decoration-[color:var(--color-sunshine-deep)] transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -469,8 +469,8 @@ export default function Home() {
 
               {/* Post-Hospital Recovery */}
               <ScrollReveal delay={0.3}>
-                <GlassCard variant="white" className="h-full p-8 flex flex-col">
-                  <div aria-hidden="true" className="w-12 h-1 bg-sage rounded-full mb-5" />
+                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                  <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Post-Hospital Recovery
                   </h3>
@@ -480,7 +480,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services#recovery"
-                    className="inline-flex items-center text-forest hover:text-terracotta-deep font-semibold underline underline-offset-4 decoration-2 decoration-sage hover:decoration-terracotta-deep transition-colors"
+                    className="inline-flex items-center text-forest hover:text-[color:var(--color-sunshine-deep)] font-semibold underline underline-offset-4 decoration-2 decoration-[color:var(--color-sunshine)]/60 hover:decoration-[color:var(--color-sunshine-deep)] transition-colors"
                   >
                     Learn More <span aria-hidden="true" className="ml-2">&rarr;</span>
                   </Link>
@@ -504,11 +504,11 @@ export default function Home() {
                 <GlassCard variant="tinted" className="p-8 sm:p-10 h-full">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta rounded-full" />
+                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-slate)] rounded-full" />
                       <span className="uppercase tracking-widest text-xs font-semibold text-ink-soft">The Risk</span>
                     </div>
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
-                      What Happens If You Do <span className="text-terracotta italic">Nothing</span>?
+                      What Happens If You Do <span className="italic text-[color:var(--color-slate)] underline decoration-2 underline-offset-4 decoration-[color:var(--color-sunshine-deep)]">Nothing</span>?
                     </h3>
                     <div className="text-left space-y-4 text-ink-soft leading-relaxed">
                       <p>
@@ -530,11 +530,11 @@ export default function Home() {
                 <div className="rounded-2xl bg-forest border border-sage/40 shadow-lg p-8 sm:p-10 h-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-sage rounded-full" />
-                      <span className="uppercase tracking-widest text-xs font-semibold text-sage-light">The Possibility</span>
+                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
+                      <span className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-sunshine)]">The Possibility</span>
                     </div>
                     <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white leading-tight">
-                      What Becomes <span className="text-sage-light italic">Possible</span>?
+                      What Becomes <span className="text-[color:var(--color-sunshine)] italic">Possible</span>?
                     </h3>
                     <div className="text-left space-y-4 text-white/90 leading-relaxed">
                       <p>
@@ -558,7 +558,7 @@ export default function Home() {
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">You&rsquo;re Invited</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-[color:var(--color-slate-soft)] mb-3">You&rsquo;re Invited</p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
                 Community Open House
               </h2>
@@ -569,7 +569,7 @@ export default function Home() {
             </div>
 
             <ScrollReveal>
-              <GlassCard variant="white" className="p-6 sm:p-10">
+              <GlassCard variant="glass" className="p-6 sm:p-10">
                 <OpenHouseForm />
               </GlassCard>
             </ScrollReveal>

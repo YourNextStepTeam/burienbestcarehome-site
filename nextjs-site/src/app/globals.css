@@ -9,16 +9,18 @@
   --color-moss-light: #8FA58B;     /* brighter moss — hover / highlights */
   --color-fog: #E8ECE6;            /* cool pale green-tinted fog */
   --color-bone: #FDFBF7;           /* bone white — glass panel tint */
-  --color-clay: #B8876B;           /* muted clay — rare warm pop */
-  --color-clay-deep: #8F6245;      /* deep clay — hover on warm CTAs */
+  --color-clay: #B8876B;           /* muted clay — kept muted for form error/validation visibility */
+  --color-clay-deep: #8F6245;      /* deep clay — errors, outlined warnings */
+  --color-sunshine: #F3B94D;       /* lemons-in-a-glass-bowl yellow — the pop/accent color */
+  --color-sunshine-deep: #D99A2B;  /* deep sunshine — button hover / punchy italics */
 
   /* Backwards-compatible aliases — legacy utility classes resolve to the new palette */
   --color-sage: #4A5560;            /* neutralized: legacy text-sage/bg-sage now reads as subtle dark ink, not green */
   --color-sage-light: #F0EBE2;      /* neutralized: legacy bg-sage-light/text-sage-light now reads as warm parchment, not mint */
   --color-cream: #F7F3EC;           /* warm cream — page base */
-  --color-terracotta: #B8876B;      /* was orange terracotta, now muted clay */
-  --color-terracotta-light: #E8ECE6; /* was pink-peach, now cool fog */
-  --color-terracotta-deep: #8F6245; /* deep clay */
+  --color-terracotta: #B8876B;      /* kept muted clay so form validation asterisks/errors stay readable */
+  --color-terracotta-light: #E8ECE6; /* cool fog for tinted surfaces */
+  --color-terracotta-deep: #8F6245; /* deep clay — form error text color */
   --color-forest: #2D3E4A;          /* was forest green, now deep slate (kills green H1s) */
   --color-ink: #1A2028;             /* near-black */
   --color-ink-soft: #4A5560;        /* body text soft */
@@ -55,10 +57,10 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 82% 8%, rgba(143, 165, 139, 0.22) 0%, transparent 38%),
-    radial-gradient(circle at 8% 92%, rgba(45, 62, 74, 0.16) 0%, transparent 42%),
-    radial-gradient(circle at 92% 78%, rgba(184, 135, 107, 0.10) 0%, transparent 34%),
-    linear-gradient(180deg, var(--color-cream) 0%, var(--color-fog) 100%);
+    /* single soft sunshine warmth top-right, just enough to give depth */
+    radial-gradient(ellipse at 88% -10%, rgba(243, 185, 77, 0.12) 0%, transparent 55%),
+    /* base warm cream→bone top-to-bottom wash */
+    linear-gradient(180deg, var(--color-cream) 0%, var(--color-bone) 100%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
