@@ -51,14 +51,13 @@ export default function HeroSection() {
         className="absolute inset-0 object-cover"
       />
 
-      {/* Layered gradient overlay — heavier base contrast so headline text carries on any photo */}
+      {/*
+         Minimal vignette — just enough to ground the centered glass panel without
+         dulling the home photo. No more full-frame slate overlay.
+       */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-br from-forest/80 via-forest/65 to-forest/85"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/20"
+        className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
       />
 
       {/* Content Container */}
@@ -68,14 +67,14 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        {/* Glassmorphism Panel — brand-tinted (forest to sage) for both legibility and on-brand feel */}
+        {/* True frosted glass — backdrop blur over the photo, subtle warm bone tint, bright border to catch the light. Photo warmth comes THROUGH the panel. */}
         <motion.div
-          className="max-w-2xl w-full backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10"
+          className="max-w-2xl w-full backdrop-blur-2xl backdrop-saturate-150 bg-[rgba(253,251,247,0.32)] border border-white/55 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/20"
           variants={itemVariants}
         >
           {/* Eyebrow — plain text, centered so left/right padding inside the glass panel is equal */}
           <motion.p
-            className="text-white/90 text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 text-center drop-shadow-sm"
+            className="text-[color:var(--color-slate-soft)] text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 text-center"
             variants={itemVariants}
           >
             <span className="whitespace-nowrap">For families in Burien, Kent, Renton &amp; across King County</span>
@@ -84,17 +83,17 @@ export default function HeroSection() {
           {/* Headline — "safety" highlighted in brand sage; intentional break for breathing room */}
           <motion.h1
             id="hero-headline"
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white mb-6 leading-[1.1] drop-shadow-lg"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-[color:var(--color-slate)] mb-6 leading-[1.1]"
             variants={itemVariants}
           >
-            Your parent&rsquo;s <span className="text-sage-light italic">safety</span>
+            Your parent&rsquo;s <span className="italic text-[color:var(--color-moss)]">safety</span>
             <br />
             shouldn&rsquo;t keep you up at&nbsp;night.
           </motion.h1>
 
           {/* Supporting Paragraph — promise of ongoing care, not just one decision */}
           <motion.p
-            className="text-base sm:text-lg lg:text-xl text-white mb-8 leading-relaxed drop-shadow"
+            className="text-base sm:text-lg lg:text-xl text-[color:var(--color-ink)] mb-8 leading-relaxed"
             variants={itemVariants}
           >
             You&rsquo;ve noticed the changes. Your parent needs more help than living alone can safely provide.
@@ -108,25 +107,25 @@ export default function HeroSection() {
             className="flex justify-center mb-8"
             variants={itemVariants}
           >
-            <ScheduleVisitButton surface="on-dark" />
+            <ScheduleVisitButton surface="on-white" />
           </motion.div>
 
           {/* Trust Badges */}
           <motion.ul
             aria-label="Trust signals"
-            className="flex flex-wrap gap-x-5 gap-y-2 text-white/90 text-sm"
+            className="flex flex-wrap gap-x-5 gap-y-2 text-[color:var(--color-ink-soft)] text-sm"
             variants={itemVariants}
           >
             <li className="flex items-center gap-2">
-              <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
+              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[color:var(--color-moss)]" />
               Licensed by WA State DSHS
             </li>
             <li className="flex items-center gap-2">
-              <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
+              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[color:var(--color-moss)]" />
               24/7 Care
             </li>
             <li className="flex items-center gap-2">
-              <span aria-hidden="true" className="w-2 h-2 bg-sage rounded-full" />
+              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[color:var(--color-moss)]" />
               Max 8 Residents
             </li>
           </motion.ul>
