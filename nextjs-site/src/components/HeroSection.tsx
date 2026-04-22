@@ -41,11 +41,10 @@ export default function HeroSection() {
       aria-labelledby="hero-headline"
       className="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden"
     >
-      {/* Warm home background — replacing clinical imagery with a bright, welcoming interior */}
+      {/* Actual photo of Burien Best Care Home */}
       <Image
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80&auto=format&fit=crop"
-        alt=""
-        role="presentation"
+        src="/hero-home.jpg"
+        alt="Burien Best Care Home, a welcoming gray craftsman-style adult family home with a covered porch"
         fill
         priority
         sizes="100vw"
