@@ -120,7 +120,7 @@ export default function Contact() {
                 <div className="space-y-8 flex-grow">
                   {/* Phone - Placeholder */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-2">Call Us</p>
+                    <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Call Us</p>
                     <p className="font-serif text-3xl sm:text-4xl text-forest/50 block leading-tight">
                       Phone number coming soon
                     </p>
@@ -131,10 +131,10 @@ export default function Contact() {
 
                   {/* Email */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-2">Email Us</p>
+                    <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Email Us</p>
                     <a
                       href="mailto:info@burienbestcarehome.com"
-                      className="font-serif text-2xl sm:text-3xl text-forest hover:text-terracotta transition-colors block break-all leading-tight"
+                      className="font-serif text-2xl sm:text-3xl text-forest hover:text-[color:var(--color-sunshine-deep)] transition-colors block break-all leading-tight"
                     >
                       info@burienbestcarehome.com
                     </a>
@@ -145,7 +145,7 @@ export default function Contact() {
 
                   {/* Hours */}
                   <div>
-                    <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-2">Care Hours</p>
+                    <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Care Hours</p>
                     <p className="font-serif text-2xl sm:text-3xl text-forest leading-tight">
                       24/7 Care
                     </p>
@@ -158,7 +158,7 @@ export default function Contact() {
                 <div className="mt-8 pt-6 border-t border-terracotta/20 flex flex-col sm:flex-row gap-3">
                   <a
                     href="mailto:info@burienbestcarehome.com"
-                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 border-2 border-terracotta-deep text-terracotta-deep font-semibold rounded-lg hover:bg-terracotta-deep hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/70"
+                    className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 border-2 bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold rounded-lg hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/70"
                   >
                     Email Us
                   </a>
@@ -169,7 +169,7 @@ export default function Contact() {
             {/* Address Section */}
             <ScrollReveal delay={0.1}>
               <GlassCard variant="white" className="p-6 sm:p-8 h-full flex flex-col">
-                <p className="uppercase tracking-widest text-xs font-semibold text-terracotta mb-1">Located in</p>
+                <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-1">Located in</p>
                 <p className="font-serif text-2xl text-forest leading-tight mb-3">
                   Burien, Washington
                 </p>
@@ -263,7 +263,7 @@ export default function Contact() {
             <ScrollReveal delay={0}>
               <GlassCard variant="white" className="p-8 h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
+                  <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                 </div>
                 <h3 className="font-serif text-2xl text-forest mb-3 leading-tight">
                   Your Best Season
@@ -275,7 +275,7 @@ export default function Contact() {
                   href="https://www.yourbestseason.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center min-h-12 px-6 py-3 border-2 border-terracotta-deep text-terracotta-deep font-semibold rounded-lg hover:bg-terracotta-deep hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/40"
+                  className="inline-flex items-center justify-center min-h-12 px-6 py-3 border-2 bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold rounded-lg hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/40"
                 >
                   Visit Website &rarr;
                 </a>
@@ -285,7 +285,7 @@ export default function Contact() {
             <ScrollReveal delay={0.1}>
               <GlassCard variant="white" className="p-8 h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
+                  <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                 </div>
                 <h3 className="font-serif text-2xl text-forest mb-3 leading-tight">
                   Your Next Step Home
@@ -297,7 +297,7 @@ export default function Contact() {
                   href="https://www.yournextstephome.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center min-h-12 px-6 py-3 border-2 border-terracotta-deep text-terracotta-deep font-semibold rounded-lg hover:bg-terracotta-deep hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/40"
+                  className="inline-flex items-center justify-center min-h-12 px-6 py-3 border-2 bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold rounded-lg hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/40"
                 >
                   Visit Website &rarr;
                 </a>
@@ -307,7 +307,7 @@ export default function Contact() {
             <ScrollReveal delay={0.2}>
               <GlassCard variant="white" className="p-8 h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
+                  <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                 </div>
                 <h3 className="font-serif text-2xl text-forest mb-3 leading-tight">
                   Washington State DSHS
@@ -319,7 +319,7 @@ export default function Contact() {
                   href="https://dshs.wa.gov"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center min-h-12 px-6 py-3 border-2 border-terracotta-deep text-terracotta-deep font-semibold rounded-lg hover:bg-terracotta-deep hover:text-white transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/40"
+                  className="inline-flex items-center justify-center min-h-12 px-6 py-3 border-2 bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold rounded-lg hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/40"
                 >
                   Visit Website &rarr;
                 </a>
@@ -334,7 +334,7 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
-              Your Family Deserves&nbsp;<span className="text-terracotta-deep italic">Peace of Mind</span>.
+              Your Family Deserves&nbsp;<span className="text-[color:var(--color-sunshine-deep)] italic font-semibold">Peace of Mind</span>.
             </h2>
           </ScrollReveal>
 
