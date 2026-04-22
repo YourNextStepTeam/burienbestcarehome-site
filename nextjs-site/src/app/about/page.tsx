@@ -130,7 +130,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">Our Promises</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-[color:var(--color-slate-soft)] mb-3">Our Promises</p>
               <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
                 What We Promise Your Family
               </h2>
@@ -142,7 +142,7 @@ export default function About() {
               <ScrollReveal key={index} delay={index * 0.1}>
                 <GlassCard variant="white" className="p-8 sm:p-10 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                   </div>
                   <h3 className="font-serif text-2xl sm:text-3xl text-forest mb-4 leading-tight">
                     {promise.title}
