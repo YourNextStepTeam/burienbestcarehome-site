@@ -467,7 +467,7 @@ export default function ServicesPage() {
         <ScrollReveal delay={0.5} className="w-full">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">The Difference</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-[color:var(--color-slate-soft)] mb-3">The Difference</p>
               <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest leading-tight">
                 Why Families Choose a Home&nbsp;Over a&nbsp;Facility
               </h2>
@@ -478,7 +478,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.6} direction="up">
                 <GlassCard variant="white" className="p-8 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Personalized Care Plans
@@ -493,7 +493,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.7} direction="up">
                 <GlassCard variant="white" className="p-8 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     True Partnership in Care
@@ -508,7 +508,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.8} direction="up">
                 <GlassCard variant="white" className="p-8 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-terracotta-deep rounded-full" />
+                    <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
                   </div>
                   <h3 className="text-2xl font-serif font-normal text-forest mb-4 leading-tight">
                     Known by Name and Heart
@@ -528,7 +528,7 @@ export default function ServicesPage() {
         <ScrollReveal delay={0.9} className="w-full">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-forest mb-6 leading-tight">
-              Your Parent Deserves Care&nbsp;That Feels Like&nbsp;<span className="text-terracotta-deep italic">Home</span>.
+              Your Parent Deserves Care&nbsp;That Feels Like&nbsp;<span className="text-[color:var(--color-sunshine-deep)] italic font-semibold">Home</span>.
             </h2>
             <p className="text-lg sm:text-xl text-ink-soft leading-relaxed mb-10">
               Whether you&rsquo;re planning ahead or need support right now, let&rsquo;s talk about what your family actually&nbsp;needs.
