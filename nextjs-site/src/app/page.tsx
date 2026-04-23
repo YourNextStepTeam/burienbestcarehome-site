@@ -232,12 +232,7 @@ export default function Home() {
         </section>
 
         {/* Your Simple Plan Section (StoryBrand: Plan) — WARM STONE */}
-        <section className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          {/* Subtle ambient wash so the glass cards have color variance to blur */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 left-1/3 w-[500px] h-[400px] rounded-full bg-[rgba(143,165,139,0.18)] blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-[460px] h-[380px] rounded-full bg-[rgba(45,62,74,0.12)] blur-3xl" />
-          </div>
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
@@ -248,7 +243,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Step 1 */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">1</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
@@ -265,7 +260,7 @@ export default function Home() {
 
               {/* Step 2 */}
               <ScrollReveal delay={0.1}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">2</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
@@ -282,7 +277,7 @@ export default function Home() {
 
               {/* Step 3 */}
               <ScrollReveal delay={0.2}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">3</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
@@ -305,13 +300,7 @@ export default function Home() {
         </section>
 
         {/* What Your Parent Gets Section (Hormozi Value Stack: Outcomes) — WHITE with terracotta cards */}
-        <section id="our-home" className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          {/* Ambient color wash — kept off the cards so they read as clean frost (no yellow bleed-through) */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[620px] h-[320px] rounded-full bg-[rgba(143,165,139,0.22)] blur-3xl" />
-            <div className="absolute -bottom-24 right-1/4 w-[520px] h-[360px] rounded-full bg-[rgba(90,110,88,0.18)] blur-3xl" />
-            <div className="absolute -bottom-16 left-0 w-[420px] h-[320px] rounded-full bg-[rgba(45,62,74,0.10)] blur-3xl" />
-          </div>
+        <section id="our-home" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
@@ -408,13 +397,7 @@ export default function Home() {
         </section>
 
         {/* Care That Meets Your Family Section (Outcome-Focused Services) — TERRACOTTA */}
-        <section className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          {/* Ambient color wash — clay + moss edge glows, no yellow over cards */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute -top-16 right-0 w-[500px] h-[380px] rounded-full bg-[rgba(184,135,107,0.16)] blur-3xl" />
-            <div className="absolute top-1/2 -left-24 w-[500px] h-[400px] rounded-full bg-[rgba(90,110,88,0.18)] blur-3xl" />
-            <div className="absolute -bottom-24 right-0 w-[460px] h-[360px] rounded-full bg-[rgba(143,165,139,0.14)] blur-3xl" />
-          </div>
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
@@ -425,7 +408,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Memory Care */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Memory Care
@@ -446,7 +429,7 @@ export default function Home() {
 
               {/* Daily Living Assistance */}
               <ScrollReveal delay={0.1}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Daily Living Assistance
@@ -466,7 +449,7 @@ export default function Home() {
 
               {/* Respite Care */}
               <ScrollReveal delay={0.2}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Respite Care
@@ -486,7 +469,7 @@ export default function Home() {
 
               {/* Post-Hospital Recovery */}
               <ScrollReveal delay={0.3}>
-                <GlassCard variant="glass" className="h-full p-8 flex flex-col">
+                <GlassCard variant="solid" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest mb-4 leading-tight">
                     Post-Hospital Recovery
@@ -532,7 +515,7 @@ export default function Home() {
                         A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
                       </p>
                       <p>
-                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make crisis decisions instead of thoughtful&nbsp;ones.
+                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make <span className="italic font-semibold text-[color:var(--color-sunshine-deep)]">crisis</span> decisions instead of thoughtful&nbsp;ones.
                       </p>
                       <p>
                         And the relationship shifts. Instead of being their child, you become their worried guardian, managing crisis after crisis. You both&nbsp;suffer.
@@ -582,13 +565,14 @@ export default function Home() {
               <p className="text-ink-soft text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
                 Join us for a tour of our home, meet our caregiving team, and see firsthand what makes Burien Best Care Home different. We&rsquo;ll have light refreshments available.
               </p>
-              <p className="inline-block bg-[color:var(--color-clay)] text-[color:var(--color-bone)] font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
+              <p className="inline-block bg-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold text-base px-5 py-2 rounded-full shadow-sm">Date Coming Soon</p>
             </div>
 
             <ScrollReveal>
-              <GlassCard variant="glass" className="p-6 sm:p-10">
-                <OpenHouseForm />
-              </GlassCard>
+              {/* Slate conversion panel — the most important form on the page gets the heaviest visual treatment */}
+              <div className="rounded-2xl bg-forest border border-sage/30 shadow-xl p-6 sm:p-10">
+                <OpenHouseForm onDark />
+              </div>
             </ScrollReveal>
           </div>
         </section>
@@ -612,14 +596,14 @@ export default function Home() {
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
+                    className="w-28 h-28 rounded-full bg-[color:var(--color-sunshine)]/25 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-[color:var(--color-ink)] border-4 border-[color:var(--color-sunshine)]/40 shadow-inner"
                   >
                     BP
                   </div>
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Becca Pitts
                   </h3>
-                  <p className="text-terracotta font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. When you visit, Becca will listen to your story and help you find the right solution for your&nbsp;family.
                   </p>
@@ -631,14 +615,14 @@ export default function Home() {
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div
                     aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
+                    className="w-28 h-28 rounded-full bg-[color:var(--color-sunshine)]/25 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-[color:var(--color-ink)] border-4 border-[color:var(--color-sunshine)]/40 shadow-inner"
                   >
                     DT
                   </div>
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Daniela Torkelson
                   </h3>
-                  <p className="text-terracotta font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>
