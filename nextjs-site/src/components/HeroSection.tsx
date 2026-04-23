@@ -74,10 +74,10 @@ export default function HeroSection() {
         >
           {/* Eyebrow — plain text, centered so left/right padding inside the glass panel is equal */}
           <motion.p
-            className="text-[color:var(--color-slate-soft)] text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 text-center"
+            className="text-[color:var(--color-slate-soft)] text-[11px] sm:text-xs lg:text-sm font-semibold uppercase tracking-[0.18em] mb-5 text-center text-balance max-w-[34ch] mx-auto"
             variants={itemVariants}
           >
-            <span className="whitespace-nowrap">For families in Burien, Kent, Renton &amp; across King County</span>
+            For families in Burien, Kent, Renton &amp; across King County
           </motion.p>
 
           {/* Headline — "safety" highlighted in brand sage; intentional break for breathing room */}
