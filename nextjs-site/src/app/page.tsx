@@ -306,11 +306,11 @@ export default function Home() {
 
         {/* What Your Parent Gets Section (Hormozi Value Stack: Outcomes) — WHITE with terracotta cards */}
         <section id="our-home" className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          {/* Ambient color wash behind the glass cards — gives backdrop-blur something to catch */}
+          {/* Ambient color wash — kept off the cards so they read as clean frost (no yellow bleed-through) */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute -top-16 left-1/4 w-[520px] h-[420px] rounded-full bg-[rgba(143,165,139,0.28)] blur-3xl" />
-            <div className="absolute top-1/3 right-0 w-[460px] h-[380px] rounded-full bg-[rgba(243,185,77,0.22)] blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-[420px] h-[360px] rounded-full bg-[rgba(45,62,74,0.12)] blur-3xl" />
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[620px] h-[320px] rounded-full bg-[rgba(143,165,139,0.22)] blur-3xl" />
+            <div className="absolute -bottom-24 right-1/4 w-[520px] h-[360px] rounded-full bg-[rgba(90,110,88,0.18)] blur-3xl" />
+            <div className="absolute -bottom-16 left-0 w-[420px] h-[320px] rounded-full bg-[rgba(45,62,74,0.10)] blur-3xl" />
           </div>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
@@ -409,11 +409,11 @@ export default function Home() {
 
         {/* Care That Meets Your Family Section (Outcome-Focused Services) — TERRACOTTA */}
         <section className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          {/* Ambient color wash — different position so the two sections feel distinct */}
+          {/* Ambient color wash — clay + moss edge glows, no yellow over cards */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 right-1/4 w-[480px] h-[400px] rounded-full bg-[rgba(184,135,107,0.20)] blur-3xl" />
-            <div className="absolute top-1/2 left-0 w-[500px] h-[400px] rounded-full bg-[rgba(90,110,88,0.20)] blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-[460px] h-[380px] rounded-full bg-[rgba(243,185,77,0.16)] blur-3xl" />
+            <div className="absolute -top-16 right-0 w-[500px] h-[380px] rounded-full bg-[rgba(184,135,107,0.16)] blur-3xl" />
+            <div className="absolute top-1/2 -left-24 w-[500px] h-[400px] rounded-full bg-[rgba(90,110,88,0.18)] blur-3xl" />
+            <div className="absolute -bottom-24 right-0 w-[460px] h-[360px] rounded-full bg-[rgba(143,165,139,0.14)] blur-3xl" />
           </div>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
