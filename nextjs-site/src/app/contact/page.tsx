@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Contact Us | Schedule a Visit',
     description:
       'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family.',
-    url: 'https://burienbestcarehome.com/contact',
+    url: 'https://burienbestcarehome.site/contact',
     type: 'website',
   },
   twitter: {
@@ -133,10 +133,10 @@ export default function Contact() {
                   <div>
                     <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Email Us</p>
                     <a
-                      href="mailto:info@burienbestcarehome.com"
+                      href="mailto:info@burienbestcarehome.site"
                       className="font-serif text-2xl sm:text-3xl text-forest hover:text-[color:var(--color-sunshine-deep)] transition-colors block break-all leading-tight"
                     >
-                      info@burienbestcarehome.com
+                      info@burienbestcarehome.site
                     </a>
                     <p className="text-sm text-ink-soft mt-1">We respond within 24&nbsp;hours</p>
                   </div>
@@ -157,7 +157,7 @@ export default function Contact() {
 
                 <div className="mt-8 pt-6 border-t border-terracotta/20 flex flex-col sm:flex-row gap-3">
                   <a
-                    href="mailto:info@burienbestcarehome.com"
+                    href="mailto:info@burienbestcarehome.site"
                     className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 border-2 bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold rounded-lg hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/70"
                   >
                     Email Us
@@ -370,13 +370,13 @@ export default function Contact() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://burienbestcarehome.com',
+                item: 'https://burienbestcarehome.site',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Contact Us',
-                item: 'https://burienbestcarehome.com/contact',
+                item: 'https://burienbestcarehome.site/contact',
               },
             ],
           }),
