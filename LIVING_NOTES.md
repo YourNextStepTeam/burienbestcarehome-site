@@ -114,3 +114,21 @@ Migrated from static HTML/CSS/JS to Next.js:
 - `/next-steps` exists as stub — needs full buildout
 - Accessibility audit pass + CTA functional QA still pending
 - Schema markup overhaul site-wide still pending
+
+## Phase D Glass Overhaul (April 22, 2026)
+Brett's feedback after Phase C shipped: the "What Life Looks Like" card cluster (Attentive Care / Purpose and Joy Daily / You Welcome Anytime) still read as eggshell-yellow boxes, and the glass effect wasn't catching anywhere. He explicitly called out the Memory Care / Daily Living Assistance cards as the look he wanted — those were already `variant="glass"`, the unlovely ones were `variant="tinted"`.
+
+**Root cause:** Two issues compounded.
+1. The `tinted` variant still used a warm `rgba(253,244,222,0.55)` fill with a sunshine-deep border — effectively an eggshell swatch, not glass.
+2. Even the `glass` variant had no color variance to catch because the body backdrop was a uniform soft wash. `backdrop-blur` only reads as glass when there's something colored behind it to diffuse.
+
+**Fix (shipped in 2 commits on master):**
+1. `GlassCard.tsx`: rewrote BOTH `tinted` and `glass` to the same Apple-style frosted-glass formula — `backdrop-blur-2xl backdrop-saturate-200` on `bg-white/35` (tinted) / `bg-white/40` (glass), bright `border-white/60-65`, strong inset highlight, slate-tinted drop shadow. The two variants are now effectively identical treatments with only ~5% opacity differential, so the Attentive Care cluster now looks the same as the Memory Care cluster — which is exactly what Brett asked for.
+2. `page.tsx`: dropped `bg-stone-50` from the Three Steps section, added `relative bg-transparent` to three sections (Three Steps, What Life Looks Like, Care Shaped Around Your Family), and injected 2–3 blurred colored blobs per section as ambient sectional washes. Moss + sunshine + slate-tint behind What Life Looks Like; clay + moss + sunshine behind Care Shaped; moss + slate behind Three Steps. Each blob is `absolute` inside a `pointer-events-none` overlay container so they sit behind the cards without affecting click targets.
+
+**Why this works:** The ambient blobs give the backdrop-blur filter actual color variance to diffuse, so the cards now read as frosted glass floating over colored light — the Apple / visionOS look Brett's been asking for. Because both variants use the same frost formula, the "two card clusters look the same" feedback is resolved by design, not by guessing which variant is which.
+
+**Note on `tinted` variant semantics:** `tinted` is retained as a named variant for future flexibility (e.g. if we want to differentiate clusters later with a slight color shift), but currently points at the same formula as `glass`. If we later want visual differentiation between card clusters, reintroduce a subtle hue (maybe 8% moss or 6% clay tint) instead of a full eggshell fill — the ambient washes behind the section should do most of the differentiation work.
+
+### Phase D.2 — body-level sunshine radial removed (April 22, 2026)
+After Phase D's glass overhaul landed, live screenshots still showed yellow behind right-column cards. Traced to the body-level `radial-gradient(ellipse at 88% -10%, rgba(243,185,77,0.12))` with `background-attachment: fixed` — this was painting a sunshine wash over the right edge of every viewport regardless of which section was on screen. Removed entirely from `globals.css`. Body is now pure cream→bone linear gradient + grain overlay. Sunshine accent color lives exclusively in CTA buttons + italic accent words ("safety", "can't unsee", "stepping up"). Cards now read as clean cream-frost everywhere.

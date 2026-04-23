@@ -131,3 +131,34 @@ Complete Next.js website rebuild for Burien Best Care Home (burienbestcarehome.c
 - Open Graph meta tags
 - Meta descriptions targeting local keywords
 - Semantic HTML5 structure
+
+---
+
+## April 22, 2026 — Phase D: Fix tinted cards + make glass actually frost
+
+**User feedback after Phase C:**
+> "The eggshell yellow backgrounds on the text boxes... the color seems ugly."
+> "I'm not seeing a glassmorphic effect on any of these other boxes still."
+> "I like the color of the boxes for memory care and the daily living assistance boxes. What I don't like is that yellow background that's behind the attentive care around the clock, purpose and joy daily."
+
+**Diagnosis:** The `tinted` variant was rgba(253,244,222,0.55) — literally an eggshell swatch, not glass. And even the `glass` variant had nothing behind it to diffuse because the page backdrop was a single uniform warm wash.
+
+**Change log (2 commits on master):**
+1. `nextjs-site/src/components/GlassCard.tsx` — rewrote `tinted` and `glass` variants to the same Apple-style frost formula: `backdrop-blur-2xl backdrop-saturate-200` + `bg-white/35-40` + `border-white/60-65` + strong inset highlight + slate-tinted drop shadow. Tinted and glass now look ~identical, which is exactly what Brett asked for.
+2. `nextjs-site/src/app/page.tsx` — three sections (Three Steps / What Life Looks Like / Care Shaped Around Your Family) switched to `relative bg-transparent` with ambient colored-blob washes injected (moss + sunshine + slate for one, clay + moss + sunshine for another, moss + slate for the third). Gives backdrop-blur actual color variance to catch.
+
+**Verification:** Next.js build passes (all 10 static pages generated). Vercel auto-deploy triggered.
+
+**Still pending:** `/blog` infrastructure, 15 blog drafts, schema markup overhaul, `/next-steps` real buildout, a11y audit, CTA functional QA.
+
+### Phase D.1 — blob repositioning (iteration after live check)
+Live screenshot showed the right-column cards (Meals They Actually Look Forward To + You Welcome Anytime) still catching a yellow tint. Root cause was two-fold:
+1. My Phase D ambient sunshine blob in What Life Looks Like sat at `top-1/3 right-0` — directly behind the right-column cards.
+2. The body itself had a `radial-gradient(ellipse at 88% -10%, rgba(243,185,77,0.12))` with `background-attachment: fixed`, which painted a sunshine wash over the right edge of every section.
+
+**Phase D.1 commit:** repositioned all sectional blobs to live at section edges (top-center, bottom-left, bottom-right) — explicitly not behind the card grid.
+
+### Phase D.2 — kill the body-level sunshine radial
+Even after the sectional blobs were repositioned, the body-level fixed radial kept tinting the right column. Removed the radial from `globals.css body { background }` entirely. Now the body is just a clean `linear-gradient(180deg, cream, bone)` with `background-attachment: fixed`. Sunshine accent color lives exclusively in the CTA buttons and italic accent words.
+
+**Verification:** Vercel deploy fresh — screenshots confirm all six What Life Looks Like cards and both Care Shaped cards render with uniform cream-frost, no yellow bleed-through. Matches Brett's "like the Memory Care boxes" direction exactly.
