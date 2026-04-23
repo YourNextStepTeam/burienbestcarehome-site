@@ -114,7 +114,7 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
         `Number of guests: ${formData.guests}`,
       ].filter(Boolean)
       const body = bodyLines.join('\n')
-      const mailto = `mailto:info@burienbestcarehome.com?subject=${encodeURIComponent(
+      const mailto = `mailto:info@burienbestcarehome.site?subject=${encodeURIComponent(
         subject
       )}&body=${encodeURIComponent(body)}`
 
@@ -125,7 +125,7 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
       setTimeout(() => setSubmitSuccess(false), 8000)
     } catch {
       setErrors({
-        name: 'We could not open your email client. Please email info@burienbestcarehome.com directly.',
+        name: 'We could not open your email client. Please email info@burienbestcarehome.site directly.',
       })
     } finally {
       setIsSubmitting(false)
