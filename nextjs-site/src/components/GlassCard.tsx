@@ -3,12 +3,12 @@ interface GlassCardProps {
   className?: string
   /**
    * Card surface treatment.
-   *   - glass: default translucent bone-white glass with slate border (macOS-like).
-   *            Sits on the body gradient and picks up warmth from it.
+   *   - glass: Apple-style frosted glass. 40% white fill + 200% saturation backdrop-blur.
+   *            Needs a colored backdrop behind it to read as glass.
    *   - white: opaque bone-white card. Use when translucency is undesirable
    *            (e.g. over busy photography).
-   *   - tinted: sunshine-tinted frosted glass — used for secondary content or to
-   *             differentiate a cluster of cards from a plain-glass neighbor.
+   *   - tinted: same frosted-glass formula as `glass`, slightly more transparent.
+   *             Used to differentiate clusters of cards in the same section.
    */
   variant?: 'glass' | 'white' | 'tinted'
 }
@@ -30,16 +30,16 @@ export default function GlassCard({
       break
     case 'tinted':
       base =
-        'backdrop-blur-xl backdrop-saturate-150 bg-[rgba(253,244,222,0.55)] border border-[color:rgba(217,154,43,0.28)] shadow-[0_1px_0_rgba(255,255,255,0.55)_inset,0_14px_32px_-14px_rgba(45,62,74,0.12)] text-ink'
+        'backdrop-blur-2xl backdrop-saturate-200 bg-white/35 border border-white/60 shadow-[0_1px_0_rgba(255,255,255,0.85)_inset,0_22px_52px_-20px_rgba(45,62,74,0.28),0_2px_10px_rgba(45,62,74,0.08)] text-ink'
       hover =
-        'transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[rgba(253,244,222,0.72)] hover:border-[color:rgba(217,154,43,0.45)]'
+        'transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white/50 hover:border-white/80 hover:shadow-[0_1px_0_rgba(255,255,255,0.95)_inset,0_28px_60px_-20px_rgba(45,62,74,0.32),0_4px_14px_rgba(45,62,74,0.10)]'
       break
     case 'glass':
     default:
       base =
-        'backdrop-blur-xl backdrop-saturate-150 bg-[rgba(253,251,247,0.62)] border border-[color:rgba(45,62,74,0.12)] shadow-[0_1px_0_rgba(255,255,255,0.55)_inset,0_20px_40px_-16px_rgba(45,62,74,0.15),0_2px_8px_rgba(45,62,74,0.05)] text-ink'
+        'backdrop-blur-2xl backdrop-saturate-200 bg-white/40 border border-white/65 shadow-[0_1px_0_rgba(255,255,255,0.85)_inset,0_22px_52px_-20px_rgba(45,62,74,0.22),0_2px_10px_rgba(45,62,74,0.08)] text-ink'
       hover =
-        'transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[rgba(253,251,247,0.78)] hover:border-[color:rgba(45,62,74,0.2)] hover:shadow-[0_1px_0_rgba(255,255,255,0.7)_inset,0_28px_52px_-16px_rgba(45,62,74,0.22),0_4px_12px_rgba(45,62,74,0.08)]'
+        'transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white/55 hover:border-white/85 hover:shadow-[0_1px_0_rgba(255,255,255,0.95)_inset,0_30px_60px_-20px_rgba(45,62,74,0.28),0_4px_14px_rgba(45,62,74,0.10)]'
   }
 
   return (
