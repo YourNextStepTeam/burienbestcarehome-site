@@ -53,11 +53,11 @@ export default function TestimonialMarquee() {
       {/* Edge fade masks for polished marquee edges */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-terracotta-light/70 to-transparent z-10"
+        className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-[color:var(--color-bone)] to-transparent z-10"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-terracotta-light/70 to-transparent z-10"
+        className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-[color:var(--color-bone)] to-transparent z-10"
       />
 
       <div
@@ -72,19 +72,22 @@ export default function TestimonialMarquee() {
             className="flex-shrink-0 w-[85vw] sm:w-[420px]"
             tabIndex={0}
           >
-            <GlassCard variant="white" className="p-8 h-full flex flex-col min-h-[280px]">
+            <GlassCard variant="solid" className="p-8 h-full flex flex-col min-h-[280px]">
               <p
                 aria-hidden="true"
-                className="text-5xl text-sage/30 font-serif leading-none mb-2"
+                className="text-6xl text-[color:var(--color-sunshine-deep)] font-serif leading-none mb-2 select-none"
               >
                 &ldquo;
               </p>
               <p className="text-ink-soft leading-relaxed flex-grow italic">
                 {t.quote}
               </p>
-              <p className="text-forest font-semibold uppercase tracking-wide text-sm mt-6 pt-4 border-t border-sage/30">
-                {t.author}
-              </p>
+              <div className="mt-6 pt-4">
+                <span aria-hidden="true" className="block h-0.5 w-10 bg-[color:var(--color-sunshine-deep)] mb-3 rounded-full" />
+                <p className="text-forest font-semibold uppercase tracking-wide text-sm">
+                  {t.author}
+                </p>
+              </div>
             </GlassCard>
           </div>
         ))}
