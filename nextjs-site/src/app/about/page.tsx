@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'About Us | Our Story & Team',
     description:
       'Meet Becca and the Burien Best Care Home team. We built this home for families like yours who need a better way to care for aging parents.',
-    url: 'https://burienbestcarehome.com/about',
+    url: 'https://burienbestcarehome.site/about',
     type: 'website',
   },
   twitter: {
@@ -280,13 +280,13 @@ export default function About() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://burienbestcarehome.com',
+                item: 'https://burienbestcarehome.site',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'About Us',
-                item: 'https://burienbestcarehome.com/about',
+                item: 'https://burienbestcarehome.site/about',
               },
             ],
           }),
