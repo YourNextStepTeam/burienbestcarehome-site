@@ -16,7 +16,37 @@ interface FormErrors {
   guests?: string
 }
 
-export default function OpenHouseForm() {
+interface OpenHouseFormProps {
+  /**
+   * When true, the form is rendered on a dark slate panel — labels become
+   * light, inputs become a light cream fill, required asterisks + error text
+   * become sunshine, submit button becomes sunshine.
+   */
+  onDark?: boolean
+}
+
+export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
+  // Color tokens flip based on panel treatment
+  const labelCls = onDark ? 'text-[color:var(--color-bone)]' : 'text-forest'
+  const inputBase = onDark
+    ? 'bg-white/95 border-white/40 text-ink placeholder:text-ink-soft/70'
+    : 'bg-white border-sage/20'
+  const inputError = onDark
+    ? 'border-[color:var(--color-sunshine)] bg-[color:var(--color-sunshine)]/10'
+    : 'border-terracotta bg-terracotta/5'
+  const focusRing = onDark ? 'focus:ring-[color:var(--color-sunshine)]/60' : 'focus:ring-sage/50'
+  const requiredCls = onDark ? 'text-[color:var(--color-sunshine)]' : 'text-terracotta'
+  const errorTextCls = onDark
+    ? 'text-[color:var(--color-sunshine)]'
+    : 'text-terracotta-deep'
+  const successBoxCls = onDark
+    ? 'rounded-lg bg-[color:var(--color-sunshine)]/15 border border-[color:var(--color-sunshine)] p-4'
+    : 'rounded-lg bg-sage/10 border border-sage p-4'
+  const successTextCls = onDark ? 'text-[color:var(--color-bone)] font-medium' : 'text-forest font-medium'
+  const submitCls = onDark
+    ? 'w-full inline-flex items-center justify-center min-h-14 bg-[color:var(--color-sunshine)] hover:bg-[color:var(--color-sunshine-deep)] text-ink text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-[color:var(--color-sunshine)]/40'
+    : 'w-full inline-flex items-center justify-center min-h-14 bg-[color:var(--color-sunshine)] hover:bg-[color:var(--color-sunshine-deep)] text-ink text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-[color:var(--color-sunshine)]/40'
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -113,9 +143,9 @@ export default function OpenHouseForm() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="rounded-lg bg-sage/10 border border-sage p-4"
+          className={successBoxCls}
         >
-          <p className="text-forest font-medium">
+          <p className={successTextCls}>
             Thank you! We have received your RSVP and will be in touch soon.
           </p>
         </motion.div>
@@ -123,9 +153,9 @@ export default function OpenHouseForm() {
 
       {/* Name Field */}
       <div className="form-group">
-        <label htmlFor="oh-name" className="block text-sm font-medium text-forest mb-2">
+        <label htmlFor="oh-name" className={`block text-sm font-medium ${labelCls} mb-2`}>
           Your Name
-          <span className="text-terracotta ml-1" aria-label="required">
+          <span className={`${requiredCls} ml-1`} aria-label="required">
             *
           </span>
         </label>
@@ -138,15 +168,15 @@ export default function OpenHouseForm() {
           placeholder="Full Name"
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.name
-              ? 'border-terracotta bg-terracotta/5'
-              : 'border-sage/20 bg-white'
-          } focus:outline-none focus:ring-2 focus:ring-sage/50 transition-all`}
+              ? inputError
+              : inputBase
+          } ${focusRing} focus:outline-none focus:ring-2 transition-all`}
           aria-required="true"
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? 'name-error' : undefined}
         />
         {errors.name && (
-          <p id="name-error" className="text-terracotta-deep text-sm mt-1 font-medium">
+          <p id="name-error" className={`${errorTextCls} text-sm mt-1 font-medium`}>
             {errors.name}
           </p>
         )}
@@ -154,9 +184,9 @@ export default function OpenHouseForm() {
 
       {/* Email Field */}
       <div className="form-group">
-        <label htmlFor="oh-email" className="block text-sm font-medium text-forest mb-2">
+        <label htmlFor="oh-email" className={`block text-sm font-medium ${labelCls} mb-2`}>
           Email Address
-          <span className="text-terracotta ml-1" aria-label="required">
+          <span className={`${requiredCls} ml-1`} aria-label="required">
             *
           </span>
         </label>
@@ -169,15 +199,15 @@ export default function OpenHouseForm() {
           placeholder="your@email.com"
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.email
-              ? 'border-terracotta bg-terracotta/5'
-              : 'border-sage/20 bg-white'
-          } focus:outline-none focus:ring-2 focus:ring-sage/50 transition-all`}
+              ? inputError
+              : inputBase
+          } ${focusRing} focus:outline-none focus:ring-2 transition-all`}
           aria-required="true"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? 'email-error' : undefined}
         />
         {errors.email && (
-          <p id="email-error" className="text-terracotta-deep text-sm mt-1 font-medium">
+          <p id="email-error" className={`${errorTextCls} text-sm mt-1 font-medium`}>
             {errors.email}
           </p>
         )}
@@ -185,7 +215,7 @@ export default function OpenHouseForm() {
 
       {/* Phone Field */}
       <div className="form-group">
-        <label htmlFor="oh-phone" className="block text-sm font-medium text-forest mb-2">
+        <label htmlFor="oh-phone" className={`block text-sm font-medium ${labelCls} mb-2`}>
           Phone Number
         </label>
         <input
@@ -195,15 +225,15 @@ export default function OpenHouseForm() {
           value={formData.phone}
           onChange={handleChange}
           placeholder="(206) 555-0000"
-          className="w-full px-4 py-3 rounded-lg border border-sage/20 bg-white focus:outline-none focus:ring-2 focus:ring-sage/50 transition-all"
+          className={`w-full px-4 py-3 rounded-lg border ${inputBase} ${focusRing} focus:outline-none focus:ring-2 transition-all`}
         />
       </div>
 
       {/* Number of Guests */}
       <div className="form-group">
-        <label htmlFor="oh-guests" className="block text-sm font-medium text-forest mb-2">
+        <label htmlFor="oh-guests" className={`block text-sm font-medium ${labelCls} mb-2`}>
           Number of Guests
-          <span className="text-terracotta ml-1" aria-label="required">
+          <span className={`${requiredCls} ml-1`} aria-label="required">
             *
           </span>
         </label>
@@ -214,9 +244,9 @@ export default function OpenHouseForm() {
           onChange={handleChange}
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.guests
-              ? 'border-terracotta bg-terracotta/5'
-              : 'border-sage/20 bg-white'
-          } focus:outline-none focus:ring-2 focus:ring-sage/50 transition-all`}
+              ? inputError
+              : inputBase
+          } ${focusRing} focus:outline-none focus:ring-2 transition-all`}
           aria-required="true"
           aria-invalid={!!errors.guests}
           aria-describedby={errors.guests ? 'guests-error' : undefined}
@@ -228,7 +258,7 @@ export default function OpenHouseForm() {
           <option value="4">4 Guests</option>
         </select>
         {errors.guests && (
-          <p id="guests-error" className="text-terracotta-deep text-sm mt-1 font-medium">
+          <p id="guests-error" className={`${errorTextCls} text-sm mt-1 font-medium`}>
             {errors.guests}
           </p>
         )}
@@ -238,10 +268,11 @@ export default function OpenHouseForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full inline-flex items-center justify-center min-h-14 bg-terracotta-deep hover:bg-terracotta text-white text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta/40"
+        className={submitCls}
       >
         {isSubmitting ? 'Submitting\u2026' : 'Reserve Your Spot \u2192'}
       </button>
     </form>
   )
 }
+—
