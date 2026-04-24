@@ -636,7 +636,7 @@ export default function Home() {
         <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-transparent overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
-              <p className="uppercase tracking-widest text-sm font-semibold text-terracotta mb-3">In Their Own Words</p>
+              <p className="uppercase tracking-widest text-sm font-semibold text-[color:var(--color-sunshine-deep)] mb-3">In Their Own Words</p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
                 Families Who Found Peace of&nbsp;Mind
               </h2>
@@ -665,7 +665,7 @@ export default function Home() {
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto glass-panel p-8 sm:p-12 lg:p-16 text-center space-y-8">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-[1.15]">
-              Most Families Wait Until a&nbsp;<span className="text-terracotta italic">Crisis</span>.
+              Most Families Wait Until a&nbsp;<span className="text-[color:var(--color-sunshine-deep)] italic font-semibold">Crisis</span>.
               <br />
               You Don&rsquo;t Have&nbsp;To.
             </h2>
