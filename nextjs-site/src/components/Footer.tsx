@@ -28,12 +28,12 @@ export default function Footer() {
           <div>
             <h2 className="text-lg font-semibold mb-4 text-sage-light">Quick Links</h2>
             <nav aria-label="Footer quick links">
-              <ul className="space-y-0">
+              <ul className="text-cream/95 text-sm space-y-4">
                 {quickLinks.map((link) => (
                   <li key={`${link.href}-${link.label}`}>
                     <Link
                       href={link.href}
-                      className="inline-flex items-center min-h-12 px-2 py-2 -mx-2 rounded text-cream/95 hover:text-sage-light transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
+                      className="rounded hover:text-sage-light transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                     >
                       {link.label}
                     </Link>
