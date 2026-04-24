@@ -20,16 +20,15 @@ export default function Footer() {
           <div>
             <h2 className="text-lg font-semibold mb-4 text-sage-light">About Us</h2>
             <p className="text-cream/95 leading-relaxed text-sm">
-              Burien Best Care Home provides compassionate, personalized care for adults in our warm and welcoming family environment.
+              A licensed adult family home in Burien, WA providing 24/7 personalized support with memory care, daily living, respite care, and post-hospital recovery for seniors across King County.
             </p>
-            <p className="text-sage-light font-medium mt-3">Where Family Feels Like Home</p>
           </div>
 
           {/* Quick Links Column */}
           <div>
             <h2 className="text-lg font-semibold mb-4 text-sage-light">Quick Links</h2>
             <nav aria-label="Footer quick links">
-              <ul className="space-y-1">
+              <ul className="space-y-0">
                 {quickLinks.map((link) => (
                   <li key={`${link.href}-${link.label}`}>
                     <Link
