@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import ScheduleVisitButton from '@/components/ScheduleVisitButton'
 import GlassCard from '@/components/GlassCard'
 import FAQAccordion from '@/components/FAQAccordion'
+import OpenHouseForm from '@/components/OpenHouseForm'
 import TestimonialMarquee from '@/components/TestimonialMarquee'
 
 export default function Home() {
@@ -555,29 +556,21 @@ export default function Home() {
 
         {/* Open House Section */}
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 sm:mb-16">
+              <p className="uppercase tracking-widest text-sm font-semibold text-[color:var(--color-slate-soft)] mb-3">You&rsquo;re Invited</p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest mb-4 leading-tight">
+                Community Open House
+              </h2>
+              <p className="text-ink-soft text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
+                We host regular open houses so families can tour our home, meet our caregiving team, and ask every question on their mind. Join the list below and we&rsquo;ll email you when the next date is&nbsp;set.
+              </p>
+            </div>
+
             <ScrollReveal>
-              <GlassCard variant="solid" className="p-8 sm:p-12 text-center space-y-6">
-                <p className="uppercase tracking-widest text-sm font-semibold text-[color:var(--color-slate-soft)]">You&rsquo;re Invited</p>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest leading-tight">
-                  Community Open House
-                </h2>
-                <p className="text-ink-soft text-lg leading-relaxed max-w-2xl mx-auto">
-                  We host regular open houses so families can tour our home, meet our caregiving team, and ask every question on their mind. Light refreshments, zero pressure.
-                </p>
-                <div className="pt-2">
-                  <p className="inline-block bg-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold text-base px-6 py-2.5 rounded-full shadow-sm mb-4">
-                    Next Date Coming Soon
-                  </p>
-                  <p className="text-ink-soft text-sm">
-                    Want to be the first to know?{' '}
-                    <Link href="/contact#visit-form" className="text-[color:var(--color-sunshine-deep)] font-semibold underline underline-offset-2 hover:text-[color:var(--color-sunshine)] transition-colors">
-                      Schedule a private tour
-                    </Link>{' '}
-                    anytime, or check back here for the next open house date.
-                  </p>
-                </div>
-              </GlassCard>
+              <div className="rounded-2xl bg-forest border border-sage/30 shadow-xl p-6 sm:p-10">
+                <OpenHouseForm onDark />
+              </div>
             </ScrollReveal>
           </div>
         </section>
