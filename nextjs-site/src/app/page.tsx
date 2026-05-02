@@ -546,7 +546,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </GlassCard>
               </ScrollReveal>
             </div>
           </div>
