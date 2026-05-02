@@ -98,8 +98,8 @@ export default function HeroSection() {
           >
             You&rsquo;ve noticed the changes. Your parent needs more help than living alone can safely provide.
             Burien Best Care Home is a licensed adult family home where seniors receive 24/7 personalized support
-            with daily living: meals, medication, bathing, dressing, and everything in between.
-            Whether your loved one needs light assistance or around-the-clock care, we meet them exactly where they&nbsp;are.
+            with daily living: meals, medication, bathing, dressing, and&nbsp;more.
+            Whether your loved one needs light assistance or around-the-clock care, we&rsquo;re&nbsp;here.
           </motion.p>
 
           {/* CTA — single outlined "Schedule a Visit" button; stroke is white to contrast with the glass panel */}
