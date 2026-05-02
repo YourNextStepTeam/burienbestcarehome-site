@@ -251,9 +251,9 @@ export default function Home() {
                     </h3>
                   </div>
                   <p className="text-ink-soft leading-relaxed flex-grow">
-                    Walk through our home. Meet our team. Ask every question on your mind.
-                    We&rsquo;ll show you what daily life looks like, introduce you to the people who live and work here,
-                    and answer honestly about cost, care, and what to expect. No pressure, no sales pitch.
+                    Walk through our home and meet our team. We&rsquo;ll show you what daily life looks like,
+                    introduce you to the people who live and work here, and talk through cost, care, and what
+                    to&nbsp;expect.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -264,13 +264,13 @@ export default function Home() {
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">2</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
-                      Build a Care Plan Together
+                      Build a Care Plan
                     </h3>
                   </div>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     We&rsquo;ll create a personalized plan around your parent&rsquo;s needs, preferences, and daily rhythms.
                     What time do they wake up? What foods do they love? Do they prefer quiet mornings or social activity?
-                    We listen and build care that fits them, not the other way around.
+                    We listen and build care that fits&nbsp;them.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -281,13 +281,12 @@ export default function Home() {
                   <div className="flex items-center gap-4 mb-4">
                     <span aria-hidden="true" className="font-serif text-5xl leading-none text-sage">3</span>
                     <h3 className="font-serif text-2xl font-normal text-forest leading-tight">
-                      Watch Them Thrive
+                      Watch Them Settle&nbsp;In
                     </h3>
                   </div>
                   <p className="text-ink-soft leading-relaxed flex-grow">
-                    Your parent settles into a home where they&rsquo;re known by name, cared for around the clock,
-                    and genuinely happy. You stop worrying about falls and medication. You start noticing smiles again.
-                    That&rsquo;s when you know you made the right choice.
+                    Your parent settles into a home where they&rsquo;re known by name and cared for around the clock.
+                    You can take a&nbsp;breath.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -317,8 +316,8 @@ export default function Home() {
                     A Real Home
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Only eight residents. Your parent is known by name, called by name, treated like family.
-                    They&rsquo;re not waiting in a room for someone to find time for them. They&rsquo;re part of a genuine home.
+                    Only eight residents. Your parent is known by name and treated like family. They&rsquo;re part
+                    of a genuine&nbsp;home.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -328,11 +327,11 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    Stimulating Activities, Every&nbsp;Week
+                    Organized Activities
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Garden planters they help fill in spring. Park outings when the weather cooperates. Local music
-                    students who come to play piano and violin. The day has rhythm, purpose, and small joys.
+                    Garden planters in spring. Park outings when the weather cooperates. Local music students
+                    who play piano and violin. The day has rhythm and small&nbsp;joys.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -342,11 +341,11 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    Meals They Look Forward&nbsp;To
+                    Meals They Enjoy
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Three home-cooked meals plus snacks, tailored to their preferences. Not institutional food. Real food.
-                    Food that says someone cares enough to cook for them.
+                    Three home-cooked meals plus snacks, tailored to their preferences. We pay close attention
+                    to nutrition, every&nbsp;day.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -356,11 +355,11 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    24/7&nbsp;Care
+                    24/7 Attentive&nbsp;Care
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Trained caregivers on-site 24/7. Never alone. Never forgotten. Someone is always there to notice
-                    if something feels off, to help when they need it, and to make sure they&rsquo;re safe.
+                    Trained caregivers on-site, around the clock. Someone is always there if something
+                    feels&nbsp;off.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -373,8 +372,7 @@ export default function Home() {
                     Purpose and&nbsp;Joy
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Activities designed to engage mind and body. Art. Music. Gentle exercise. Social connection.
-                    Days filled with moments that matter, not empty hours waiting for bedtime.
+                    Art, music, gentle exercise, social connection. Days with moments that&nbsp;matter.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -387,9 +385,8 @@ export default function Home() {
                     Family Welcome Throughout the&nbsp;Day
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    No appointment needed for daytime visits. Just check in when you arrive. Bring the grandkids,
-                    share a meal, stay as long as you like. Your parent gets their family close, and you stay
-                    involved in their care.
+                    Bring the grandkids. Share moments. Stay involved in their care. Daytime visits welcome.
+                    Just check in when you&nbsp;arrive.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -516,7 +513,7 @@ export default function Home() {
                         A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
                       </p>
                       <p>
-                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make <span className="italic font-semibold text-[color:var(--color-sunshine)] pr-1">crisis</span>decisions instead of thoughtful&nbsp;ones.
+                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make <span className="italic font-semibold text-[color:var(--color-sunshine)] pr-1">crisis</span> decisions instead of thoughtful&nbsp;ones.
                       </p>
                       <p>
                         And the relationship shifts. Instead of being their child, you become their worried guardian, managing crisis after crisis. You both&nbsp;suffer.
@@ -602,7 +599,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Becca Pitts
                   </h3>
-                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Co-Founder</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. When you visit, Becca will listen to your story and help you find the right solution for your&nbsp;family.
                   </p>
@@ -621,7 +618,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Daniela Torkelson
                   </h3>
-                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Provider</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Provider &amp; Resident Manager</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>
@@ -650,7 +647,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                Questions You May Have
+                Questions You Might Have
               </h2>
             </div>
 
