@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import Link from 'next/link'
+import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import ScrollReveal from '@/components/ScrollReveal'
 import ScheduleVisitButton from '@/components/ScheduleVisitButton'
@@ -590,11 +591,14 @@ export default function Home() {
               {/* Team Member 1: Becca Pitts */}
               <ScrollReveal delay={0}>
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
-                  <div
-                    aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-[color:var(--color-sunshine)]/25 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-[color:var(--color-ink)] border-4 border-[color:var(--color-sunshine)]/40 shadow-inner"
-                  >
-                    BP
+                  <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 border-4 border-[color:var(--color-sunshine)]/40 shadow-inner relative">
+                    <Image
+                      src="/images/becca-headshot.webp"
+                      alt="Portrait of Becca Pitts"
+                      fill
+                      sizes="112px"
+                      className="object-cover"
+                    />
                   </div>
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Becca Pitts
