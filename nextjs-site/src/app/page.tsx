@@ -328,11 +328,11 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    Fresh Air and Sunshine Every&nbsp;Day
+                    Stimulating Activities, Every&nbsp;Week
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Landscaped gardens. Covered patio. Nature at the doorstep. Your parent gets outside, breathes fresh air,
-                    feels the sun. It&rsquo;s healing in ways medication alone can&rsquo;t be.
+                    Garden planters they help fill in spring. Park outings when the weather cooperates. Local music
+                    students who come to play piano and violin. The day has rhythm, purpose, and small joys.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -342,7 +342,7 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    Meals They Actually Look Forward&nbsp;To
+                    Meals They Look Forward&nbsp;To
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
                     Three home-cooked meals plus snacks, tailored to their preferences. Not institutional food. Real food.
@@ -356,7 +356,7 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    Attentive Care, Around the&nbsp;Clock
+                    24/7&nbsp;Care
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
                     Trained caregivers on-site 24/7. Never alone. Never forgotten. Someone is always there to notice
@@ -370,7 +370,7 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    Purpose and Joy,&nbsp;Daily
+                    Purpose and&nbsp;Joy
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
                     Activities designed to engage mind and body. Art. Music. Gentle exercise. Social connection.
@@ -384,11 +384,12 @@ export default function Home() {
                 <GlassCard variant="tinted" className="h-full p-8 flex flex-col">
                   <div aria-hidden="true" className="w-12 h-1 bg-[color:var(--color-sunshine)] rounded-full mb-5" />
                   <h3 className="font-serif text-2xl font-normal text-forest mb-3 leading-tight">
-                    You, Welcome&nbsp;Anytime
+                    Family Welcome Throughout the&nbsp;Day
                   </h3>
                   <p className="text-ink-soft leading-relaxed">
-                    Open-door policy. Visit for breakfast, lunch, dinner, coffee, or a quiet afternoon. Bring the grandkids.
-                    Share moments. Your parent gets their family close, and you stay involved in their care.
+                    No appointment needed for daytime visits. Just check in when you arrive. Bring the grandkids,
+                    share a meal, stay as long as you like. Your parent gets their family close, and you stay
+                    involved in their care.
                   </p>
                 </GlassCard>
               </ScrollReveal>
@@ -499,44 +500,44 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
-              {/* Left: Failure / What's at Risk */}
+              {/* Left: Failure / What's at Risk — dark forest card for the heavier scenario */}
               <ScrollReveal delay={0}>
-                <GlassCard variant="tinted" className="p-8 sm:p-10 h-full">
+                <div className="rounded-2xl bg-forest border border-sage/40 shadow-lg p-8 sm:p-10 h-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-slate)] rounded-full" />
-                      <span className="uppercase tracking-widest text-xs font-semibold text-ink-soft">The Risk</span>
+                      <span aria-hidden="true" className="inline-block w-10 h-1 bg-white/40 rounded-full" />
+                      <span className="uppercase tracking-widest text-xs font-semibold text-white/70">The Risk</span>
                     </div>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
-                      What Happens If You Do <span className="italic text-[color:var(--color-slate)] underline decoration-2 underline-offset-4 decoration-[color:var(--color-sunshine-deep)]">Nothing</span>?
+                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white leading-tight">
+                      What Happens If You Do <span className="italic text-[color:var(--color-sunshine)] underline decoration-2 underline-offset-4 decoration-[color:var(--color-sunshine-deep)]">Nothing</span>?
                     </h3>
-                    <div className="text-left space-y-4 text-ink-soft leading-relaxed">
+                    <div className="text-left space-y-4 text-white/85 leading-relaxed">
                       <p>
                         A fall in the bathroom. A missed dose of medication. A late-night call from the ER. The guilt compounds. You miss work. You can&rsquo;t focus. Your own health suffers.
                       </p>
                       <p>
-                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make <span className="italic font-semibold text-[color:var(--color-sunshine-deep)]">crisis</span> decisions instead of thoughtful&nbsp;ones.
+                        Your parent becomes isolated. Days blur together. They decline faster without engagement, without purpose, without community. You make <span className="italic font-semibold text-[color:var(--color-sunshine)] pr-1">crisis</span>decisions instead of thoughtful&nbsp;ones.
                       </p>
                       <p>
                         And the relationship shifts. Instead of being their child, you become their worried guardian, managing crisis after crisis. You both&nbsp;suffer.
                       </p>
                     </div>
                   </div>
-                </GlassCard>
+                </div>
               </ScrollReveal>
 
-              {/* Right: Success Vision — forest card for contrast with terracotta risk card */}
+              {/* Right: Success Vision — light tinted card for the brighter scenario */}
               <ScrollReveal delay={0.1}>
-                <div className="rounded-2xl bg-forest border border-sage/40 shadow-lg p-8 sm:p-10 h-full transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
+                <GlassCard variant="tinted" className="p-8 sm:p-10 h-full">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <span aria-hidden="true" className="inline-block w-10 h-1 bg-[color:var(--color-sunshine)] rounded-full" />
-                      <span className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-sunshine)]">The Possibility</span>
+                      <span className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-sunshine-deep)]">The Possibility</span>
                     </div>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white leading-tight">
-                      What Becomes <span className="text-[color:var(--color-sunshine)] italic">Possible</span>?
+                    <h3 className="font-serif text-2xl sm:text-3xl font-normal text-forest leading-tight">
+                      What Becomes <span className="italic text-[color:var(--color-sunshine-deep)] underline decoration-2 underline-offset-4 decoration-[color:var(--color-sunshine)]">Possible</span>?
                     </h3>
-                    <div className="text-left space-y-4 text-white/90 leading-relaxed">
+                    <div className="text-left space-y-4 text-ink-soft leading-relaxed">
                       <p>
                         You sleep through the night. You stop holding your breath every time the phone rings. Your parent thrives in a home where they&rsquo;re known, cared for, and genuinely&nbsp;happy.
                       </p>
@@ -620,7 +621,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Daniela Torkelson
                   </h3>
-                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Provider</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>
@@ -649,7 +650,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-forest">
-                Questions You Should Ask
+                Questions You May Have
               </h2>
             </div>
 
