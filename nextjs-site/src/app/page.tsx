@@ -86,7 +86,7 @@ export default function Home() {
               postalCode: '98148',
               addressCountry: 'US',
             },
-            telephone: '(206) 555-0142',
+            telephone: '(253) 678-7089',
             email: 'info@burienbestcarehome.site',
             url: 'https://burienbestcarehome.site',
             priceRange: '$$',

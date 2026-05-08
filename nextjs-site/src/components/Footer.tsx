@@ -55,19 +55,19 @@ export default function Footer() {
                 <div>
                   <p className="font-medium text-sage-light-light mb-1">Phone</p>
                   <a
-                    href="tel:+12065550142"
+                    href="tel:+12536787089"
                     className="inline-flex items-center min-h-12 px-2 py-2 -mx-2 rounded hover:text-sage-light transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                   >
-                    (206) 555-0142
+                    (253) 678-7089
                   </a>
                 </div>
                 <div>
                   <p className="font-medium text-sage-light-light mb-1">Email</p>
                   <a
-                    href="mailto:info@burienbestcarehome.site"
+                    href="mailto:info@burienbestcarehome.com"
                     className="inline-flex items-center min-h-12 px-2 py-2 -mx-2 rounded break-all hover:text-sage-light transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest"
                   >
-                    info@burienbestcarehome.site
+                    info@burienbestcarehome.com
                   </a>
                 </div>
               </div>

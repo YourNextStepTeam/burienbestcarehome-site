@@ -111,7 +111,7 @@ export default function ContactForm() {
         formData.message || '(none)',
       ].filter(Boolean)
       const body = bodyLines.join('\n')
-      const mailto = `mailto:info@burienbestcarehome.site?subject=${encodeURIComponent(
+      const mailto = `mailto:becca@burienbestcarehome.com?subject=${encodeURIComponent(
         subject
       )}&body=${encodeURIComponent(body)}`
 
@@ -136,7 +136,7 @@ export default function ContactForm() {
     } catch {
       setErrors({
         submit:
-          'We could not open your email client. Please email us directly at info@burienbestcarehome.site or call (206) 555-0142.',
+          'We could not open your email client. Please email us directly at becca@burienbestcarehome.com or call (253) 678-7089.',
       })
     } finally {
       setIsSubmitting(false)
@@ -158,8 +158,8 @@ export default function ContactForm() {
         </p>
         <p className="text-forest">
           If nothing opened, please email us directly at{' '}
-          <a href="mailto:info@burienbestcarehome.site" className="text-forest font-semibold underline">
-            info@burienbestcarehome.site
+          <a href="mailto:becca@burienbestcarehome.com" className="text-forest font-semibold underline">
+            becca@burienbestcarehome.com
           </a>
           .
         </p>

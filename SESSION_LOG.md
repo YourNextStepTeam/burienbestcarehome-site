@@ -162,3 +162,58 @@ Live screenshot showed the right-column cards (Meals They Actually Look Forward 
 Even after the sectional blobs were repositioned, the body-level fixed radial kept tinting the right column. Removed the radial from `globals.css body { background }` entirely. Now the body is just a clean `linear-gradient(180deg, cream, bone)` with `background-attachment: fixed`. Sunshine accent color lives exclusively in the CTA buttons and italic accent words.
 
 **Verification:** Vercel deploy fresh — screenshots confirm all six What Life Looks Like cards and both Care Shaped cards render with uniform cream-frost, no yellow bleed-through. Matches Brett's "like the Memory Care boxes" direction exactly.
+
+---
+
+## May 8, 2026 — Email infrastructure + repo workflow scaffolding
+
+**Session driver:** Brett (whispering remotely into Becca's Claude account). Goal: stand up the Burien Best Care Home email infrastructure end-to-end (domain, Workspace, DNS records, group routing) and codify the multi-Claude / GitHub-as-shared-brain workflow into the repo.
+
+### Email infrastructure (the big lift)
+
+**Workspace setup:**
+- Confirmed `burienbestcarehome.com` is owned at GoDaddy (auto-renew on, expires 2027-03-31, on GoDaddy nameservers). DNS state pre-session: parked, no MX records, DMARC at `p=quarantine` already, an SPF flattening chain via `dc-aa8e722993._spfm` already pointing to Google.
+- Created Google Workspace at `burienbestcarehome.com`. Free trial active 13 days, paid service starts 2026-05-22.
+- Initial signup put us on Business **Plus** ($19.80/user/mo trial, $26.40 standard). Downgraded to Business **Starter Flexible** at **$8.40/user/mo** (no annual commitment — explicit Becca call to retain monthly flexibility for first 60 days).
+- Primary user: `becca@burienbestcarehome.com`, Super Admin, Starter license auto-assigned.
+
+**Group architecture (corrected mid-session):**
+- Initially set up `info@` and `daniela@` as aliases on Becca's seat. Brett clarified the actual intent was Workspace **Groups** with multiple owners (so `becca@yournextsteprealty.com` could be a perpetual co-owner without paying a second seat).
+- Reversed the aliases. Created `info@burienbestcarehome.com` as a Group with description "Primary inbound email for Burien Best Care Home." Two owners: `becca@burienbestcarehome.com` (internal) + `becca@yournextsteprealty.com` (external). External membership flag enabled in group settings.
+- Skipped a separate `daniela@` group for now — Daniela's personal Gmail to be added as group member when Becca has it.
+- The Admin Console's group-member picker rejects external addresses (chip won't form). Used `groups.google.com/u/3/a/burienbestcarehome.com/g/info/members` as the standalone Groups UI to add the external owner. CAPTCHA required (Becca completed it).
+
+**DNS records added at GoDaddy:**
+- 5 MX records (Name `@`): priority 1 → `aspmx.l.google.com`, priority 5 → `alt1.aspmx.l.google.com`, priority 5 → `alt2.aspmx.l.google.com`, priority 10 → `alt3.aspmx.l.google.com`, priority 10 → `alt4.aspmx.l.google.com`. GoDaddy required these to be entered as multiple **values** under one MX record entry via "Add another value" — entering them as separate rows triggered fake "name conflict" warnings.
+- DKIM TXT record (Name `google._domainkey`) with the 2048-bit key generated in Workspace admin (Apps → Google Workspace → Gmail → Authenticate Email → Generate new record). Despite Google's "wait 24-72 hours after enabling Gmail" warning, the key generated successfully on first try.
+- SPF: no new record added — the existing `@` SPF chain via `dc-aa8e722993._spfm` already includes `_spf.google.com`. Adding another @ SPF would have created duplicate-SPF failures.
+- DMARC: pre-existed at `_dmarc` with `p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;`.
+- Workspace domain verification TXT auto-added during signup.
+
+**Pending (next session):**
+- Wait for DNS propagation (~1-48h), then click "Start authentication" in Workspace admin to activate DKIM signing on outbound mail.
+- Add Daniela's personal Gmail to the `info@` group as member.
+
+### Repo workflow scaffolding
+
+**Brett's GitHub access investigation:**
+- Verified `@YourNextStepTeam` is a personal user account, not an Organization (the `/orgs/.../people` URL 404'd).
+- On Free Personal accounts, repo collaborators get **Write only** — no Admin role available. The earlier sync report's note about this limitation was correct.
+- Brett already has Write (he's a Collaborator). For day-to-day work — pushing code, adding research/strategy/blog files, reorganizing folders, updating markdown docs — Write is sufficient.
+- Future move: migrate repos to a free GitHub Organization to give Brett true Admin. Logged as a follow-up task; not done today.
+
+**Doc structure codified:**
+- New `STATUS.md` at repo root: "current state, in-flight, blockers." Designed to be the first file any Claude session reads. Frequently updated, terse.
+- Updated `.claude/CLAUDE.md`: added explicit Session Bootstrap routine, multi-Claude/GitHub-as-shared-brain workflow notes, repo structure map, commit message discipline, email infrastructure summary, and Key People section.
+- This SESSION_LOG entry.
+
+### Code changes (pushed in this commit)
+
+- Phone number `(206) 555-0142` → `(253) 678-7089` across `Footer.tsx` (twice), `ContactForm.tsx` error message, and homepage `LocalBusiness` JSON-LD schema.
+- Email references in components: `info@burienbestcarehome.site` → `info@burienbestcarehome.com` in Footer and OpenHouseForm. ContactForm switched to `becca@burienbestcarehome.com` (direct line to Becca, per Brett — vs. the info@ group).
+
+### Decisions captured
+
+- Domain split is intentional: website on `.site`, email on `.com`. Don't flip the website canonical to `.com` without explicit approval.
+- Cold-outreach future move: when GoHighLevel arrives, configure it on a subdomain (e.g., `mail.burienbestcarehome.com`) to isolate marketing-automation reputation from primary `info@` reputation.
+- Address publish: Becca leaning yes for map-pack SEO; pending final confirmation.
