@@ -118,12 +118,15 @@ export default function Contact() {
             <ScrollReveal delay={0}>
               <GlassCard variant="white" className="p-8 sm:p-10 h-full flex flex-col">
                 <div className="space-y-8 flex-grow">
-                  {/* Phone - Placeholder */}
+                  {/* Phone */}
                   <div>
                     <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Call Us</p>
-                    <p className="font-serif text-3xl sm:text-4xl text-forest/50 block leading-tight">
-                      Phone number coming soon
-                    </p>
+                    <a
+                      href="tel:+12536787089"
+                      className="font-serif text-3xl sm:text-4xl text-forest hover:text-[color:var(--color-sunshine-deep)] transition-colors block leading-tight"
+                    >
+                      (253) 678-7089
+                    </a>
                     <p className="text-sm text-ink-soft mt-1">Mon&ndash;Fri, 9am&ndash;5pm Pacific</p>
                   </div>
 
