@@ -86,7 +86,7 @@ export default function Contact() {
           </p>
           <h1
             id="contact-hero-headline"
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight drop-shadow-lg"
           >
             The First Step Is the&nbsp;<span className="text-[color:var(--color-sunshine)] italic">Hardest</span>.
             <br />

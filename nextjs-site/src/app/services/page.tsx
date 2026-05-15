@@ -359,7 +359,7 @@ export default function ServicesPage() {
           <div className="backdrop-blur-xl bg-gradient-to-br from-forest/65 via-forest/55 to-sage/50 border border-white/30 rounded-2xl p-6 sm:p-10 lg:p-14 shadow-2xl ring-1 ring-white/10">
             <h1
               id="services-hero-headline"
-              className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-white mb-6 leading-tight"
             >
               Care That Treats Your Parent as a&nbsp;<span className="text-[color:var(--color-sunshine)] italic">Person</span>.
             </h1>

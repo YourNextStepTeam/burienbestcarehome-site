@@ -142,7 +142,7 @@ export default function NextSteps() {
           </p>
           <h1
             id="next-steps-hero-headline"
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight drop-shadow-lg"
           >
             A clear path,&nbsp;<span className="text-sunshine italic">at your pace</span>.
           </h1>

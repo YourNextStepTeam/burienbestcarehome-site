@@ -83,7 +83,7 @@ export default function About() {
           </p>
           <h1
             id="about-hero-headline"
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight drop-shadow-lg"
           >
             A Home Built for Families Who Wanted&nbsp;<span className="text-[color:var(--color-sunshine)] italic">Real</span>&nbsp;Alternatives.
           </h1>
