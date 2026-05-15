@@ -94,7 +94,7 @@ export default function About() {
       </section>
 
       {/* Our Why Section (The Guide's Backstory) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -124,7 +124,7 @@ export default function About() {
       </section>
 
       {/* Our Promises Section (Outcomes, not features) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -156,7 +156,7 @@ export default function About() {
       </section>
 
       {/* Team Section (Guides, not just staff) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -209,7 +209,7 @@ export default function About() {
       </section>
 
       {/* Family Philosophy Section */}
-      <section className="py-20 px-6 bg-transparent">
+      <section className="py-16 px-6 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
@@ -247,7 +247,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">

@@ -160,7 +160,7 @@ export default function NextSteps() {
               <p className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-sunshine-deep mb-3">
                 The Path Forward
               </p>
-              <h2 className="font-serif text-3xl md:text-5xl text-ink leading-tight">
+              <h2 className="font-serif text-3xl md:text-5xl text-forest leading-tight">
                 From first visit to &ldquo;they&rsquo;re home.&rdquo;
               </h2>
               <p className="mt-5 text-base md:text-lg text-ink-soft max-w-2xl mx-auto">
@@ -179,7 +179,7 @@ export default function NextSteps() {
                       <div className="mt-2 text-xs uppercase tracking-widest text-ink-soft">{s.duration}</div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-serif text-2xl md:text-3xl text-ink mb-3">{s.title}</h3>
+                      <h3 className="font-serif text-2xl md:text-3xl text-forest mb-3">{s.title}</h3>
                       <p className="text-base md:text-lg text-ink-soft leading-relaxed">{s.body}</p>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ export default function NextSteps() {
             <p className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-sunshine-deep mb-3">
               About Cost
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-ink leading-tight mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl text-forest leading-tight mb-6">
               We&rsquo;ll tell you the number before you ask twice.
             </h2>
             <p className="text-base md:text-lg text-ink-soft leading-relaxed mb-4">
@@ -219,7 +219,7 @@ export default function NextSteps() {
               <p className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-sunshine-deep mb-3">
                 Families Ask
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink leading-tight">
+              <h2 className="font-serif text-3xl md:text-4xl text-forest leading-tight">
                 The questions we hear most.
               </h2>
             </div>
@@ -235,7 +235,7 @@ export default function NextSteps() {
       <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <GlassCard variant="solid" className="p-8 md:p-14 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl text-ink leading-tight mb-5">
+            <h2 className="font-serif text-3xl md:text-4xl text-forest leading-tight mb-5">
               Start with a visit. <span className="text-sunshine-deep italic">That&rsquo;s it.</span>
             </h2>
             <p className="text-base md:text-lg text-ink-soft leading-relaxed mb-8 max-w-xl mx-auto">

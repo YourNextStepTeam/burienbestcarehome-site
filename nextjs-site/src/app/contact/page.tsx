@@ -99,7 +99,7 @@ export default function Contact() {
       </section>
 
       {/* Reach Out Section - Rebuilt: no icons, split layout with map */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12 sm:mb-16">
@@ -186,7 +186,7 @@ export default function Contact() {
       </section>
 
       {/* Schedule a Visit Form Section */}
-      <section id="visit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent scroll-mt-20">
+      <section id="visit-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-10">
@@ -210,7 +210,7 @@ export default function Contact() {
 
 
       {/* What to Expect Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -251,7 +251,7 @@ export default function Contact() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -333,7 +333,7 @@ export default function Contact() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
