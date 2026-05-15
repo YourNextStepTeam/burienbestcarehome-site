@@ -29,15 +29,17 @@ export const metadata: Metadata = {
 export default function About() {
   const teamMembers = [
     {
+      image: '/images/becca-headshot.webp',
       initials: 'BP',
       name: 'Becca Pitts',
-      role: 'Owner & Care Director',
+      role: 'Co-Founder',
       bio: 'Becca founded this home after years walking alongside families in senior care. She has been where you are right now, helping her own family navigate this decision. She knows the exhaustion of trying to find a place that feels like home, not a facility. She built this because she wished it existed for her own family.',
     },
     {
+      image: null,
       initials: 'DT',
       name: 'Daniela Torkelson',
-      role: 'Lead Caregiver',
+      role: 'Provider & Resident Manager',
       bio: 'Daniela brings a calm steadiness to everything she does. She knows the difference between managing someone and truly seeing them, and that difference shows up in every interaction. Families trust her instincts, and residents feel safer the moment she walks in the room.',
     },
   ]
@@ -49,15 +51,11 @@ export default function About() {
     },
     {
       title: 'We Keep You Informed',
-      description: 'Open communication, welcome visits, honest conversations. You stay in the loop on what matters. You choose how involved to be.',
+      description: 'Open communication. Visits are welcome. We set up a communication plan based on your family\u2019s preferences and needs. You stay in the loop on what matters and you choose how involved to be.',
     },
     {
       title: 'Small by Design',
-      description: 'An adult family home with up to eight residents. Because real care requires real attention. We say no to growth so we can say yes to each person.',
-    },
-    {
-      title: 'Clear Commitments, Kept',
-      description: 'Licensed, bonded, insured. No hidden fees, no surprises, no excuses. You know exactly what you are getting.',
+      description: 'An adult family home with up to eight residents. The smaller the home, the more attention each person receives. Quality over quantity, every day.',
     },
   ]
 
@@ -69,7 +67,7 @@ export default function About() {
         className="relative min-h-[70vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80&auto=format&fit=crop"
+          src="/images/backyard.webp"
           alt=""
           role="presentation"
           fill
@@ -87,7 +85,7 @@ export default function About() {
             id="about-hero-headline"
             className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            A Home Built for Families Who Wanted&nbsp;<span className="text-sage-light italic">Real</span>&nbsp;Alternatives.
+            A Home Built for Families Who Wanted&nbsp;<span className="text-[color:var(--color-sunshine)] italic">Real</span>&nbsp;Alternatives.
           </h1>
           <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
             We kept watching families forced to choose between cold institutions and staying home until a crisis. We built Burien Best Care Home to give families a third option. A place with the warmth of home and the professionalism of trained caregivers. Peace of mind, without the&nbsp;distance.
@@ -109,7 +107,7 @@ export default function About() {
 
           <ScrollReveal delay={0.2}>
             <GlassCard variant="tinted" className="p-8 sm:p-12 lg:p-14">
-              <div className="space-y-6 text-lg text-white/90 leading-relaxed">
+              <div className="space-y-6 text-lg text-ink-soft leading-relaxed">
                 <p>
                   We saw families struggling. We watched loved ones fade in large facilities where they were room numbers, not people. We watched families torn between guilt and exhaustion. And we decided to create something&nbsp;different.
                 </p>
@@ -164,10 +162,10 @@ export default function About() {
             <div className="text-center mb-16">
               <p className="uppercase tracking-widest text-sm font-semibold text-forest mb-3">Our Team</p>
               <h2 className="font-serif text-4xl md:text-5xl text-forest mb-4 leading-tight">
-                The People Walking This Road&nbsp;With&nbsp;You
+                We&rsquo;re Here for&nbsp;You
               </h2>
               <p className="text-lg text-ink-soft max-w-2xl mx-auto">
-                We become part of your family&rsquo;s&nbsp;story.
+                We&rsquo;re here to help your&nbsp;family.
               </p>
             </div>
           </ScrollReveal>
@@ -176,24 +174,33 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
                 <GlassCard variant="white" className="p-8 sm:p-10 text-center h-full flex flex-col">
-                  <div
-                    aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-terracotta/20 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-terracotta/30 shadow-inner"
-                  >
-                    {member.initials}
-                  </div>
+                  {member.image ? (
+                    <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 border-4 border-[color:var(--color-sunshine)]/40 shadow-inner relative">
+                      <Image
+                        src={member.image}
+                        alt={`Portrait of ${member.name}`}
+                        fill
+                        sizes="112px"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="w-28 h-28 rounded-full bg-[color:var(--color-sunshine)]/25 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-forest border-4 border-[color:var(--color-sunshine)]/40 shadow-inner"
+                    >
+                      {member.initials}
+                    </div>
+                  )}
                   <h3 className="font-serif text-2xl text-forest mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-terracotta font-semibold uppercase tracking-wide text-sm mb-4">
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">
                     {member.role}
                   </p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     {member.bio}
                   </p>
-                  {index === 0 && (
-                    <p className="text-xs text-terracotta font-semibold uppercase tracking-wide mt-4 pt-4 border-t border-terracotta/20">Founder &amp;&nbsp;Care&nbsp;Director</p>
-                  )}
                 </GlassCard>
               </ScrollReveal>
             ))}
@@ -227,8 +234,8 @@ export default function About() {
             <ScrollReveal direction="right" delay={0.2}>
               <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80&auto=format&fit=crop"
-                  alt="Bright and welcoming living room with natural light and comfortable seating"
+                  src="/images/living-room.webp"
+                  alt="The bright communal living room at Burien Best Care Home with comfortable seating and natural light"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"

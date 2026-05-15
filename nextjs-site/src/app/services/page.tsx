@@ -173,12 +173,10 @@ const recoveryCareFeaturesData: FeatureItem[] = [
 
 type Surface = 'white' | 'terracotta'
 
-function FeatureGrid({ features, surface }: { features: FeatureItem[]; surface: Surface }) {
-  const onTerracotta = surface === 'terracotta'
-  const cardClass = onTerracotta
-    ? 'p-6 sm:p-7 bg-white rounded-xl border border-sage/15 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-sage/40'
-    : 'p-6 sm:p-7 bg-terracotta-light rounded-xl border border-terracotta/20 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-terracotta/40'
-  const accentClass = onTerracotta ? 'bg-sage' : 'bg-terracotta'
+function FeatureGrid({ features, surface: _surface }: { features: FeatureItem[]; surface: Surface }) {
+  // Unified card treatment matching homepage GlassCard variant="solid"
+  const cardClass = 'p-6 sm:p-7 bg-bone rounded-xl border border-cream/40 shadow-sm h-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-[color:var(--color-sunshine)]/40'
+  const accentClass = 'bg-[color:var(--color-sunshine)]'
   const titleClass = 'text-forest'
   const bodyClass = 'text-ink-soft'
 
@@ -218,9 +216,10 @@ function ServiceSection({
   delay: number
   surface: Surface
 }) {
-  const onTerracotta = surface === 'terracotta'
-  const sectionBg = onTerracotta ? 'bg-terracotta-light' : 'bg-white'
-  const eyebrow = 'text-terracotta'
+  // surface prop kept for API compat; all sections now use unified transparent bg per homepage pattern
+  const _onTerracotta = surface === 'terracotta'
+  const sectionBg = 'bg-transparent'
+  const eyebrow = 'text-[color:var(--color-sunshine-deep)]'
   const heading = 'text-forest'
   const subheading = 'text-ink-soft'
   const body = 'text-ink-soft'
@@ -345,7 +344,7 @@ export default function ServicesPage() {
         className="relative min-h-[70vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="https://images.unsplash.com/photo-1478144592103-25e218a04891?w=1600&q=80&auto=format&fit=crop"
+          src="/images/dining-room.webp"
           alt=""
           role="presentation"
           fill
@@ -362,7 +361,7 @@ export default function ServicesPage() {
               id="services-hero-headline"
               className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-white mb-6 leading-tight"
             >
-              Care That Treats Your Parent as a&nbsp;<span className="text-sage-light italic">Person</span>.
+              Care That Treats Your Parent as a&nbsp;<span className="text-[color:var(--color-sunshine)] italic">Person</span>.
             </h1>
             <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto">
               Every care plan starts with one question: what does your parent need to feel safe, happy, and at&nbsp;home?
@@ -375,8 +374,8 @@ export default function ServicesPage() {
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <ScrollReveal className="max-w-3xl mx-auto">
           <GlassCard variant="tinted" className="p-8 sm:p-10">
-            <p className="text-center text-white/90 leading-relaxed text-lg sm:text-xl">
-              We don&rsquo;t believe in one-size-fits-all care. In our home, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care actually looks&nbsp;like.
+            <p className="text-center text-ink-soft leading-relaxed text-lg sm:text-xl">
+              We don&rsquo;t believe in one-size-fits-all care. In our home, we have the time and attention to truly know your parent. Their morning preferences, their favorite music, the stories that make them smile. This is what personalized care looks&nbsp;like.
             </p>
           </GlassCard>
         </ScrollReveal>
@@ -390,7 +389,7 @@ export default function ServicesPage() {
           <>
             Your parent with memory loss deserves more than&nbsp;supervision.
             <br className="hidden sm:block" />
-            <span> They deserve <em className="text-white not-italic font-semibold">connection</em>.</span>
+            <span> They deserve <em className="text-[color:var(--color-sunshine-deep)] italic font-semibold">connection</em>.</span>
           </>
         }
         paragraphs={[
@@ -450,7 +449,7 @@ export default function ServicesPage() {
             <br className="hidden sm:block" />
             But going home alone isn&rsquo;t an&nbsp;option.
             <br className="hidden sm:block" />
-            <span> We <em className="text-forest not-italic font-semibold">bridge</em> that gap.</span>
+            <span> We <em className="text-[color:var(--color-sunshine-deep)] italic font-semibold">bridge</em> that gap.</span>
           </>
         }
         paragraphs={[
