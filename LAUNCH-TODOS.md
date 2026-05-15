@@ -5,14 +5,23 @@ These are the things code can't do on its own — accounts to create, credential
 
 ## Brett to do
 
-- [ ] Sign up at https://web3forms.com (free, no card required). Copy the access key.
-- [ ] Set `NEXT_PUBLIC_WEB3FORMS_KEY` in the Vercel project env vars (Production + Preview + Development). Once set, both ContactForm and OpenHouseForm submissions will land in inbox instead of returning the placeholder-key error.
-- [ ] In the Web3Forms dashboard, confirm the destination for the access key — typically configured as Becca's email. ContactForm payload also carries `to_email: becca@burienbestcarehome.com` and OpenHouseForm carries `to_email: info@burienbestcarehome.com`, but Web3Forms will only honor those if forwarding is enabled in the dashboard.
 - [ ] Re-point DNS for `burienbestcarehome.com` to the Vercel deployment when ready to flip canonical. The code is now wired to `.com` everywhere; production deploy can stay on `.site` if needed by switching one Vercel domain alias.
 
 ## Becca to do
 
-- [ ] Replace the 4 remaining Unsplash placeholder hero images with real photos from her Drive:
+### Forms backend (Google Apps Script webhook)
+
+- [ ] Create a new Google Sheet titled "Burien Best Care Home — Form Submissions" with two tabs: `Contact` and `Open House`.
+- [ ] Extensions → Apps Script → paste the starter from `templates/apps-script/Code.gs` into the editor (replace the default `Code.gs`).
+- [ ] Save the script (give it a name like "BBCH Form Webhook").
+- [ ] Deploy → New deployment → Type: Web app → Execute as: Me → Who has access: Anyone → Deploy. Authorize when prompted.
+- [ ] Copy the generated web app URL (looks like `https://script.google.com/macros/s/AKfyc.../exec`).
+- [ ] Paste it as `NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL` in the Vercel project env vars (Production + Preview + Development). Redeploy the site so the new env var bakes into the static build.
+- [ ] Test by submitting both forms in preview, verifying a row writes to the correct sheet tab and an email alert lands in becca@burienbestcarehome.com (contact form) / info@burienbestcarehome.com (open house RSVP).
+
+### Content + trust signals
+
+- [ ] Replace the remaining Unsplash placeholder hero images with real photos from Drive:
   - `/about` — currently `/images/backyard.webp` (kept from May-2 update, good for now; swap if a better hero photo exists)
   - `/services` — currently `/images/dining-room.webp` (good for now)
   - `/next-steps` — still uses an Unsplash bedroom photo (`photo-1600585154340-be6161a56a0c`). Swap for a real home interior photo.

@@ -27,10 +27,8 @@ interface OpenHouseFormProps {
   onDark?: boolean
 }
 
-const WEB3FORMS_KEY =
-  process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? 'WEB3FORMS_ACCESS_KEY_TODO_REPLACE'
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
-const OPEN_HOUSE_RECIPIENT = 'info@burienbestcarehome.com'
+const APPS_SCRIPT_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL ?? 'APPS_SCRIPT_WEBHOOK_URL_TODO_REPLACE'
 
 export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
   // Color tokens flip based on panel treatment
@@ -114,31 +112,32 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
 
     try {
       const payload = {
-        access_key: WEB3FORMS_KEY,
-        to_email: OPEN_HOUSE_RECIPIENT,
-        subject: `Open House RSVP from ${formData.name}`,
-        from_name: formData.name,
-        replyto: formData.email,
-        botcheck: formData.botcheck,
+        form_type: 'open_house_rsvp',
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         guests: formData.guests,
+        botcheck: formData.botcheck,
       }
 
-      const res = await fetch(WEB3FORMS_ENDPOINT, {
+      // Use Content-Type: text/plain to skip the CORS preflight that Apps
+      // Script web apps can't satisfy. The script still parses the body
+      // string as JSON via JSON.parse(e.postData.contents).
+      const res = await fetch(APPS_SCRIPT_WEBHOOK_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
         body: JSON.stringify(payload),
       })
 
-      const result = (await res.json()) as { success?: boolean; message?: string }
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`)
+      }
 
-      if (!res.ok || !result.success) {
-        throw new Error(result.message || 'Submission failed')
+      const result = (await res.json().catch(() => ({}))) as { status?: string }
+      if (result.status && result.status !== 'success' && result.status !== 'ok') {
+        throw new Error(result.status)
       }
 
       setSubmitSuccess(true)

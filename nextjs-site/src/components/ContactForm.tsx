@@ -12,7 +12,7 @@ interface FormData {
   visitDate: string
   visitTime: string
   message: string
-  // Honeypot — Web3Forms rejects submissions where this is non-empty
+  // Honeypot — the Apps Script rejects submissions where this is non-empty
   botcheck: string
 }
 
@@ -20,13 +20,11 @@ interface FormErrors {
   [key: string]: string
 }
 
-// Placeholder is replaced at build time when NEXT_PUBLIC_WEB3FORMS_KEY is set
-// in the Vercel project env. Until that key is configured, submissions will
-// return a Web3Forms error and the user will see the inline error state.
-const WEB3FORMS_KEY =
-  process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? 'WEB3FORMS_ACCESS_KEY_TODO_REPLACE'
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
-const CONTACT_RECIPIENT = 'becca@burienbestcarehome.com'
+// Placeholder is replaced at build time when NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL
+// is set in the Vercel project env. Until the URL is configured, submissions
+// will return an error and the user will see the inline error state.
+const APPS_SCRIPT_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL ?? 'APPS_SCRIPT_WEBHOOK_URL_TODO_REPLACE'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -109,14 +107,8 @@ export default function ContactForm() {
 
     try {
       const payload = {
-        access_key: WEB3FORMS_KEY,
-        // Web3Forms supports forwarding to a specific address if enabled in
-        // the dashboard. The default recipient is configured server-side.
-        to_email: CONTACT_RECIPIENT,
-        subject: `Visit Request from ${formData.firstName} ${formData.lastName}`,
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        replyto: formData.email,
-        botcheck: formData.botcheck,
+        form_type: 'contact',
+        name: `${formData.firstName} ${formData.lastName}`,
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
@@ -126,21 +118,30 @@ export default function ContactForm() {
         visitDate: formData.visitDate,
         visitTime: formData.visitTime,
         message: formData.message,
+        botcheck: formData.botcheck,
       }
 
-      const res = await fetch(WEB3FORMS_ENDPOINT, {
+      // Note: Apps Script web apps don't respond to CORS preflight (OPTIONS),
+      // so a POST with Content-Type: application/json gets blocked by the
+      // browser. The standard pattern is to send JSON as the body but with
+      // Content-Type: text/plain — that makes it a "simple" CORS request that
+      // skips preflight. Apps Script reads e.postData.contents as a raw
+      // string regardless of the declared Content-Type.
+      const res = await fetch(APPS_SCRIPT_WEBHOOK_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
         body: JSON.stringify(payload),
       })
 
-      const result = (await res.json()) as { success?: boolean; message?: string }
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`)
+      }
 
-      if (!res.ok || !result.success) {
-        throw new Error(result.message || 'Submission failed')
+      const result = (await res.json().catch(() => ({}))) as { status?: string }
+      if (result.status && result.status !== 'success' && result.status !== 'ok') {
+        throw new Error(result.status)
       }
 
       setIsSuccess(true)
