@@ -32,14 +32,14 @@ export default function About() {
       image: '/images/becca-headshot.webp',
       initials: 'BP',
       name: 'Becca Pitts',
-      role: 'Co-Founder',
+      role: 'Owner & Care Director',
       bio: 'Becca founded this home after years walking alongside families in senior care. She has been where you are right now, helping her own family navigate this decision. She knows the exhaustion of trying to find a place that feels like home, not a facility. She built this because she wished it existed for her own family.',
     },
     {
       image: null,
       initials: 'DT',
       name: 'Daniela Torkelson',
-      role: 'Provider & Resident Manager',
+      role: 'Lead Caregiver',
       bio: 'Daniela brings a calm steadiness to everything she does. She knows the difference between managing someone and truly seeing them, and that difference shows up in every interaction. Families trust her instincts, and residents feel safer the moment she walks in the room.',
     },
   ]
