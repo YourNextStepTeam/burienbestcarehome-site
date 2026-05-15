@@ -137,7 +137,6 @@ export default function Navigation() {
             className="md:hidden inline-flex flex-col items-center justify-center gap-1.5 min-w-12 min-h-12 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 12 } : { rotate: 0, y: 0 }}

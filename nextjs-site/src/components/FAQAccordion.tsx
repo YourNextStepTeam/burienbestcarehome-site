@@ -36,7 +36,6 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
             onClick={() => toggleItem(index)}
             onKeyDown={(e) => handleKeyDown(e, index)}
             aria-expanded={openIndex === index}
-            aria-controls={`faq-answer-${index}`}
             className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left hover:bg-sage/5 transition-colors"
           >
             <h3 className="font-serif text-lg text-forest font-semibold">
