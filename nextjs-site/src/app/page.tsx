@@ -80,7 +80,7 @@ export default function Home() {
               'Compassionate adult family home providing memory care, daily living assistance, respite care, and post-hospital recovery for seniors in Burien, Kent, Renton, Tukwila, SeaTac, and across King County, Washington.',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Burien',
+              // TODO Brett: Add real street address once Becca confirms it's safe to publish
               addressLocality: 'Burien',
               addressRegion: 'WA',
               postalCode: '98148',
