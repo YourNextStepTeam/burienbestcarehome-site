@@ -50,13 +50,12 @@ export default function Footer() {
               <div className="text-cream/95 text-sm space-y-4">
                 <div>
                   <p className="font-medium text-sage-light-light mb-1">Address</p>
-                  {/* TODO Becca: replace [STREET NAME TODO] once confirmed */}
                   <p>
-                    <span itemProp="streetAddress">927 [STREET NAME TODO]</span>
+                    <span itemProp="streetAddress">927 SW 132nd St</span>
                     <br />
                     <span itemProp="addressLocality">Burien</span>,{' '}
                     <span itemProp="addressRegion">WA</span>{' '}
-                    <span itemProp="postalCode">98148</span>
+                    <span itemProp="postalCode">98146</span>
                   </p>
                 </div>
                 <div>

@@ -97,7 +97,7 @@ export const metadata: Metadata = {
   other: {
     'geo.placename': 'Burien, WA',
     'geo.region': 'US-WA',
-    ICBM: '47.4707, -122.3470',
+    ICBM: '47.4870, -122.3636',
   },
 }
 

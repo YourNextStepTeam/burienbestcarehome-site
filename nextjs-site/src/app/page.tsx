@@ -80,26 +80,20 @@ export default function Home() {
               'Compassionate adult family home providing memory care, daily living assistance, respite care, and post-hospital recovery for seniors in Burien, Kent, Renton, Tukwila, SeaTac, and across King County, Washington.',
             address: {
               '@type': 'PostalAddress',
-              // Brett confirmed street number 927. Street name + verified ZIP
-              // are still pending Becca; 98148 is the downtown-Burien default
-              // and may need to be 98146 / 98166 / 98168 depending on the home.
-              // TODO Becca: confirm full street name + ZIP, then update here.
-              streetAddress: '927 [STREET NAME TODO]',
+              streetAddress: '927 SW 132nd St',
               addressLocality: 'Burien',
               addressRegion: 'WA',
-              postalCode: '98148',
+              postalCode: '98146',
               addressCountry: 'US',
             },
             telephone: '(253) 678-7089',
             email: 'info@burienbestcarehome.com',
             url: 'https://burienbestcarehome.com',
             priceRange: '$$',
-            // Coordinates approximate downtown Burien; Becca can refine to the
-            // home's exact location once she's comfortable publishing it.
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: '47.4707',
-              longitude: '-122.3470',
+              latitude: '47.4870',
+              longitude: '-122.3636',
             },
             // Adult family homes are 24/7 care; this is the schema-org way to
             // say "always open" so Map Pack and Knowledge Panel show it.
