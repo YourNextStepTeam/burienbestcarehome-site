@@ -80,7 +80,11 @@ export default function Home() {
               'Compassionate adult family home providing memory care, daily living assistance, respite care, and post-hospital recovery for seniors in Burien, Kent, Renton, Tukwila, SeaTac, and across King County, Washington.',
             address: {
               '@type': 'PostalAddress',
-              // TODO Brett: Add real street address once Becca confirms it's safe to publish
+              // Brett confirmed street number 927. Street name + verified ZIP
+              // are still pending Becca; 98148 is the downtown-Burien default
+              // and may need to be 98146 / 98166 / 98168 depending on the home.
+              // TODO Becca: confirm full street name + ZIP, then update here.
+              streetAddress: '927 [STREET NAME TODO]',
               addressLocality: 'Burien',
               addressRegion: 'WA',
               postalCode: '98148',
@@ -90,10 +94,28 @@ export default function Home() {
             email: 'info@burienbestcarehome.com',
             url: 'https://burienbestcarehome.com',
             priceRange: '$$',
+            // Coordinates approximate downtown Burien; Becca can refine to the
+            // home's exact location once she's comfortable publishing it.
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: '47.4954',
-              longitude: '-122.3307',
+              latitude: '47.4707',
+              longitude: '-122.3470',
+            },
+            // Adult family homes are 24/7 care; this is the schema-org way to
+            // say "always open" so Map Pack and Knowledge Panel show it.
+            openingHoursSpecification: {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday',
+              ],
+              opens: '00:00',
+              closes: '23:59',
             },
             // aggregateRating intentionally omitted: Google requires reviews
             // to be visible on the same page as the schema, and we have no

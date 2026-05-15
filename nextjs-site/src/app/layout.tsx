@@ -91,6 +91,14 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  // Legacy geo meta tags — still consumed by some local-SEO crawlers and
+  // tools (Bing Webmaster, third-party local directories). The JSON-LD on
+  // the homepage is the primary signal; these are a belt-and-suspenders move.
+  other: {
+    'geo.placename': 'Burien, WA',
+    'geo.region': 'US-WA',
+    ICBM: '47.4707, -122.3470',
+  },
 }
 
 export default function RootLayout({

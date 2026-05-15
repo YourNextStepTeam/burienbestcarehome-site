@@ -172,13 +172,37 @@ export default function Contact() {
             {/* Address Section */}
             <ScrollReveal delay={0.1}>
               <GlassCard variant="white" className="p-6 sm:p-8 h-full flex flex-col">
-                <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-1">Located in</p>
-                <p className="font-serif text-2xl text-forest leading-tight mb-3">
-                  Burien, Washington
+                <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Visit Us</p>
+                {/* TODO Becca: replace [STREET NAME TODO] once confirmed */}
+                <address
+                  className="not-italic font-serif text-2xl text-forest leading-tight mb-3"
+                  itemScope
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <span itemProp="streetAddress">927 [STREET NAME TODO]</span>
+                  <br />
+                  <span itemProp="addressLocality">Burien</span>,{' '}
+                  <span itemProp="addressRegion">WA</span>{' '}
+                  <span itemProp="postalCode">98148</span>
+                </address>
+                <p className="text-sm text-ink-soft mb-4">
+                  Tours by appointment. Schedule a visit and we&rsquo;ll confirm exact arrival&nbsp;directions.
                 </p>
-                <p className="text-ink-soft leading-relaxed flex-grow">
-                  Address available upon request. We'll share the exact location when you schedule a&nbsp;visit.
-                </p>
+                <div className="relative rounded-lg overflow-hidden border border-[rgba(45,62,74,0.08)] aspect-[4/3] flex-grow">
+                  {/* Google Maps embed centered on Burien, WA. Once Becca confirms
+                      the full street address, regenerate this URL via Google
+                      Maps -> Share -> Embed a map for the precise pin. */}
+                  <iframe
+                    title="Map showing Burien Best Care Home location in Burien, Washington"
+                    src="https://www.google.com/maps?q=Burien+WA+98148&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, position: 'absolute', inset: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
               </GlassCard>
             </ScrollReveal>
           </div>

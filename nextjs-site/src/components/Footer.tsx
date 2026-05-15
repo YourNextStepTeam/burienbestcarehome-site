@@ -46,11 +46,18 @@ export default function Footer() {
           {/* Contact Column */}
           <div>
             <h2 className="text-lg font-semibold mb-4 text-sage-light">Contact</h2>
-            <address className="not-italic">
+            <address className="not-italic" itemScope itemType="https://schema.org/PostalAddress">
               <div className="text-cream/95 text-sm space-y-4">
                 <div>
                   <p className="font-medium text-sage-light-light mb-1">Address</p>
-                  <p>Burien, WA 98148</p>
+                  {/* TODO Becca: replace [STREET NAME TODO] once confirmed */}
+                  <p>
+                    <span itemProp="streetAddress">927 [STREET NAME TODO]</span>
+                    <br />
+                    <span itemProp="addressLocality">Burien</span>,{' '}
+                    <span itemProp="addressRegion">WA</span>{' '}
+                    <span itemProp="postalCode">98148</span>
+                  </p>
                 </div>
                 <div>
                   <p className="font-medium text-sage-light-light mb-1">Phone</p>

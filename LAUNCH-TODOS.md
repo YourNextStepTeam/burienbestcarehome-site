@@ -3,9 +3,20 @@
 Items that block or follow the launch-readiness PR (`launch-readiness-fixes` branch).
 These are the things code can't do on its own — accounts to create, credentials to confirm, content to swap.
 
+## CRITICAL — Becca confirm address (blocks production launch)
+
+The site currently publishes `927 [STREET NAME TODO], Burien, WA 98148` as a placeholder. This needs the real street name + verified ZIP before the production deploy so the local-SEO schema, footer NAP, and Contact-page map embed point at a real address.
+
+- [ ] Confirm full street address: **927 [street name], Burien, WA [zip]**
+  - Search for `[STREET NAME TODO]` across the repo (3 hits expected: `nextjs-site/src/app/page.tsx` JSON-LD, `nextjs-site/src/components/Footer.tsx`, `nextjs-site/src/app/contact/page.tsx`) and replace with the real street name.
+  - Verify ZIP is correct (98148 is the downtown-Burien default; the home may actually be in 98146 / 98166 / 98168 depending on the side of town).
+  - Once corrected, regenerate the Contact-page Google Maps embed URL: open Google Maps → search the real address → Share → Embed a map → copy the new `src` into `nextjs-site/src/app/contact/page.tsx` (replace the current `https://www.google.com/maps?q=Burien+WA+98148...` URL).
+  - Optional: refine the `geo` coordinates in `page.tsx` JSON-LD and the `ICBM` meta tag in `layout.tsx` from the downtown-Burien default (`47.4707, -122.3470`) to the home's exact lat/long. Right-click the pin in Google Maps to get coordinates.
+
 ## Brett to do
 
 - [ ] Re-point DNS for `burienbestcarehome.com` to the Vercel deployment when ready to flip canonical. The code is now wired to `.com` everywhere; production deploy can stay on `.site` if needed by switching one Vercel domain alias.
+- [ ] Register / claim the **Google Business Profile** at https://business.google.com using the same NAP (Name / Address / Phone) as the site: "Burien Best Care Home" / `927 [confirmed street], Burien, WA [confirmed zip]` / `(253) 678-7089`. This is the single biggest move for Map Pack visibility — the on-site schema is necessary but not sufficient. Verify the listing by postcard or phone, set business hours to 24/7, and link the website to the live `.com` domain.
 
 ## Becca to do
 
