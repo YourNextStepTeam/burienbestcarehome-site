@@ -125,7 +125,7 @@ export default function NextSteps() {
         className="relative min-h-[60vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80&auto=format&fit=crop"
+          src="/photos/heroes/hero-next-steps-open-plan-living.webp"
           alt=""
           role="presentation"
           fill

@@ -344,7 +344,7 @@ export default function ServicesPage() {
         className="relative min-h-[70vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="/images/dining-room.webp"
+          src="/photos/heroes/hero-services-kitchen-island.webp"
           alt=""
           role="presentation"
           fill

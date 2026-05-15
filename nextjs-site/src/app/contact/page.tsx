@@ -69,7 +69,7 @@ export default function Contact() {
         className="relative min-h-[70vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="/images/exterior-front.webp"
+          src="/photos/heroes/hero-contact-home-side-driveway.webp"
           alt=""
           role="presentation"
           fill

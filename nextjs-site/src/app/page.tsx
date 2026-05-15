@@ -591,8 +591,8 @@ export default function Home() {
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 border-4 border-[color:var(--color-sunshine)]/40 shadow-inner relative">
                     <Image
-                      src="/images/becca-headshot.webp"
-                      alt="Portrait of Becca Pitts"
+                      src="/photos/staff/becca-pitts-owner-care-director.webp"
+                      alt="Portrait of Becca Pitts, Owner and Care Director of Burien Best Care Home"
                       fill
                       sizes="112px"
                       className="object-cover"
@@ -611,11 +611,14 @@ export default function Home() {
               {/* Team Member 2: Daniela Torkelson */}
               <ScrollReveal delay={0.1}>
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
-                  <div
-                    aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-[color:var(--color-sunshine)]/25 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-[color:var(--color-ink)] border-4 border-[color:var(--color-sunshine)]/40 shadow-inner"
-                  >
-                    DT
+                  <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 border-4 border-[color:var(--color-sunshine)]/40 shadow-inner relative">
+                    <Image
+                      src="/photos/staff/dana-t-caregiver.webp"
+                      alt="Portrait of Daniela Torkelson, Lead Caregiver at Burien Best Care Home"
+                      fill
+                      sizes="112px"
+                      className="object-cover"
+                    />
                   </div>
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Daniela Torkelson

@@ -29,14 +29,14 @@ export const metadata: Metadata = {
 export default function About() {
   const teamMembers = [
     {
-      image: '/images/becca-headshot.webp',
+      image: '/photos/staff/becca-pitts-owner-care-director.webp',
       initials: 'BP',
       name: 'Becca Pitts',
       role: 'Owner & Care Director',
       bio: 'Becca founded this home after years walking alongside families in senior care. She has been where you are right now, helping her own family navigate this decision. She knows the exhaustion of trying to find a place that feels like home, not a facility. She built this because she wished it existed for her own family.',
     },
     {
-      image: null,
+      image: '/photos/staff/dana-t-caregiver.webp',
       initials: 'DT',
       name: 'Daniela Torkelson',
       role: 'Lead Caregiver',
@@ -67,7 +67,7 @@ export default function About() {
         className="relative min-h-[70vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="/images/backyard.webp"
+          src="/photos/heroes/hero-about-living-room-grand-piano.webp"
           alt=""
           role="presentation"
           fill
