@@ -48,12 +48,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  // Only the Vercel production deployment is indexable. PR previews and
+  // branch deploys get noindex,nofollow so they don't compete with the
+  // real site for search traffic. VERCEL_ENV is auto-populated by Vercel
+  // at build time ("production" / "preview" / "development").
   robots: {
-    index: true,
-    follow: true,
+    index: process.env.VERCEL_ENV === 'production',
+    follow: process.env.VERCEL_ENV === 'production',
     googleBot: {
-      index: true,
-      follow: true,
+      index: process.env.VERCEL_ENV === 'production',
+      follow: process.env.VERCEL_ENV === 'production',
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
