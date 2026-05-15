@@ -95,11 +95,9 @@ export default function Home() {
               latitude: '47.4954',
               longitude: '-122.3307',
             },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5',
-              ratingCount: '12',
-            },
+            // aggregateRating intentionally omitted: Google requires reviews
+            // to be visible on the same page as the schema, and we have no
+            // on-page review block yet. Restore once 3+ real reviews ship.
             knowsAbout: [
               'Memory Care',
               'Daily Living Assistance',
