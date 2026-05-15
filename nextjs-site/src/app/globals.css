@@ -9,18 +9,18 @@
   --color-moss-light: #8FA58B;     /* brighter moss — hover / highlights */
   --color-fog: #E8ECE6;            /* cool pale green-tinted fog */
   --color-bone: #FDFBF7;           /* bone white — glass panel tint */
-  --color-clay: #B8876B;           /* muted clay — kept muted for form error/validation visibility */
-  --color-clay-deep: #8F6245;      /* deep clay — errors, outlined warnings */
+  --color-clay: #7a4f3a;           /* deep clay for text — hits WCAG AA on bone/cream surfaces */
+  --color-clay-deep: #5e3a29;      /* deepest clay — errors, outlined warnings (stronger AA) */
   --color-sunshine: #F3B94D;       /* lemons-in-a-glass-bowl yellow — the pop/accent color */
-  --color-sunshine-deep: #D99A2B;  /* deep sunshine — button hover / punchy italics */
+  --color-sunshine-deep: #9a6500;  /* deep sunshine for text/punchy italics — WCAG AA 4.5:1 on light bg */
 
   /* Backwards-compatible aliases — legacy utility classes resolve to the new palette */
   --color-sage: #4A5560;            /* neutralized: legacy text-sage/bg-sage now reads as subtle dark ink, not green */
   --color-sage-light: #F0EBE2;      /* neutralized: legacy bg-sage-light/text-sage-light now reads as warm parchment, not mint */
   --color-cream: #F7F3EC;           /* warm cream — page base */
-  --color-terracotta: #B8876B;      /* kept muted clay so form validation asterisks/errors stay readable */
+  --color-terracotta: #7a4f3a;      /* deep clay — passes WCAG AA on bone/cream for asterisks and inline error text */
   --color-terracotta-light: #E8ECE6; /* cool fog for tinted surfaces */
-  --color-terracotta-deep: #8F6245; /* deep clay — form error text color */
+  --color-terracotta-deep: #5e3a29; /* deepest clay — form error text color (stronger AA) */
   --color-forest: #2D3E4A;          /* was forest green, now deep slate (kills green H1s) */
   --color-ink: #1A2028;             /* near-black */
   --color-ink-soft: #4A5560;        /* body text soft */
