@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Next Steps | Burien Best Care Home',
     description:
       'What to expect after you decide Burien Best Care Home is the right fit for your family.',
-    url: 'https://burienbestcarehome.site/next-steps',
+    url: 'https://burienbestcarehome.com/next-steps',
     type: 'website',
   },
 }
@@ -97,8 +97,8 @@ export default function NextSteps() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://burienbestcarehome.site' },
-              { '@type': 'ListItem', position: 2, name: 'Next Steps', item: 'https://burienbestcarehome.site/next-steps' },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://burienbestcarehome.com' },
+              { '@type': 'ListItem', position: 2, name: 'Next Steps', item: 'https://burienbestcarehome.com/next-steps' },
             ],
           }),
         }}

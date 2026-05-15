@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import GlassCard from '@/components/GlassCard'
 import ScheduleVisitButton from '@/components/ScheduleVisitButton'
 
-const SITE_URL = 'https://burienbestcarehome.site'
+const SITE_URL = 'https://burienbestcarehome.com'
 
 interface PageProps {
   params: Promise<{ slug: string }>

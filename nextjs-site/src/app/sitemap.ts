@@ -3,7 +3,7 @@ import { getAllPosts } from '@/content/posts'
 
 export const dynamic = 'force-static'
 
-const SITE_URL = 'https://burienbestcarehome.site'
+const SITE_URL = 'https://burienbestcarehome.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()

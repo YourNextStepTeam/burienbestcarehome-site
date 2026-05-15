@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     title: 'Blog | Burien Best Care Home',
     description:
       'Honest writing for families navigating senior care in King County.',
-    url: 'https://burienbestcarehome.site/blog',
+    url: 'https://burienbestcarehome.com/blog',
     type: 'website',
   },
 }
 
-const SITE_URL = 'https://burienbestcarehome.site'
+const SITE_URL = 'https://burienbestcarehome.com'
 
 function formatDate(iso: string) {
   const d = new Date(iso)
