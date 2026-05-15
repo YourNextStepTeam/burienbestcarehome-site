@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) {
-    return { title: 'Not found | Burien Best Care Home' }
+    return { title: 'Not found' }
   }
   return {
-    title: `${post.title} | Burien Best Care Home`,
+    title: post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {

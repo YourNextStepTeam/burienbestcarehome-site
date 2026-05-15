@@ -7,7 +7,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import GlassCard from '@/components/GlassCard'
 
 export const metadata: Metadata = {
-  title: 'Next Steps | Burien Best Care Home',
+  title: 'Next Steps',
   description:
     'What to expect after you decide Burien Best Care Home is the right fit. A clear, unhurried path from first visit to move-in, with pricing transparency, care plan timeline, and FAQs.',
   alternates: {
