@@ -8,12 +8,14 @@ interface FormData {
   email: string
   phone: string
   guests: string
+  botcheck: string
 }
 
 interface FormErrors {
   name?: string
   email?: string
   guests?: string
+  submit?: string
 }
 
 interface OpenHouseFormProps {
@@ -24,6 +26,9 @@ interface OpenHouseFormProps {
    */
   onDark?: boolean
 }
+
+const APPS_SCRIPT_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL ?? 'APPS_SCRIPT_WEBHOOK_URL_TODO_REPLACE'
 
 export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
   // Color tokens flip based on panel treatment
@@ -43,15 +48,15 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
     ? 'rounded-lg bg-[color:var(--color-sunshine)]/15 border border-[color:var(--color-sunshine)] p-4'
     : 'rounded-lg bg-sage/10 border border-sage p-4'
   const successTextCls = onDark ? 'text-[color:var(--color-bone)] font-medium' : 'text-forest font-medium'
-  const submitCls = onDark
-    ? 'w-full inline-flex items-center justify-center min-h-14 bg-[color:var(--color-sunshine)] hover:bg-[color:var(--color-sunshine-deep)] text-ink text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-[color:var(--color-sunshine)]/40'
-    : 'w-full inline-flex items-center justify-center min-h-14 bg-[color:var(--color-sunshine)] hover:bg-[color:var(--color-sunshine-deep)] text-ink text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-[color:var(--color-sunshine)]/40'
+  const submitCls =
+    'w-full inline-flex items-center justify-center min-h-14 bg-[color:var(--color-sunshine)] hover:bg-[color:var(--color-sunshine-deep)] text-ink text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-[color:var(--color-sunshine)]/40'
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
     guests: '',
+    botcheck: '',
   })
 
   const [errors, setErrors] = useState<FormErrors>({})
@@ -103,29 +108,44 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
     }
 
     setIsSubmitting(true)
+    setErrors((prev) => ({ ...prev, submit: undefined }))
 
-    // Static site: open user's email client pre-filled with the RSVP data
     try {
-      const subject = `Open House RSVP from ${formData.name}`
-      const bodyLines = [
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        formData.phone ? `Phone: ${formData.phone}` : null,
-        `Number of guests: ${formData.guests}`,
-      ].filter(Boolean)
-      const body = bodyLines.join('\n')
-      const mailto = `mailto:info@burienbestcarehome.com?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`
+      const payload = {
+        form_type: 'open_house_rsvp',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        guests: formData.guests,
+        botcheck: formData.botcheck,
+      }
 
-      window.location.href = mailto
+      // Use Content-Type: text/plain to skip the CORS preflight that Apps
+      // Script web apps can't satisfy. The script still parses the body
+      // string as JSON via JSON.parse(e.postData.contents).
+      const res = await fetch(APPS_SCRIPT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`)
+      }
+
+      const result = (await res.json().catch(() => ({}))) as { status?: string }
+      if (result.status && result.status !== 'success' && result.status !== 'ok') {
+        throw new Error(result.status)
+      }
 
       setSubmitSuccess(true)
-      setFormData({ name: '', email: '', phone: '', guests: '' })
-      setTimeout(() => setSubmitSuccess(false), 8000)
-    } catch {
+      setFormData({ name: '', email: '', phone: '', guests: '', botcheck: '' })
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Submission failed'
       setErrors({
-        name: 'We could not open your email client. Please email info@burienbestcarehome.com directly.',
+        submit: `We could not save your RSVP (${message}). Please email info@burienbestcarehome.com directly and we will add you to the list.`,
       })
     } finally {
       setIsSubmitting(false)
@@ -138,17 +158,39 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
       className="space-y-6 max-w-md mx-auto"
       noValidate
     >
+      {/* Honeypot */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        checked={!!formData.botcheck}
+        onChange={(e) =>
+          setFormData((prev) => ({ ...prev, botcheck: e.target.checked ? 'true' : '' }))
+        }
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
       {submitSuccess && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           className={successBoxCls}
+          role="status"
+          aria-live="polite"
         >
           <p className={successTextCls}>
-            Thank you! We have received your RSVP and will be in touch soon.
+            Thank you! We have received your RSVP and will be in touch as soon as the next open house date is set.
           </p>
         </motion.div>
+      )}
+
+      {errors.submit && (
+        <div className={`rounded-lg border p-4 ${onDark ? 'bg-[color:var(--color-sunshine)]/10 border-[color:var(--color-sunshine)]' : 'bg-terracotta/10 border-terracotta-deep'} ${errorTextCls} font-medium`} role="alert">
+          {errors.submit}
+        </div>
       )}
 
       {/* Name Field */}
@@ -166,7 +208,8 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
           value={formData.name}
           onChange={handleChange}
           placeholder="Full Name"
-          className={`w-full px-4 py-3 rounded-lg border ${
+          autoComplete="name"
+          className={`w-full min-h-12 px-4 py-3 rounded-lg border ${
             errors.name
               ? inputError
               : inputBase
@@ -197,7 +240,8 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
           value={formData.email}
           onChange={handleChange}
           placeholder="your@email.com"
-          className={`w-full px-4 py-3 rounded-lg border ${
+          autoComplete="email"
+          className={`w-full min-h-12 px-4 py-3 rounded-lg border ${
             errors.email
               ? inputError
               : inputBase
@@ -225,7 +269,8 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
           value={formData.phone}
           onChange={handleChange}
           placeholder="(206) 555-0000"
-          className={`w-full px-4 py-3 rounded-lg border ${inputBase} ${focusRing} focus:outline-none focus:ring-2 transition-all`}
+          autoComplete="tel"
+          className={`w-full min-h-12 px-4 py-3 rounded-lg border ${inputBase} ${focusRing} focus:outline-none focus:ring-2 transition-all`}
         />
       </div>
 
@@ -242,7 +287,8 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
           name="guests"
           value={formData.guests}
           onChange={handleChange}
-          className={`w-full px-4 py-3 rounded-lg border ${
+          autoComplete="off"
+          className={`w-full min-h-12 px-4 py-3 rounded-lg border ${
             errors.guests
               ? inputError
               : inputBase
@@ -270,7 +316,7 @@ export default function OpenHouseForm({ onDark = false }: OpenHouseFormProps) {
         disabled={isSubmitting}
         className={submitCls}
       >
-        {isSubmitting ? 'Submitting\u2026' : 'Reserve Your Spot \u2192'}
+        {isSubmitting ? 'Submitting…' : 'Reserve Your Spot →'}
       </button>
     </form>
   )

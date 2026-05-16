@@ -43,8 +43,8 @@ export default function HeroSection() {
     >
       {/* Actual photo of Burien Best Care Home */}
       <Image
-        src="/hero-home.jpg"
-        alt="Burien Best Care Home, a welcoming gray craftsman-style adult family home with a covered porch"
+        src="/photos/heroes/hero-home-burien-care-home-exterior.webp"
+        alt="Front exterior of Burien Best Care Home, a welcoming craftsman-style adult family home in Burien, Washington"
         fill
         priority
         sizes="100vw"

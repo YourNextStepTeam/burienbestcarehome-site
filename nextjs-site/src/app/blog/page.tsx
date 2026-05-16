@@ -5,7 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import GlassCard from '@/components/GlassCard'
 
 export const metadata: Metadata = {
-  title: 'Blog | Burien Best Care Home',
+  title: 'Blog',
   description:
     'Honest writing for families navigating senior care in King County — practical guides, real-talk about cost and timing, and what to look for when you tour any adult family home.',
   alternates: { canonical: '/blog' },
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     title: 'Blog | Burien Best Care Home',
     description:
       'Honest writing for families navigating senior care in King County.',
-    url: 'https://burienbestcarehome.site/blog',
+    url: 'https://burienbestcarehome.com/blog',
     type: 'website',
   },
 }
 
-const SITE_URL = 'https://burienbestcarehome.site'
+const SITE_URL = 'https://burienbestcarehome.com'
 
 function formatDate(iso: string) {
   const d = new Date(iso)

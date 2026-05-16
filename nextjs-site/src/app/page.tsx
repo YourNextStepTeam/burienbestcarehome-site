@@ -75,31 +75,45 @@ export default function Home() {
             '@context': 'https://schema.org',
             '@type': ['LocalBusiness', 'AssistedLivingFacility'],
             name: 'Burien Best Care Home',
-            image: 'https://burienbestcarehome.site/og-image.png',
+            image: 'https://burienbestcarehome.com/og-image.png',
             description:
               'Compassionate adult family home providing memory care, daily living assistance, respite care, and post-hospital recovery for seniors in Burien, Kent, Renton, Tukwila, SeaTac, and across King County, Washington.',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Burien',
+              streetAddress: '927 SW 132nd St',
               addressLocality: 'Burien',
               addressRegion: 'WA',
-              postalCode: '98148',
+              postalCode: '98146',
               addressCountry: 'US',
             },
             telephone: '(253) 678-7089',
-            email: 'info@burienbestcarehome.site',
-            url: 'https://burienbestcarehome.site',
+            email: 'info@burienbestcarehome.com',
+            url: 'https://burienbestcarehome.com',
             priceRange: '$$',
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: '47.4954',
-              longitude: '-122.3307',
+              latitude: '47.4870',
+              longitude: '-122.3636',
             },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '5',
-              ratingCount: '12',
+            // Adult family homes are 24/7 care; this is the schema-org way to
+            // say "always open" so Map Pack and Knowledge Panel show it.
+            openingHoursSpecification: {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday',
+              ],
+              opens: '00:00',
+              closes: '23:59',
             },
+            // aggregateRating intentionally omitted: Google requires reviews
+            // to be visible on the same page as the schema, and we have no
+            // on-page review block yet. Restore once 3+ real reviews ship.
             knowsAbout: [
               'Memory Care',
               'Daily Living Assistance',
@@ -157,25 +171,25 @@ export default function Home() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://burienbestcarehome.site/',
+                item: 'https://burienbestcarehome.com/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Our Home',
-                item: 'https://burienbestcarehome.site/#our-home',
+                item: 'https://burienbestcarehome.com/#our-home',
               },
               {
                 '@type': 'ListItem',
                 position: 3,
                 name: 'Services',
-                item: 'https://burienbestcarehome.site/services',
+                item: 'https://burienbestcarehome.com/services',
               },
               {
                 '@type': 'ListItem',
                 position: 4,
                 name: 'Our Team',
-                item: 'https://burienbestcarehome.site/#our-team',
+                item: 'https://burienbestcarehome.com/#our-team',
               },
             ],
           }),
@@ -593,8 +607,8 @@ export default function Home() {
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
                   <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 border-4 border-[color:var(--color-sunshine)]/40 shadow-inner relative">
                     <Image
-                      src="/images/becca-headshot.webp"
-                      alt="Portrait of Becca Pitts"
+                      src="/photos/staff/becca-pitts-owner-care-director.webp"
+                      alt="Portrait of Becca Pitts, Owner and Care Director of Burien Best Care Home"
                       fill
                       sizes="112px"
                       className="object-cover"
@@ -603,7 +617,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Becca Pitts
                   </h3>
-                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Co-Founder</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Owner &amp; Care Director</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Becca founded Burien Best Care Home out of a deep passion for providing genuine, dignified care for seniors. When you visit, Becca will listen to your story and help you find the right solution for your&nbsp;family.
                   </p>
@@ -613,16 +627,19 @@ export default function Home() {
               {/* Team Member 2: Daniela Torkelson */}
               <ScrollReveal delay={0.1}>
                 <GlassCard variant="tinted" className="p-8 sm:p-10 text-center h-full flex flex-col">
-                  <div
-                    aria-hidden="true"
-                    className="w-28 h-28 rounded-full bg-[color:var(--color-sunshine)]/25 mx-auto mb-5 flex items-center justify-center font-serif text-3xl text-[color:var(--color-ink)] border-4 border-[color:var(--color-sunshine)]/40 shadow-inner"
-                  >
-                    DT
+                  <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 border-4 border-[color:var(--color-sunshine)]/40 shadow-inner relative">
+                    <Image
+                      src="/photos/staff/dana-t-caregiver.webp"
+                      alt="Portrait of Daniela Torkelson, Lead Caregiver at Burien Best Care Home"
+                      fill
+                      sizes="112px"
+                      className="object-cover"
+                    />
                   </div>
                   <h3 className="font-serif text-2xl font-normal text-forest mb-1">
                     Daniela Torkelson
                   </h3>
-                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Provider &amp; Resident Manager</p>
+                  <p className="text-[color:var(--color-sunshine-deep)] font-semibold uppercase tracking-wide text-sm mb-4">Lead Caregiver</p>
                   <p className="text-ink-soft leading-relaxed flex-grow">
                     Daniela is the warm, steady presence our residents rely on every day. She believes care is about more than tasks. It&rsquo;s about knowing each person&rsquo;s story and honoring who they&nbsp;are.
                   </p>

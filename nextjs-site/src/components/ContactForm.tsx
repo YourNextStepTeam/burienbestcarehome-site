@@ -12,11 +12,19 @@ interface FormData {
   visitDate: string
   visitTime: string
   message: string
+  // Honeypot — the Apps Script rejects submissions where this is non-empty
+  botcheck: string
 }
 
 interface FormErrors {
   [key: string]: string
 }
+
+// Placeholder is replaced at build time when NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL
+// is set in the Vercel project env. Until the URL is configured, submissions
+// will return an error and the user will see the inline error state.
+const APPS_SCRIPT_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_APPS_SCRIPT_WEBHOOK_URL ?? 'APPS_SCRIPT_WEBHOOK_URL_TODO_REPLACE'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -29,6 +37,7 @@ export default function ContactForm() {
     visitDate: '',
     visitTime: '',
     message: '',
+    botcheck: '',
   })
 
   const [errors, setErrors] = useState<FormErrors>({})
@@ -94,29 +103,46 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true)
+    setErrors((prev) => ({ ...prev, submit: '' }))
 
-    // Static site: open user's email client pre-filled with the form data
     try {
-      const subject = `Visit Request from ${formData.firstName} ${formData.lastName}`
-      const bodyLines = [
-        `Name: ${formData.firstName} ${formData.lastName}`,
-        `Email: ${formData.email}`,
-        formData.phone ? `Phone: ${formData.phone}` : null,
-        `Relationship to resident: ${formData.relationship}`,
-        `Type of care: ${formData.careType}`,
-        formData.visitDate ? `Preferred visit date: ${formData.visitDate}` : null,
-        `Preferred time: ${formData.visitTime}`,
-        '',
-        'Message:',
-        formData.message || '(none)',
-      ].filter(Boolean)
-      const body = bodyLines.join('\n')
-      const mailto = `mailto:becca@burienbestcarehome.com?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`
+      const payload = {
+        form_type: 'contact',
+        name: `${formData.firstName} ${formData.lastName}`,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        relationship: formData.relationship,
+        careType: formData.careType,
+        visitDate: formData.visitDate,
+        visitTime: formData.visitTime,
+        message: formData.message,
+        botcheck: formData.botcheck,
+      }
 
-      // Open the user's email client
-      window.location.href = mailto
+      // Note: Apps Script web apps don't respond to CORS preflight (OPTIONS),
+      // so a POST with Content-Type: application/json gets blocked by the
+      // browser. The standard pattern is to send JSON as the body but with
+      // Content-Type: text/plain — that makes it a "simple" CORS request that
+      // skips preflight. Apps Script reads e.postData.contents as a raw
+      // string regardless of the declared Content-Type.
+      const res = await fetch(APPS_SCRIPT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`)
+      }
+
+      const result = (await res.json().catch(() => ({}))) as { status?: string }
+      if (result.status && result.status !== 'success' && result.status !== 'ok') {
+        throw new Error(result.status)
+      }
 
       setIsSuccess(true)
       setFormData({
@@ -129,14 +155,12 @@ export default function ContactForm() {
         visitDate: '',
         visitTime: '',
         message: '',
+        botcheck: '',
       })
-      setTimeout(() => {
-        setIsSuccess(false)
-      }, 8000)
-    } catch {
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Submission failed'
       setErrors({
-        submit:
-          'We could not open your email client. Please email us directly at becca@burienbestcarehome.com or call (253) 678-7089.',
+        submit: `We could not send your request (${message}). Please email becca@burienbestcarehome.com or call (253) 678-7089 and we will follow up directly.`,
       })
     } finally {
       setIsSubmitting(false)
@@ -151,15 +175,19 @@ export default function ContactForm() {
         className="bg-sage-light border-2 border-sage rounded-2xl p-8 text-center max-w-2xl mx-auto"
       >
         <h3 className="font-serif text-3xl text-forest mb-4">
-          Almost There!
+          Thank You!
         </h3>
         <p className="text-lg text-forest leading-relaxed mb-4">
-          Your email client should open with your visit request ready to send. Just hit send, and we will respond within 24 hours to confirm your preferred time.
+          We received your visit request and will respond within 24 hours to confirm your preferred time.
         </p>
         <p className="text-forest">
-          If nothing opened, please email us directly at{' '}
+          If you need to reach us sooner, email{' '}
           <a href="mailto:becca@burienbestcarehome.com" className="text-forest font-semibold underline">
             becca@burienbestcarehome.com
+          </a>{' '}
+          or call{' '}
+          <a href="tel:+12536787089" className="text-forest font-semibold underline">
+            (253) 678-7089
           </a>
           .
         </p>
@@ -168,7 +196,21 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-8">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-8" noValidate>
+      {/* Honeypot: real users leave this blank; bots fill every input */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        checked={!!formData.botcheck}
+        onChange={(e) =>
+          setFormData((prev) => ({ ...prev, botcheck: e.target.checked ? 'true' : '' }))
+        }
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
       {/* Row 1: First Name, Last Name */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
@@ -182,7 +224,8 @@ export default function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             aria-required="true"
-            className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+            autoComplete="given-name"
+            className={`w-full min-h-12 px-4 py-3 rounded-lg border-2 transition-colors ${
               errors.firstName
                 ? 'border-terracotta bg-white'
                 : 'border-sage-light focus:border-sage'
@@ -205,7 +248,8 @@ export default function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             aria-required="true"
-            className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+            autoComplete="family-name"
+            className={`w-full min-h-12 px-4 py-3 rounded-lg border-2 transition-colors ${
               errors.lastName
                 ? 'border-terracotta bg-white'
                 : 'border-sage-light focus:border-sage'
@@ -231,7 +275,8 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             aria-required="true"
-            className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+            autoComplete="email"
+            className={`w-full min-h-12 px-4 py-3 rounded-lg border-2 transition-colors ${
               errors.email
                 ? 'border-terracotta bg-white'
                 : 'border-sage-light focus:border-sage'
@@ -253,7 +298,8 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border-2 border-sage-light focus:border-sage transition-colors"
+            autoComplete="tel"
+            className="w-full min-h-12 px-4 py-3 rounded-lg border-2 border-sage-light focus:border-sage transition-colors"
             placeholder="(206) 555-0123"
           />
         </div>
@@ -271,7 +317,8 @@ export default function ContactForm() {
             value={formData.relationship}
             onChange={handleChange}
             aria-required="true"
-            className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+            autoComplete="off"
+            className={`w-full min-h-12 px-4 py-3 rounded-lg border-2 transition-colors ${
               errors.relationship
                 ? 'border-terracotta bg-white'
                 : 'border-sage-light focus:border-sage'
@@ -300,7 +347,8 @@ export default function ContactForm() {
             value={formData.careType}
             onChange={handleChange}
             aria-required="true"
-            className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+            autoComplete="off"
+            className={`w-full min-h-12 px-4 py-3 rounded-lg border-2 transition-colors ${
               errors.careType
                 ? 'border-terracotta bg-white'
                 : 'border-sage-light focus:border-sage'
@@ -331,7 +379,8 @@ export default function ContactForm() {
             name="visitDate"
             value={formData.visitDate}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border-2 border-sage-light focus:border-sage transition-colors"
+            autoComplete="off"
+            className="w-full min-h-12 px-4 py-3 rounded-lg border-2 border-sage-light focus:border-sage transition-colors"
           />
         </div>
 
@@ -345,7 +394,8 @@ export default function ContactForm() {
             value={formData.visitTime}
             onChange={handleChange}
             aria-required="true"
-            className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+            autoComplete="off"
+            className={`w-full min-h-12 px-4 py-3 rounded-lg border-2 transition-colors ${
               errors.visitTime
                 ? 'border-terracotta bg-white'
                 : 'border-sage-light focus:border-sage'
@@ -373,6 +423,7 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
+          autoComplete="off"
           className="w-full px-4 py-3 rounded-lg border-2 border-sage-light focus:border-sage transition-colors min-h-32"
           placeholder="Tell us a bit about what you're looking for, any specific concerns, or questions you have..."
         />
@@ -397,9 +448,9 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-block disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="btn btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
-          {isSubmitting ? 'Scheduling...' : 'Schedule My Visit'}
+          {isSubmitting ? 'Sending...' : 'Schedule My Visit'}
         </button>
       </div>
     </form>

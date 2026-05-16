@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Contact Us | Schedule a Visit',
     description:
       'Schedule a visit at Burien Best Care Home. Meet our team, see our home, and discover if we are right for your family.',
-    url: 'https://burienbestcarehome.site/contact',
+    url: 'https://burienbestcarehome.com/contact',
     type: 'website',
   },
   twitter: {
@@ -69,7 +69,7 @@ export default function Contact() {
         className="relative min-h-[70vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
         <Image
-          src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&q=80&auto=format&fit=crop"
+          src="/photos/heroes/hero-contact-home-side-driveway.webp"
           alt=""
           role="presentation"
           fill
@@ -86,20 +86,20 @@ export default function Contact() {
           </p>
           <h1
             id="contact-hero-headline"
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight drop-shadow-lg"
           >
-            The First Step Is the&nbsp;<span className="text-sage-light italic">Hardest</span>.
+            The First Step Is the&nbsp;<span className="text-[color:var(--color-sunshine)] italic">Hardest</span>.
             <br />
             We&rsquo;ll Make It Easy.
           </h1>
           <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            Just an honest conversation about what your parent needs and how we can&nbsp;help.
+            A real conversation about what your parent needs and how we can&nbsp;help.
           </p>
         </div>
       </section>
 
       {/* Reach Out Section - Rebuilt: no icons, split layout with map */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12 sm:mb-16">
@@ -118,30 +118,33 @@ export default function Contact() {
             <ScrollReveal delay={0}>
               <GlassCard variant="white" className="p-8 sm:p-10 h-full flex flex-col">
                 <div className="space-y-8 flex-grow">
-                  {/* Phone - Placeholder */}
+                  {/* Phone */}
                   <div>
                     <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Call Us</p>
-                    <p className="font-serif text-3xl sm:text-4xl text-forest/50 block leading-tight">
-                      Phone number coming soon
-                    </p>
+                    <a
+                      href="tel:+12536787089"
+                      className="font-serif text-3xl sm:text-4xl text-forest hover:text-[color:var(--color-sunshine-deep)] transition-colors block leading-tight"
+                    >
+                      (253) 678-7089
+                    </a>
                     <p className="text-sm text-ink-soft mt-1">Mon&ndash;Fri, 9am&ndash;5pm Pacific</p>
                   </div>
 
-                  <div className="h-px bg-terracotta/20" />
+                  <div className="h-px bg-[color:var(--color-sunshine)]/30" />
 
                   {/* Email */}
                   <div>
                     <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Email Us</p>
                     <a
-                      href="mailto:info@burienbestcarehome.site"
+                      href="mailto:info@burienbestcarehome.com"
                       className="font-serif text-2xl sm:text-3xl text-forest hover:text-[color:var(--color-sunshine-deep)] transition-colors block break-all leading-tight"
                     >
-                      info@burienbestcarehome.site
+                      info@burienbestcarehome.com
                     </a>
                     <p className="text-sm text-ink-soft mt-1">We respond within 24&nbsp;hours</p>
                   </div>
 
-                  <div className="h-px bg-terracotta/20" />
+                  <div className="h-px bg-[color:var(--color-sunshine)]/30" />
 
                   {/* Hours */}
                   <div>
@@ -155,9 +158,9 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-terracotta/20 flex flex-col sm:flex-row gap-3">
+                <div className="mt-8 pt-6 border-t border-[color:var(--color-sunshine)]/30 flex flex-col sm:flex-row gap-3">
                   <a
-                    href="mailto:info@burienbestcarehome.site"
+                    href="mailto:info@burienbestcarehome.com"
                     className="inline-flex items-center justify-center flex-1 min-h-12 px-6 py-3 border-2 bg-[color:var(--color-sunshine)] border-[color:var(--color-sunshine)] text-[color:var(--color-ink)] font-semibold rounded-lg hover:bg-[color:var(--color-sunshine-deep)] hover:border-[color:var(--color-sunshine-deep)] transition-colors duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-terracotta-deep/70"
                   >
                     Email Us
@@ -169,13 +172,33 @@ export default function Contact() {
             {/* Address Section */}
             <ScrollReveal delay={0.1}>
               <GlassCard variant="white" className="p-6 sm:p-8 h-full flex flex-col">
-                <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-1">Located in</p>
-                <p className="font-serif text-2xl text-forest leading-tight mb-3">
-                  Burien, Washington
+                <p className="uppercase tracking-widest text-xs font-semibold text-[color:var(--color-slate-soft)] mb-2">Visit Us</p>
+                <address
+                  className="not-italic font-serif text-2xl text-forest leading-tight mb-3"
+                  itemScope
+                  itemType="https://schema.org/PostalAddress"
+                >
+                  <span itemProp="streetAddress">927 SW 132nd St</span>
+                  <br />
+                  <span itemProp="addressLocality">Burien</span>,{' '}
+                  <span itemProp="addressRegion">WA</span>{' '}
+                  <span itemProp="postalCode">98146</span>
+                </address>
+                <p className="text-sm text-ink-soft mb-4">
+                  Tours by appointment. Schedule a visit and we&rsquo;ll confirm exact arrival&nbsp;directions.
                 </p>
-                <p className="text-ink-soft leading-relaxed flex-grow">
-                  Address available upon request. We'll share the exact location when you schedule a&nbsp;visit.
-                </p>
+                <div className="relative rounded-lg overflow-hidden border border-[rgba(45,62,74,0.08)] aspect-[4/3] flex-grow">
+                  <iframe
+                    title="Burien Best Care Home location map"
+                    src="https://www.google.com/maps?q=927+SW+132nd+St,+Burien,+WA+98146&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, position: 'absolute', inset: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
               </GlassCard>
             </ScrollReveal>
           </div>
@@ -183,7 +206,7 @@ export default function Contact() {
       </section>
 
       {/* Schedule a Visit Form Section */}
-      <section id="visit-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent scroll-mt-20">
+      <section id="visit-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-10">
@@ -207,7 +230,7 @@ export default function Contact() {
 
 
       {/* What to Expect Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -227,7 +250,7 @@ export default function Contact() {
                 <GlassCard variant="tinted" className="p-6 sm:p-8">
                   <div className="flex items-start gap-5 sm:gap-6">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-terracotta/20 border-2 border-terracotta/40 font-serif text-2xl sm:text-3xl font-normal text-forest shadow-sm">
+                      <div className="flex items-center justify-center h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-[color:var(--color-sunshine)]/25 border-2 border-[color:var(--color-sunshine)]/40 font-serif text-2xl sm:text-3xl font-normal text-forest shadow-sm">
                         {step.number}
                       </div>
                     </div>
@@ -248,7 +271,7 @@ export default function Contact() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -330,7 +353,7 @@ export default function Contact() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
@@ -370,13 +393,13 @@ export default function Contact() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://burienbestcarehome.site',
+                item: 'https://burienbestcarehome.com',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Contact Us',
-                item: 'https://burienbestcarehome.site/contact',
+                item: 'https://burienbestcarehome.com/contact',
               },
             ],
           }),
